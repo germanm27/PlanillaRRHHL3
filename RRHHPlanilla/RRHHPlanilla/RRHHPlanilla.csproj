@@ -1,0 +1,251 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{1B2DDB48-BB2C-43F4-A217-060381A38DE0}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>RRHHPlanilla</RootNamespace>
+    <AssemblyName>RRHHPlanilla</AssemblyName>
+    <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="AlphaBlendTextBox, Version=1.0.1270.35793, Culture=neutral">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\AlphaBlendTextBox\AlphaBlendTextBox.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="FormLogin.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormLogin.Designer.cs">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FormMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FormMenu.Designer.cs">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInicio.Designer.cs">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Prestamos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Prestamos.Designer.cs">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Trabajadores.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Trabajadores.Designer.cs">
+      <DependentUpon>Trabajadores.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="FormLogin.resx">
+      <DependentUpon>FormLogin.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FormMenu.resx">
+      <DependentUpon>FormMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInicio.resx">
+      <DependentUpon>FrmInicio.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Prestamos.resx">
+      <DependentUpon>Prestamos.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <EmbeddedResource Include="Trabajadores.resx">
+      <DependentUpon>Trabajadores.cs</DependentUpon>
+    </EmbeddedResource>
+    <None Include="Properties\DataSources\RRHH.BL.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.Trabajador.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.TrabajadoresBL.datasource" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\3d-secure-2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\rh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logo rh.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\additional-horizontal-menu-browser-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\equipo-de-trabajadores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Flecha redimensionada.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\transaccion.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\valores.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\analitica.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\giphy.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\0.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2019-11-04 at 10.16.06 PM %282%29.jpeg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\WhatsApp Image 2019-11-04 at 10.16.06 PM %281%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-close-up-silhouette-with-tie.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\lllll.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Sin título.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listo.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\flecha lista.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MARCO.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\hoy si.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\sin falta.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\X.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GIFMaker.org_knNzun.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\logins %285%29.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cancelar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICONO.gif" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\cerrar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\maxi.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\minimazar.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\res.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\producto.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\pagos.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\reportes.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\seeee.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\male-close-up-silhouette-with-tie1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\MENU.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\RRHH.BL\RRHH.BL.csproj">
+      <Project>{6d077293-28f2-42f3-9d1c-b65c83e1433e}</Project>
+      <Name>RRHH.BL</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>
