@@ -213,6 +213,27 @@ namespace RRHHPlanilla.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap interrogacion {
+            get {
+                object obj = ResourceManager.GetObject("interrogacion", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap kisspng_question_mark_royalty_free_illustration_vector_gra_preguntas_ms_frecuentes_psicologa_5c00b264119d82_1938272815435495400722 {
+            get {
+                object obj = ResourceManager.GetObject("kisspng-question-mark-royalty-free-illustration-vector-gra-preguntas-ms-frecuente" +
+                        "s-psicologa-5c00b264119d82.1938272815435495400722", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Listo {
             get {
                 object obj = ResourceManager.GetObject("Listo", resourceCulture);

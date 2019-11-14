@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -29,10 +30,20 @@ namespace RRHHPlanilla
             var trabajador = (Trabajador)listaTrabajadoresBindingSource.Current;
             var resultado = _trabajadores.GuardarTrabajador(trabajador);
 
+            if (fotoPictureBox.Image != null)
+            {
+                trabajador.Foto = Program.imageToByteArray(fotoPictureBox.Image);
+            }
+            else
+            {
+                trabajador.Foto = null;
+            }
+
             if (resultado.Exitoso == true)
             {
                 listaTrabajadoresBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
+                DialogResult resul = MessageBox.Show("Usuario Guardado", "Exitoso...!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
             }
             else
             {
@@ -93,6 +104,43 @@ namespace RRHHPlanilla
         {
             DeshabilitarHabilitarBotones(true);
             Eliminar(0);
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            var trabajador = (Trabajador)listaTrabajadoresBindingSource.Current;
+
+            if (trabajador != null)
+            {
+                openFileDialog1.ShowDialog();
+                var archivo = openFileDialog1.FileName;
+
+                if (archivo != "")
+                {
+                    var fileInfo = new FileInfo(archivo);
+                    var fileStream = fileInfo.OpenRead();
+
+                    if (fileInfo.OpenRead() == CancelButton)
+                    {
+
+                    }
+
+                    if (fileInfo.OpenRead() == AcceptButton)
+                    {
+                        fotoPictureBox.Image = Image.FromStream(fileStream);
+                    }
+                    
+                }
+            }
+            else
+            {
+                DialogResult result = MessageBox.Show("Ingrese el empleado antes de agregar la fotografia", "Advertencia", MessageBoxButtons.OK, MessageBoxIcon.Warning);
+            }
+        }
+        
+        private void button2_Click(object sender, EventArgs e)
+        {
+            fotoPictureBox.Image = null;
         }
     }
 }

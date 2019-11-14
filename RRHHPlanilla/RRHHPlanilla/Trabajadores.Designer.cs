@@ -64,6 +64,10 @@
             this.idTextBox = new System.Windows.Forms.TextBox();
             this.nombreTextBox = new System.Windows.Forms.TextBox();
             this.sexoTextBox = new System.Windows.Forms.TextBox();
+            this.button1 = new System.Windows.Forms.Button();
+            this.button2 = new System.Windows.Forms.Button();
+            this.fotoPictureBox = new System.Windows.Forms.PictureBox();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             apellidoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             edadLabel = new System.Windows.Forms.Label();
@@ -74,6 +78,7 @@
             this.listaTrabajadoresBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             this.SuspendLayout();
             // 
             // apellidoLabel
@@ -375,11 +380,45 @@
             this.sexoTextBox.Size = new System.Drawing.Size(100, 22);
             this.sexoTextBox.TabIndex = 5;
             // 
+            // button1
+            // 
+            this.button1.Location = new System.Drawing.Point(393, 103);
+            this.button1.Name = "button1";
+            this.button1.Size = new System.Drawing.Size(120, 33);
+            this.button1.TabIndex = 16;
+            this.button1.Text = "Agregar Foto";
+            this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
+            // 
+            // button2
+            // 
+            this.button2.Location = new System.Drawing.Point(393, 149);
+            this.button2.Name = "button2";
+            this.button2.Size = new System.Drawing.Size(120, 35);
+            this.button2.TabIndex = 17;
+            this.button2.Text = "Remover Foto";
+            this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
+            // 
+            // fotoPictureBox
+            // 
+            this.fotoPictureBox.BackColor = System.Drawing.Color.Silver;
+            this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaTrabajadoresBindingSource, "Foto", true));
+            this.fotoPictureBox.Location = new System.Drawing.Point(534, 52);
+            this.fotoPictureBox.Name = "fotoPictureBox";
+            this.fotoPictureBox.Size = new System.Drawing.Size(173, 190);
+            this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
+            this.fotoPictureBox.TabIndex = 18;
+            this.fotoPictureBox.TabStop = false;
+            // 
             // Trabajadores
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(956, 606);
+            this.Controls.Add(this.fotoPictureBox);
+            this.Controls.Add(this.button2);
+            this.Controls.Add(this.button1);
             this.Controls.Add(apellidoLabel);
             this.Controls.Add(this.apellidoTextBox);
             this.Controls.Add(direccionLabel);
@@ -401,6 +440,7 @@
             this.listaTrabajadoresBindingNavigator.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -436,5 +476,9 @@
         private System.Windows.Forms.TextBox nombreTextBox;
         private System.Windows.Forms.TextBox sexoTextBox;
         private System.Windows.Forms.ToolStripButton toolStripCancelar;
+        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button button2;
+        private System.Windows.Forms.PictureBox fotoPictureBox;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
     }
 }

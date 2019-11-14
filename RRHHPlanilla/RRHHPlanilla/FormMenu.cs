@@ -93,16 +93,36 @@ namespace RRHHPlanilla
         //FORM LOAD 
         //FORM LOAD 
 
+        #region FORM LOAD
+        //Mostrar Logo en PANTALLA
+        private void MostrarFormLogo()
+        {
+            abrirformhija(new FrmInicio());
+        }
+
+        //METODO PARA MOSTRAR FORMULARIO DE LOGO Al CERRAR OTROS FORM ----------------------------------------------------------
+        private void MostrarFormLogoAlCerrarForms(object sender, FormClosedEventArgs e)
+        {
+            MostrarFormLogo();
+        }
+
         private void FormMenu_Load(object sender, EventArgs e)
         {
 
-            
+            label3.Visible = false;
+            label4.Visible = false;
+            usu2.Visible = false;
+            pues2.Visible = false;
+
+            pnlUsuario.Width = 0;
+            pnlayuda.Width = 0;
             panel1.Height = i;
             panel2.Height = i;
             panel3.Height = i;
 
-            tableLayoutPanel1.Width = anchoc;
+            //tableLayoutPanel1.Width = anchoc;
             pictureBox1.Image = RRHHPlanilla.Properties.Resources.ICONO;
+            MostrarFormLogo();
             //label1_Click(null, e);
             //pictureBox1.Image = Image.FromFile(ruta);
 
@@ -120,15 +140,16 @@ namespace RRHHPlanilla
             Login();
         }
 
-        private void FormMenu_KeyDown(object sender, KeyEventArgs e)
-        {
-
-        }
+        #endregion
 
         #region botones Panel
         private void button2_Click(object sender, EventArgs e)
         {
-            abrirformhija(new Prestamos());
+            //abrirformhija(new Prestamos());
+
+            Prestamos fm = new Prestamos();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fm);
 
             //var prestamos = new Prestamos();
             //prestamos.MdiParent = this;
@@ -137,7 +158,12 @@ namespace RRHHPlanilla
 
         private void button3_Click(object sender, EventArgs e)
         {
-            abrirformhija(new Trabajadores());
+            //abrirformhija(new Trabajadores());
+
+            Trabajadores fm = new Trabajadores();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fm);
+
             //var formTrabajadores = new Trabajadores();
             //formTrabajadores.MdiParent = this;
             //formTrabajadores.Show();
@@ -285,6 +311,7 @@ namespace RRHHPlanilla
         #region pICTURE BOXES
         private void pictureBox1_Click(object sender, EventArgs e)
         {
+
             if (tableLayoutPanel1.Width == anchoa)
             {
                 tableLayoutPanel1.Width = anchoc;
@@ -309,12 +336,14 @@ namespace RRHHPlanilla
                 button8.Text = "Reportes";
 
             }
+
         }
 
-            
+
 
         private void pictureBox1_MouseEnter_1(object sender, EventArgs e)
         {
+           
             pictureBox1.Image = RRHHPlanilla.Properties.Resources.X;
 
             //pictureBox1.Image = Image.FromFile(ruta2);
@@ -326,45 +355,11 @@ namespace RRHHPlanilla
             //pictureBox1.Image = Image.FromFile(ruta);
         }
 
-        private void pictureBox2_Click(object sender, EventArgs e)
-        {
-            if (tableLayoutPanel1.Width == anchoa)
-            {
-                tableLayoutPanel1.Width = anchoc;
-                button1.Text = " ";
-                button4.Text = " ";
-                button8.Text = " ";
-
-                panel1.AutoSize = false;
-                panel2.AutoSize = false;
-                panel3.AutoSize = false;
-
-                panel1.Height = i;
-                panel2.Height = i;
-                panel3.Height = i;
-            }
-
-            else
-            {
-                tableLayoutPanel1.Width = anchoa;
-                button1.Text = "Mantenimiento";
-                button4.Text = "Transacciones";
-                button8.Text = "Reportes";
-
-            }
-        }
-
         #endregion
 
         private void panel5_Paint(object sender, PaintEventArgs e)
         {
 
-        }
-
-        private void timer1_Tick(object sender, EventArgs e)
-        {
-            lblhora.Text = DateTime.Now.ToString("h:mm:ss");
-            lblfecha.Text = DateTime.Now.ToLongDateString();
         }
 
         #region BOTONES DE CERRAR, MAX, MIN
@@ -374,7 +369,7 @@ namespace RRHHPlanilla
 
         private void pictureBox3_Click(object sender, EventArgs e)
         {
-            DialogResult result = MessageBox.Show("Seguro que dese salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Exclamation);
+            DialogResult result = MessageBox.Show("Seguro que dese salir?", "Salir", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
             if (result == DialogResult.Yes)
             {
                 //UsuarioAutenticado = Cancelar;
@@ -395,6 +390,7 @@ namespace RRHHPlanilla
             ly = this.Location.Y;
             sw = this.Size.Width;
             sh = this.Size.Height;
+
             this.Size = Screen.PrimaryScreen.WorkingArea.Size;
             this.Location = Screen.PrimaryScreen.WorkingArea.Location;
             picrehavi.Visible = true;
@@ -404,8 +400,8 @@ namespace RRHHPlanilla
         private void picrehavi_Click(object sender, EventArgs e)
         {
             //this.WindowState = FormWindowState.Normal;
-
-            this.Size = new Size(sw, sh);
+            
+            this.Size = new Size(1155, 604);
             this.Location = new Point(lx, ly);
             picrehavi.Visible = false;
             picmaxi.Visible = true;
@@ -417,6 +413,8 @@ namespace RRHHPlanilla
         }
         #endregion
 
+
+
         private void label1_Click(object sender, EventArgs e)
         {
             abrirformhija(new FrmInicio());
@@ -426,48 +424,139 @@ namespace RRHHPlanilla
         {
             if (pnlmenu.Height == 105)
             {
+                pnlUsuario.Width = 0;
                 this.tmContraerMenu.Start();
             }
             else if (pnlmenu.Height == 35)
             {
-                this.tmExpandirMenu.Start();
+                label3.Visible = false;
+                label4.Visible = false;
+
+                usu2.Visible = false;
+                pues2.Visible = false;
+                this.tmExpandirMenu.Start();               
             }
         }
 
         private void button10_Click(object sender, EventArgs e)
         {
-            //if (pnlmenu.Height == 195)
-            //{
-            //    pnlmenu.Height = 1;
-            //}
-            //else
-            //{
-            //    pnlmenu.Height = 195;
-            //}
+            if (pnlUsuario.Width == 0)
+            {
+                pnlUsuario.Width = 121;
+            }
+            else
+                pnlUsuario.Width = 0;
+            
+
         }
 
+        private void pnlmenu_Paint(object sender, PaintEventArgs e)
+        {
 
-
+        }
 
         #region TIMERS
 
         private void tmExpandirMenu_Tick(object sender, EventArgs e)
         {
+
             if (pnlmenu.Height >= 105)
+            {
                 this.tmExpandirMenu.Stop();
+            }
             else
-                pnlmenu.Height = pnlmenu.Height + 5;
+                pnlmenu.Height = pnlmenu.Height + 10;
+
+        }
+
+        //Logo
+        private void pictureBox2_Click(object sender, EventArgs e)
+        {
+
+            if (tableLayoutPanel1.Width == anchoa)
+            {
+                tableLayoutPanel1.Width = anchoc;
+                button1.Text = " ";
+                button4.Text = " ";
+                button8.Text = " ";
+
+                panel1.AutoSize = false;
+                panel2.AutoSize = false;
+                panel3.AutoSize = false;
+
+                panel1.Height = i;
+                panel2.Height = i;
+                panel3.Height = i;
+            }
+
+            else
+            {
+                tableLayoutPanel1.Width = anchoa;
+                button1.Text = "Mantenimiento";
+                button4.Text = "Transacciones";
+                button8.Text = "Reportes";
+
+            }
+        }
+
+        private void label5_Click(object sender, EventArgs e)
+        {
+
+            
+        }
+
+        private void Interrogacion_Click(object sender, EventArgs e)
+        {
+            if (pnlayuda.Width == 0)
+            {
+                pnlayuda.Width = 79;
+            }
+            else
+            pnlayuda.Width = 0;
+        }
+
+        private void button15_Click(object sender, EventArgs e)
+        {
+            this.Hide();
+            Login();
+            this.Show();
+        }
+
+        private void button12_Click_1(object sender, EventArgs e)
+        {
+            FrmAcercaDe frm = new FrmAcercaDe();
+            frm.ShowDialog();
+        }
+
+        private void backgroundWorker1_DoWork(object sender, DoWorkEventArgs e)
+        {
+
         }
 
         private void tmContraerMenu_Tick(object sender, EventArgs e)
         {
-            if (pnlmenu.Height <= 35)
-                this.tmContraerMenu.Stop();
-            else
-                pnlmenu.Height = pnlmenu.Height - 5;
 
+            if (pnlmenu.Height <= 35)
+            {
+                this.tmContraerMenu.Stop();
+                usu2.Visible = true;
+                pues2.Visible = true;
+                label3.Visible = true;
+                label4.Visible = true;
+            }
+            else
+                pnlmenu.Height = pnlmenu.Height - 10;
         }
 
+
+        private void timer1_Tick(object sender, EventArgs e)
+        {
+            lblhora.Text = DateTime.Now.ToString("h:mm:ss");
+            lblfecha.Text = DateTime.Now.ToLongDateString();
+
+            label4.Text = DateTime.Now.ToString("h:mm:ss");
+            label3.Text = DateTime.Now.ToLongDateString();
+        }
 
         #endregion
     }

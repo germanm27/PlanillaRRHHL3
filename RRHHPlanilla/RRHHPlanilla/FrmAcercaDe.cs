@@ -7,20 +7,14 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
-using System.Runtime.InteropServices;
 
 namespace RRHHPlanilla
 {
-    public partial class FrmInicio : Form
+    public partial class FrmAcercaDe : Form
     {
-        public FrmInicio()
+        public FrmAcercaDe()
         {
             InitializeComponent();
-        }
-
-        private void FrmInicio_Load(object sender, EventArgs e)
-        {
-            
         }
     }
 }
