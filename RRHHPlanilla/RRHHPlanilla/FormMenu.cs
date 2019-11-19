@@ -147,7 +147,7 @@ namespace RRHHPlanilla
         {
             //abrirformhija(new Prestamos());
 
-            Prestamos fm = new Prestamos();
+            Capacitaciones fm = new Capacitaciones();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             abrirformhija(fm);
 
@@ -160,10 +160,10 @@ namespace RRHHPlanilla
         {
             //abrirformhija(new Trabajadores());
 
-            Trabajadores fm = new Trabajadores();
+            Empleados fm = new Empleados();
             fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             abrirformhija(fm);
-
+            
             //var formTrabajadores = new Trabajadores();
             //formTrabajadores.MdiParent = this;
             //formTrabajadores.Show();
@@ -532,6 +532,52 @@ namespace RRHHPlanilla
         {
 
         }
+
+        private void button19_Click(object sender, EventArgs e)
+        
+            {
+                Anticipos fm = new Anticipos();
+                fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+                abrirformhija(fm);
+            }
+        
+
+        private void button16_Click(object sender, EventArgs e)
+        {
+            Busquedas fms = new Busquedas();
+            fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fms);
+        }
+
+        private void button5_Click(object sender, EventArgs e)
+        {
+            Planillas fm = new Planillas();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fm);
+        }
+
+        private void button17_Click(object sender, EventArgs e)
+        {
+            Prestaciones fm = new Prestaciones();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fm);
+        }
+
+        private void button18_Click(object sender, EventArgs e)
+        {
+            Vacaciones fm = new Vacaciones();
+            fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fm);
+        }
+
+        private void button22_Click(object sender, EventArgs e)
+        
+            {
+                Deducciones fm = new Deducciones();
+                fm.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+                abrirformhija(fm);
+            }
+        
 
         private void tmContraerMenu_Tick(object sender, EventArgs e)
         {
