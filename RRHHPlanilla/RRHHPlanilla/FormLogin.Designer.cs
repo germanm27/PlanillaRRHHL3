@@ -43,7 +43,7 @@
             this.lblhora = new System.Windows.Forms.Label();
             this.HoraFecha = new System.Windows.Forms.Timer(this.components);
             this.lblfecha = new System.Windows.Forms.Label();
-            this.alphaBlendTextBox3 = new ZBobb.AlphaBlendTextBox();
+            this.alphaBlendTextBox2 = new ZBobb.AlphaBlendTextBox();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox2)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pictureBox3)).BeginInit();
@@ -58,6 +58,8 @@
             this.button1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.button1.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.button1.FlatAppearance.BorderSize = 0;
+            this.button1.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button1.FlatAppearance.MouseOverBackColor = System.Drawing.Color.Transparent;
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Segoe MDL2 Assets", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button1.ForeColor = System.Drawing.SystemColors.ControlLightLight;
@@ -94,13 +96,13 @@
             this.alphaBlendTextBox1.BackAlpha = 0;
             this.alphaBlendTextBox1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
             this.alphaBlendTextBox1.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.alphaBlendTextBox1.ForeColor = System.Drawing.Color.White;
-            this.alphaBlendTextBox1.Location = new System.Drawing.Point(50, 204);
+            this.alphaBlendTextBox1.Location = new System.Drawing.Point(50, 202);
             this.alphaBlendTextBox1.Name = "alphaBlendTextBox1";
-            this.alphaBlendTextBox1.Size = new System.Drawing.Size(224, 15);
+            this.alphaBlendTextBox1.Size = new System.Drawing.Size(224, 17);
             this.alphaBlendTextBox1.TabIndex = 1;
-            this.alphaBlendTextBox1.Tag = "*";
+            this.alphaBlendTextBox1.Tag = "";
             this.alphaBlendTextBox1.Text = "USUARIO";
             this.alphaBlendTextBox1.TextChanged += new System.EventHandler(this.alphaBlendTextBox1_TextChanged);
             this.alphaBlendTextBox1.Enter += new System.EventHandler(this.alphaBlendTextBox1_Enter);
@@ -183,7 +185,7 @@
             this.linkLabel1.Location = new System.Drawing.Point(73, 424);
             this.linkLabel1.Name = "linkLabel1";
             this.linkLabel1.Size = new System.Drawing.Size(149, 13);
-            this.linkLabel1.TabIndex = 14;
+            this.linkLabel1.TabIndex = 0;
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "¿Has olvidado tu contraseña?";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
@@ -194,7 +196,7 @@
             this.lblhora.BackColor = System.Drawing.Color.Transparent;
             this.lblhora.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblhora.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.lblhora.Location = new System.Drawing.Point(122, 0);
+            this.lblhora.Location = new System.Drawing.Point(125, 0);
             this.lblhora.Name = "lblhora";
             this.lblhora.Size = new System.Drawing.Size(35, 13);
             this.lblhora.TabIndex = 15;
@@ -219,22 +221,24 @@
             this.lblfecha.Text = "label3";
             this.lblfecha.TextAlign = System.Drawing.ContentAlignment.TopCenter;
             // 
-            // alphaBlendTextBox3
+            // alphaBlendTextBox2
             // 
-            this.alphaBlendTextBox3.BackAlpha = 0;
-            this.alphaBlendTextBox3.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
-            this.alphaBlendTextBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.alphaBlendTextBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 11.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.alphaBlendTextBox3.ForeColor = System.Drawing.Color.White;
-            this.alphaBlendTextBox3.Location = new System.Drawing.Point(50, 260);
-            this.alphaBlendTextBox3.Name = "alphaBlendTextBox3";
-            this.alphaBlendTextBox3.Size = new System.Drawing.Size(228, 17);
-            this.alphaBlendTextBox3.TabIndex = 2;
-            this.alphaBlendTextBox3.Text = "CONTRASEÑA";
-            this.alphaBlendTextBox3.Enter += new System.EventHandler(this.alphaBlendTextBox3_Enter);
-            this.alphaBlendTextBox3.Leave += new System.EventHandler(this.alphaBlendTextBox3_Leave);
-            this.alphaBlendTextBox3.MouseEnter += new System.EventHandler(this.alphaBlendTextBox3_MouseEnter);
-            this.alphaBlendTextBox3.MouseLeave += new System.EventHandler(this.alphaBlendTextBox3_MouseLeave);
+            this.alphaBlendTextBox2.BackAlpha = 0;
+            this.alphaBlendTextBox2.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(105)))), ((int)(((byte)(105)))), ((int)(((byte)(105)))));
+            this.alphaBlendTextBox2.BorderStyle = System.Windows.Forms.BorderStyle.None;
+            this.alphaBlendTextBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 11F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.alphaBlendTextBox2.ForeColor = System.Drawing.Color.White;
+            this.alphaBlendTextBox2.Location = new System.Drawing.Point(50, 262);
+            this.alphaBlendTextBox2.Name = "alphaBlendTextBox2";
+            this.alphaBlendTextBox2.Size = new System.Drawing.Size(224, 17);
+            this.alphaBlendTextBox2.TabIndex = 2;
+            this.alphaBlendTextBox2.Tag = "";
+            this.alphaBlendTextBox2.Text = "CONTRASEÑA";
+            this.alphaBlendTextBox2.Enter += new System.EventHandler(this.alphaBlendTextBox2_Enter);
+            this.alphaBlendTextBox2.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.alphaBlendTextBox2_KeyPress);
+            this.alphaBlendTextBox2.Leave += new System.EventHandler(this.alphaBlendTextBox2_Leave);
+            this.alphaBlendTextBox2.MouseEnter += new System.EventHandler(this.alphaBlendTextBox2_MouseEnter);
+            this.alphaBlendTextBox2.MouseLeave += new System.EventHandler(this.alphaBlendTextBox2_MouseLeave);
             // 
             // FormLogin
             // 
@@ -245,7 +249,7 @@
             this.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.ClientSize = new System.Drawing.Size(286, 563);
             this.ControlBox = false;
-            this.Controls.Add(this.alphaBlendTextBox3);
+            this.Controls.Add(this.alphaBlendTextBox2);
             this.Controls.Add(this.lblfecha);
             this.Controls.Add(this.lblhora);
             this.Controls.Add(this.linkLabel1);
@@ -291,7 +295,7 @@
         private System.Windows.Forms.Label lblhora;
         private System.Windows.Forms.Timer HoraFecha;
         private System.Windows.Forms.Label lblfecha;
-        private ZBobb.AlphaBlendTextBox alphaBlendTextBox3;
+        private ZBobb.AlphaBlendTextBox alphaBlendTextBox2;
     }
 }
 

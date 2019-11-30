@@ -37,6 +37,10 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AlphaBlendTextBox\AlphaBlendTextBox.dll</HintPath>
     </Reference>
+    <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
       <Private>True</Private>
@@ -45,6 +49,7 @@
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.SqlServer.dll</HintPath>
       <Private>True</Private>
     </Reference>
+    <Reference Include="FlashControlV71, Version=1.0.3187.32366, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="Microsoft.VisualBasic" />
     <Reference Include="MZControls, Version=1.0.7217.27044, Culture=neutral, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
@@ -53,6 +58,8 @@
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
+    <Reference Include="System.Web.Services" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -64,29 +71,67 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Anticipos.cs">
+    <Compile Include="DataSetEmpleado.cs">
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetEmpleado.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="EXTRA\FrmConfigurarUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Anticipos.Designer.cs">
-      <DependentUpon>Anticipos.cs</DependentUpon>
+    <Compile Include="EXTRA\FrmConfigurarUsuario.Designer.cs">
+      <DependentUpon>FrmConfigurarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Busqueda.cs">
+    <Compile Include="Reportes\FormReportePlanilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Busqueda.Designer.cs">
+    <Compile Include="Reportes\FormReportePlanilla.Designer.cs">
+      <DependentUpon>FormReportePlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteEmpleados.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReportePlanilla.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReportePlanilla.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteEmpleado.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\FormReporteEmpleado.Designer.cs">
+      <DependentUpon>FormReporteEmpleado.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\RprtAnticipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\RprtAnticipos.Designer.cs">
+      <DependentUpon>RprtAnticipos.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Mantenimiento\Busqueda.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Mantenimiento\Busqueda.Designer.cs">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </Compile>
-    <Compile Include="Capacitaciones.cs">
+    <Compile Include="Mantenimiento\Capacitaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Capacitaciones.Designer.cs">
+    <Compile Include="Mantenimiento\Capacitaciones.Designer.cs">
       <DependentUpon>Capacitaciones.cs</DependentUpon>
     </Compile>
-    <Compile Include="Deducciones.cs">
+    <Compile Include="Transacciones\RprtDeducciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Deducciones.Designer.cs">
-      <DependentUpon>Deducciones.cs</DependentUpon>
+    <Compile Include="Transacciones\RprtDeducciones.Designer.cs">
+      <DependentUpon>RprtDeducciones.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -100,52 +145,75 @@
     <Compile Include="FormMenu.Designer.cs">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmAcercaDe.cs">
+    <Compile Include="EXTRA\FrmAcercaDe.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmAcercaDe.Designer.cs">
+    <Compile Include="EXTRA\FrmAcercaDe.Designer.cs">
       <DependentUpon>FrmAcercaDe.cs</DependentUpon>
     </Compile>
-    <Compile Include="FrmInicio.cs">
+    <Compile Include="EXTRA\FrmNuevUsuario.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="FrmInicio.Designer.cs">
+    <Compile Include="EXTRA\FrmNuevUsuario.Designer.cs">
+      <DependentUpon>FrmNuevUsuario.cs</DependentUpon>
+    </Compile>
+    <Compile Include="EXTRA\FrmInicio.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="EXTRA\FrmInicio.Designer.cs">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </Compile>
-    <Compile Include="Planillas.cs">
+    <Compile Include="Transacciones\Planillas.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Planillas.Designer.cs">
+    <Compile Include="Transacciones\Planillas.Designer.cs">
       <DependentUpon>Planillas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Prestaciones.cs">
+    <Compile Include="Transacciones\Prestaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Prestaciones.Designer.cs">
+    <Compile Include="Transacciones\Prestaciones.Designer.cs">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Empleados.cs">
+    <Compile Include="Mantenimiento\Empleados.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Empleados.Designer.cs">
+    <Compile Include="Mantenimiento\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Vacaciones.cs">
+    <Compile Include="Transacciones\Vacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Vacaciones.Designer.cs">
+    <Compile Include="Transacciones\Vacaciones.Designer.cs">
       <DependentUpon>Vacaciones.cs</DependentUpon>
     </Compile>
-    <EmbeddedResource Include="Busqueda.resx">
+    <EmbeddedResource Include="EXTRA\FrmConfigurarUsuario.resx">
+      <DependentUpon>FrmConfigurarUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReportePlanilla.resx">
+      <DependentUpon>FormReportePlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Mantenimiento\Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Capacitaciones.resx">
+    <EmbeddedResource Include="Mantenimiento\Capacitaciones.resx">
       <DependentUpon>Capacitaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Deducciones.resx">
-      <DependentUpon>Deducciones.cs</DependentUpon>
+    <EmbeddedResource Include="ReporteEmpleados.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteEmpleados.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReportePlanilla.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReportePlanilla.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\FormReporteEmpleado.resx">
+      <DependentUpon>FormReporteEmpleado.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\RprtDeducciones.resx">
+      <DependentUpon>RprtDeducciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -153,16 +221,19 @@
     <EmbeddedResource Include="FormMenu.resx">
       <DependentUpon>FormMenu.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmAcercaDe.resx">
+    <EmbeddedResource Include="EXTRA\FrmAcercaDe.resx">
       <DependentUpon>FrmAcercaDe.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="FrmInicio.resx">
+    <EmbeddedResource Include="EXTRA\FrmNuevUsuario.resx">
+      <DependentUpon>FrmNuevUsuario.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="EXTRA\FrmInicio.resx">
       <DependentUpon>FrmInicio.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Planillas.resx">
+    <EmbeddedResource Include="Transacciones\Planillas.resx">
       <DependentUpon>Planillas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Prestaciones.resx">
+    <EmbeddedResource Include="Transacciones\Prestaciones.resx">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -175,19 +246,33 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="Empleados.resx">
+    <EmbeddedResource Include="Mantenimiento\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Vacaciones.resx">
+    <EmbeddedResource Include="Transacciones\Vacaciones.resx">
       <DependentUpon>Vacaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <None Include="DataSetEmpleado.xsc">
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </None>
+    <None Include="DataSetEmpleado.xsd">
+      <SubType>Designer</SubType>
+      <Generator>MSDataSetGenerator</Generator>
+      <LastGenOutput>DataSetEmpleado.Designer.cs</LastGenOutput>
+    </None>
+    <None Include="DataSetEmpleado.xss">
+      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    </None>
     <None Include="packages.config" />
     <None Include="Properties\DataSources\RRHH.BL.CapacitacionesBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.CargosBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.EstadoCivilBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.JornadaBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.MetodoPagoBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.PlanillaBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.PrivilegiosBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.SexoBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.Trabajador.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.TrabajadoresBL.datasource" />
     <None Include="Properties\Settings.settings">
@@ -325,6 +410,40 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\kisspng-question-mark-royalty-free-illustration-vector-gra-preguntas-ms-frecuentes-psicologa-5c00b264119d82.1938272815435495400722.png" />
+  </ItemGroup>
+  <ItemGroup />
+  <ItemGroup>
+    <None Include="Resources\ojo2.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ojo3.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\close.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\HABER2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listo1.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listo2.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Listo3.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\bab.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\salir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

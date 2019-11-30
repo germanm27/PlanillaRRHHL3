@@ -1,4 +1,5 @@
-﻿using System;
+﻿using RRHH.BL;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -10,6 +11,10 @@ namespace RRHHPlanilla
 {
     static class Program
     {
+        public static Usuario usuario;
+    
+        
+        
         /// <summary>
         /// Punto de entrada principal para la aplicación.
         /// </summary>

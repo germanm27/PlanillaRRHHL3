@@ -49,19 +49,22 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="BusquedaBL.cs" />
-    <Compile Include="CapacitacionesBL.cs" />
-    <Compile Include="CargosBL.cs" />
+    <Compile Include="MantenimientoBL\BusquedaBL.cs" />
+    <Compile Include="MantenimientoBL\CapacitacionesBL.cs" />
+    <Compile Include="MantenimientoBL\Listas para Trabajadores\CargosBL.cs" />
     <Compile Include="Contexto.cs" />
     <Compile Include="DatosdeInicio.cs" />
     <Compile Include="EgresosBL.cs" />
-    <Compile Include="EstadoCivilBL.cs" />
+    <Compile Include="MantenimientoBL\Listas para Trabajadores\EstadoCivilBL.cs" />
     <Compile Include="IngresosBL.cs" />
-    <Compile Include="JornadaBL.cs" />
-    <Compile Include="MetodoPagoBL.cs" />
-    <Compile Include="SeguridadBL.cs" />
+    <Compile Include="MantenimientoBL\Listas para Trabajadores\JornadaBL.cs" />
+    <Compile Include="MantenimientoBL\Listas para Trabajadores\MetodoPagoBL.cs" />
+    <Compile Include="TransaccionesBL\PlanillaBL.cs" />
+    <Compile Include="SEGURIDAD\PrivilegiosBL.cs" />
+    <Compile Include="SEGURIDAD\SeguridadBL.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="TrabajadoresBL.cs" />
+    <Compile Include="MantenimientoBL\TrabajadoresBL.cs" />
+    <Compile Include="MantenimientoBL\Listas para Trabajadores\SexoBL.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
@@ -70,9 +73,11 @@
     <None Include="Properties\DataSources\Contexto.datasource" />
     <None Include="Properties\DataSources\Resultado.datasource" />
     <None Include="Properties\DataSources\SeguridadBL.datasource" />
+    <None Include="Properties\DataSources\SexoBL.datasource" />
     <None Include="Properties\DataSources\Trabajador.datasource" />
     <None Include="Properties\DataSources\TrabajadoresBL.datasource" />
   </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
