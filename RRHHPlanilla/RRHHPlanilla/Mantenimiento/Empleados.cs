@@ -44,6 +44,43 @@ namespace RRHHPlanilla
             listaMetodoPagosBindingSource.DataSource = _metodopagoBL.ObtenerMetodoPagos();
 
         }
+        #region BotonesEdicion
+        public void HabilitarEdicion()
+        {
+            button1.Enabled = true;
+            button2.Enabled = true;
+            nombreTextBox.Enabled = true;
+            apellidoTextBox.Enabled = true;
+            edadTextBox.Enabled = true;
+            sueldoTextBox.Enabled = true;
+            direccionTextBox.Enabled = true;
+            cedulaTextBox.Enabled = true;
+            fechaInicioDateTimePicker.Enabled = true;
+            comboBox1.Enabled = true;
+            estadoCivilIdComboBox.Enabled = true;
+            cargoIdComboBox.Enabled = true;
+            metodoPagoIdComboBox.Enabled = true;
+            jornadaIdComboBox.Enabled = true;
+        }
+
+        public void DesabilitarEdicion()
+        {
+            button1.Enabled = false;
+            button2.Enabled = false;
+            nombreTextBox.Enabled = false;
+            apellidoTextBox.Enabled = false;
+            edadTextBox.Enabled = false;
+            sueldoTextBox.Enabled = false;
+            direccionTextBox.Enabled = false;
+            cedulaTextBox.Enabled = false;
+            fechaInicioDateTimePicker.Enabled = false;
+            comboBox1.Enabled = false;
+            estadoCivilIdComboBox.Enabled = false;
+            cargoIdComboBox.Enabled = false;
+            metodoPagoIdComboBox.Enabled = false;
+            jornadaIdComboBox.Enabled = false;
+        }
+        #endregion
 
         //GUARDAR
         private void listaTrabajadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
@@ -83,8 +120,9 @@ namespace RRHHPlanilla
             listaTrabajadoresBindingSource.MoveLast();
 
             DeshabilitarHabilitarBotones(false);
-        }
+            HabilitarEdicion();
 
+        }
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -96,7 +134,7 @@ namespace RRHHPlanilla
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripCancelar.Visible = !valor;
-
+            toolStripButton1.Enabled = valor;
         }
 
         //BORRAR
@@ -134,6 +172,7 @@ namespace RRHHPlanilla
         private void toolStripCancelar_Click(object sender, EventArgs e)
         {
             _trabajadores.CancelarCambios();
+            DesabilitarEdicion();
             DeshabilitarHabilitarBotones(true);       
         }
      
@@ -146,6 +185,7 @@ namespace RRHHPlanilla
         {
             toolStripCancelar.Visible = false;
             listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
+            DesabilitarEdicion();
         }
 
 
@@ -209,7 +249,10 @@ namespace RRHHPlanilla
 
         private void toolStripButton1_Click(object sender, EventArgs e)
         {
-            listaTrabajadoresBindingNavigatorSaveItem.Enabled = true;            
+            listaTrabajadoresBindingNavigatorSaveItem.Enabled = true;
+            toolStripCancelar.Visible = true;
+            toolStripCancelar.Enabled = true;
+            HabilitarEdicion();
         }
     }
 }
