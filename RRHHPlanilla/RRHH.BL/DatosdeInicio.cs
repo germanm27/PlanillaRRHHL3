@@ -1,6 +1,8 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
+using System.Globalization;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -51,7 +53,7 @@ namespace RRHH.BL
             usuario1.Correo = "prueba1234@gmail.com";
             usuario1.edad = 22;
             usuario1.Foto = null;
-            usuario1.FechaInicio = new DateTime(1997, 4, 29);
+            usuario1.FechaInicio = new DateTime(2000, 4, 29);
             usuario1.Cedula = 0512199700879;
             usuario1.PrivilegioId = 1;
 
@@ -68,7 +70,7 @@ namespace RRHH.BL
             usuario2.Correo = "prueba1234@gmail.com";
             usuario2.edad = 21;
             usuario2.Foto = null;
-            usuario2.FechaInicio = new DateTime(1998, 10, 18);
+            usuario2.FechaInicio = new DateTime(2000, 10, 18);
             usuario2.Cedula = 0504199800263;
             usuario2.PrivilegioId = 1;
 
@@ -88,6 +90,37 @@ namespace RRHH.BL
             usuario3.FechaInicio = new DateTime(2002, 12, 9);
             usuario3.Cedula = 0512199700999;
             usuario3.PrivilegioId = 3;
+            #endregion
+
+            #region ArchivosCSV
+            //var archivo = "../../../Mantenimientos2.csv";
+            //using (var reader = new StreamReader(archivo))
+            //{
+            //    reader.ReadLine();
+
+            //    while (!reader.EndOfStream)
+            //    {
+            //        var line = reader.ReadLine();
+            //        var values = line.Split(',');
+            //        var nuevoTrabajador = new Trabajador()
+            //        {
+            //            Foto = null,
+            //            Nombre = values[0].ToString(),
+            //            Apellido = values[1].ToString(),
+            //            Edad = int.Parse(values[2].ToString()),
+            //            SexoId = int.Parse(values[3].ToString()),
+            //            Sueldo = double.Parse(values[4].ToString()),
+            //            Direccion = values[5].ToString(),
+            //            EstadoCivilId = int.Parse(values[6].ToString()),
+            //            CargoId = int.Parse(values[7].ToString()),
+            //            MetodoPagoId = int.Parse(values[8].ToString()),
+            //            JornadaId = int.Parse(values[9].ToString()),
+            //            FechaInicio = DateTime.Parse(values[10].ToString(), CultureInfo.GetCultureInfo("es")),
+            //            Cedula = double.Parse(values[11].ToString())
+            //        };
+            //        contexto.Trabajadores.Add(nuevoTrabajador);
+            //    }
+            //}
             #endregion
 
             #region CARGO
@@ -272,7 +305,7 @@ namespace RRHH.BL
             trabajador5.CargoId = 2;
             trabajador5.MetodoPagoId = 1;
             trabajador5.JornadaId = 1;
-            trabajador5.FechaInicio = new DateTime(1999, 6, 16);
+            trabajador5.FechaInicio = new DateTime(2000, 6, 16);
             trabajador5.Cedula = 0512199499999;
             contexto.Trabajadores.Add(trabajador5);
 
@@ -311,7 +344,7 @@ namespace RRHH.BL
             #region CAPACITACION
             var capacitacion1 = new Capacitacion();
             capacitacion1.Tema = "Manejo de Conflictos";
-            capacitacion1.Horas= "12";
+            capacitacion1.Horas = "12";
             capacitacion1.Poblacion = "San Pedro Sula";
             capacitacion1.Personal = "German Mendoza y Kevin Amaya";
             capacitacion1.Fecha = "10-Noviembre";

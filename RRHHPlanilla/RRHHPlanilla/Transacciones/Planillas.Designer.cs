@@ -55,6 +55,7 @@
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaPlanillasBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripButtonCancelar = new System.Windows.Forms.ToolStripButton();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.planillaDetalleBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.button1 = new System.Windows.Forms.Button();
@@ -73,7 +74,6 @@
             this.jornadaIdComboBox = new System.Windows.Forms.ComboBox();
             this.metodoPagoIdComboBox = new System.Windows.Forms.ComboBox();
             this.planillaDetalleDataGridView = new System.Windows.Forms.DataGridView();
-            this.label3 = new System.Windows.Forms.Label();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewComboBoxColumn();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewComboBoxColumn();
@@ -87,6 +87,7 @@
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn13 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.label3 = new System.Windows.Forms.Label();
             activoLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -239,6 +240,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaPlanillasBindingNavigatorSaveItem,
+            this.toolStripButton1,
             this.toolStripButtonCancelar});
             this.listaPlanillasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaPlanillasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -362,6 +364,16 @@
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // fechaDateTimePicker
             // 
@@ -565,20 +577,6 @@
             this.planillaDetalleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.planillaDetalleDataGridView_CellEndEdit_1);
             this.planillaDetalleDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.planillaDetalleDataGridView_DataError_1);
             // 
-            // label3
-            // 
-            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(1207, 73);
-            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(229, 48);
-            this.label3.TabIndex = 51;
-            this.label3.Text = "ANULADO";
-            this.label3.Visible = false;
-            // 
             // dataGridViewTextBoxColumn3
             // 
             this.dataGridViewTextBoxColumn3.AutoSizeMode = System.Windows.Forms.DataGridViewAutoSizeColumnMode.AllCells;
@@ -688,6 +686,20 @@
             this.dataGridViewTextBoxColumn14.HeaderText = "PagoTotal";
             this.dataGridViewTextBoxColumn14.Name = "dataGridViewTextBoxColumn14";
             // 
+            // label3
+            // 
+            this.label3.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.label3.AutoSize = true;
+            this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label3.ForeColor = System.Drawing.Color.Red;
+            this.label3.Location = new System.Drawing.Point(1207, 73);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
+            this.label3.Name = "label3";
+            this.label3.Size = new System.Drawing.Size(229, 48);
+            this.label3.TabIndex = 51;
+            this.label3.Text = "ANULADO";
+            this.label3.Visible = false;
+            // 
             // Planillas
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -787,5 +799,6 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

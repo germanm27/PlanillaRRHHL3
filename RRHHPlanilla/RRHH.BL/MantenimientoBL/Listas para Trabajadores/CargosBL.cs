@@ -27,6 +27,7 @@ namespace RRHH.BL
             return ListaCargos;
         }
 
+        //LinQ
         public BindingList<Cargo> ObtenerCargos(int cargoId)
         {
             var query = _contexto.Cargos.Where(r => r.Id == cargoId);

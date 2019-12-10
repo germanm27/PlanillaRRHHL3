@@ -41,16 +41,39 @@ namespace RRHHPlanilla
 
         private void Planillas_Load(object sender, EventArgs e)
         {
-
+            DesabilitarEdicion();
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
             _planillaBL.AgregarPlanilla();
             listaPlanillasBindingSource.MoveLast();
-
+            HabilitarEdicion();
             DeshabilitarHabilitarBotones(false);
         }
+        #region BotonesEdicion
+        public void HabilitarEdicion()
+        {
+            fechaDateTimePicker.Enabled = true;
+            cargoIdComboBox.Enabled = true;
+            metodoPagoIdComboBox.Enabled = true;
+            jornadaIdComboBox.Enabled = true;
+            button1.Enabled = true;
+            button2.Enabled = true;
+            planillaDetalleDataGridView.Enabled = true;
+        }
+
+        public void DesabilitarEdicion()
+        {
+            fechaDateTimePicker.Enabled = false;
+            cargoIdComboBox.Enabled = false;
+            metodoPagoIdComboBox.Enabled = false;
+            jornadaIdComboBox.Enabled = false;
+            button1.Enabled = false;
+            button2.Enabled = false;
+            planillaDetalleDataGridView.Enabled = false;
+        }
+        #endregion
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -62,6 +85,7 @@ namespace RRHHPlanilla
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
+            toolStripButton1.Enabled = valor;
 
         }
 
@@ -88,6 +112,7 @@ namespace RRHHPlanilla
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
             DeshabilitarHabilitarBotones(true);
+            DesabilitarEdicion();
             _planillaBL.CancelarCambios();
         }
 
@@ -105,6 +130,11 @@ namespace RRHHPlanilla
             var planillaDetalle = (PlanillaDetalle)planillaDetalleBindingSource.Current;
 
             _planillaBL.RemoverPlanillaDetalle(planilla, planillaDetalle);
+
+
+            _planillaBL.RemoverDetalle(planilla);
+
+            listaPlanillasBindingSource.ResetBindings(false);
         }
 
         private void planillaDetalleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -130,6 +160,7 @@ namespace RRHHPlanilla
             var planilla = (Planilla)listaPlanillasBindingSource.Current;
             _planillaBL.CalcularPlanilla(planilla);
 
+            //LinQ
             //var planillaDetalle = (PlanillaDetalle)planillaDetalleBindingSource.Current;
             //if (planillaDetalle != null)
             //{
@@ -179,6 +210,14 @@ namespace RRHHPlanilla
             {
                 label3.Visible = false;
             }
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            listaPlanillasBindingNavigatorSaveItem.Enabled = true;
+            toolStripButtonCancelar.Visible = true;
+            toolStripButtonCancelar.Enabled = true;
+            HabilitarEdicion();
         }
     }
 }

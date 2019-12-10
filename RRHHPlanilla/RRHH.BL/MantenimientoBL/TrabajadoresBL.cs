@@ -28,10 +28,23 @@ namespace RRHH.BL
             return ListaTrabajadores;
         }
 
+        //LinQ
         public Trabajador ObtenerTrabajador(int trabajadorId)
         {
             return _contexto.Trabajadores.FirstOrDefault(r => r.Id == trabajadorId);
         }
+
+        public BindingList<Trabajador> ObtenerTrabajador(DateTime fechaInicio, DateTime fechaFinal)
+        {
+            var query = _contexto.Trabajadores
+                .Where(r => r.FechaInicio >= fechaInicio && r.FechaInicio <= fechaFinal);
+
+            ListaTrabajadores = new BindingList<Trabajador>(query.ToList());
+
+            return ListaTrabajadores;
+        }
+
+
 
         public Resultado GuardarTrabajador(Trabajador trabajador)
         {           

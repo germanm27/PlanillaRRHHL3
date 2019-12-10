@@ -34,6 +34,7 @@ namespace RRHHPlanilla
             textBox1.Text = Convert.ToString(filas.Cells[0].Value);
             textBox2.Text = Convert.ToString(filas.Cells[2].Value);
             textBox3.Text = Convert.ToString(filas.Cells[3].Value);
+
         }
 
         private void Busquedas_Load(object sender, EventArgs e)

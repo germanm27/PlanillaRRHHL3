@@ -173,6 +173,7 @@ namespace RRHHPlanilla
         {
             _trabajadores.CancelarCambios();
             DesabilitarEdicion();
+            listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
             DeshabilitarHabilitarBotones(true);       
         }
      

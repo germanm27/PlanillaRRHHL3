@@ -82,6 +82,14 @@ namespace RRHH.BL
             return resultado;
         }
 
+        //REMOVER
+        public void RemoverDetalle(Planilla planilla)
+        {
+            int cant = 1;
+            planilla.CantEmpleados -= cant;
+
+        }
+
         //CALCULOS
         public void CalcularPlanilla(Planilla planilla)
         {
