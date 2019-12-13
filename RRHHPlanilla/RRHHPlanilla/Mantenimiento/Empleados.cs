@@ -9,6 +9,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Drawing.Imaging;
 
 namespace RRHHPlanilla
 {
@@ -29,7 +30,7 @@ namespace RRHHPlanilla
             listaSexosBindingSource.DataSource = _sexoBL.ObtenerSexos();
 
             _trabajadores = new TrabajadoresBL();
-            listaTrabajadoresBindingSource.DataSource = _trabajadores.ObtenerTrabajador();
+            listaTrabajadoresBindingSource.DataSource = _trabajadores.ListaTrabajadores;  //ObtenerTrabajador();
 
             _cargosBL = new CargosBL();
             listaCargosBindingSource.DataSource = _cargosBL.ObtenerCargos();
@@ -44,51 +45,26 @@ namespace RRHHPlanilla
             listaMetodoPagosBindingSource.DataSource = _metodopagoBL.ObtenerMetodoPagos();
 
         }
-        #region BotonesEdicion
-        public void HabilitarEdicion()
-        {
-            button1.Enabled = true;
-            button2.Enabled = true;
-            nombreTextBox.Enabled = true;
-            apellidoTextBox.Enabled = true;
-            edadTextBox.Enabled = true;
-            sueldoTextBox.Enabled = true;
-            direccionTextBox.Enabled = true;
-            cedulaTextBox.Enabled = true;
-            fechaInicioDateTimePicker.Enabled = true;
-            comboBox1.Enabled = true;
-            estadoCivilIdComboBox.Enabled = true;
-            cargoIdComboBox.Enabled = true;
-            metodoPagoIdComboBox.Enabled = true;
-            jornadaIdComboBox.Enabled = true;
-        }
-
-        public void DesabilitarEdicion()
-        {
-            button1.Enabled = false;
-            button2.Enabled = false;
-            nombreTextBox.Enabled = false;
-            apellidoTextBox.Enabled = false;
-            edadTextBox.Enabled = false;
-            sueldoTextBox.Enabled = false;
-            direccionTextBox.Enabled = false;
-            cedulaTextBox.Enabled = false;
-            fechaInicioDateTimePicker.Enabled = false;
-            comboBox1.Enabled = false;
-            estadoCivilIdComboBox.Enabled = false;
-            cargoIdComboBox.Enabled = false;
-            metodoPagoIdComboBox.Enabled = false;
-            jornadaIdComboBox.Enabled = false;
-        }
-        #endregion
 
         //GUARDAR
         private void listaTrabajadoresBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            if (codigoBarrasPictureBox.Image == null && nombreTextBox.Text != "" || nombreTextBox.Text != "")
+            {
+                BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
+                Codigo.IncludeLabel = true;
+                codigoBarrasPictureBox.Image = Codigo.Encode(BarcodeLib.TYPE.CODE128, nombreTextBox.Text + apellidoTextBox.Text, Color.Black, Color.White, 400, 100);
+            }
+            else
+            {
+
+            }
+
+
             listaTrabajadoresBindingSource.EndEdit();
             var trabajador = (Trabajador)listaTrabajadoresBindingSource.Current;
 
-            if (fotoPictureBox.Image != null)
+            if (fotoPictureBox.Image != null )
             {
                 trabajador.Foto = Program.imageToByteArray(fotoPictureBox.Image);
             }
@@ -96,6 +72,17 @@ namespace RRHHPlanilla
             {
                 trabajador.Foto = null;
             }
+
+
+            if (codigoBarrasPictureBox.Image != null)
+            {               
+                trabajador.CodigoBarras = Program.imageToByteArray(codigoBarrasPictureBox.Image);
+            }
+            else
+            {              
+                trabajador.CodigoBarras = null;
+            }
+
             var resultado = _trabajadores.GuardarTrabajador(trabajador);
 
            
@@ -104,7 +91,10 @@ namespace RRHHPlanilla
                 listaTrabajadoresBindingSource.ResetBindings(false);
                 DeshabilitarHabilitarBotones(true);
                 DialogResult resul = MessageBox.Show("Usuario Guardado", "Exitoso...!!", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
+                
+                textBox1.Text = "";
+                button3.PerformClick();
+               
             }
             else
             {
@@ -115,14 +105,17 @@ namespace RRHHPlanilla
         //AGREGAR
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
+            //textBox1.Text = null;
+            //button3.PerformClick();
+            listaTrabajadoresBindingSource.DataSource = _trabajadores.ObtenerTrabajador();
+
             listaTrabajadoresBindingNavigatorSaveItem.Enabled = true;
             _trabajadores.AgregarTrabajador();
             listaTrabajadoresBindingSource.MoveLast();
 
-            DeshabilitarHabilitarBotones(false);
-            HabilitarEdicion();
-
+            DeshabilitarHabilitarBotones(false);        
         }
+
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -134,7 +127,7 @@ namespace RRHHPlanilla
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripCancelar.Visible = !valor;
-            toolStripButton1.Enabled = valor;
+
         }
 
         //BORRAR
@@ -171,45 +164,64 @@ namespace RRHHPlanilla
         //CANCELAR CAMBIOS
         private void toolStripCancelar_Click(object sender, EventArgs e)
         {
-            _trabajadores.CancelarCambios();
-            DesabilitarEdicion();
-            listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
-            DeshabilitarHabilitarBotones(true);       
+            textBox1.Text = null;
+            button3.PerformClick();       
+            _trabajadores.CancelarCambios();            
+            DeshabilitarHabilitarBotones(true);
+
         }
-     
+
         private void button3_Click(object sender, EventArgs e)
         {
-            this.Close();
+            var buscar = textBox1.Text;
+
+            if (string.IsNullOrEmpty(buscar) == true)
+            {
+                _trabajadores = new TrabajadoresBL();
+                listaTrabajadoresBindingSource.DataSource = _trabajadores.ListaTrabajadores;
+            }
+
+            if (string.IsNullOrEmpty(buscar) != true)
+            {
+                
+
+                listaTrabajadoresBindingSource.DataSource =
+                    _trabajadores.ObtenerTrabajadores(buscar);
+
+
+                listaTrabajadoresBindingSource.ResetBindings(false);
+            }
+
+  
         }
 
         private void Trabajadores_Load(object sender, EventArgs e)
         {
-            toolStripCancelar.Visible = false;
-            listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
-            DesabilitarEdicion();
+            //listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
+            
         }
 
+        private void listaTrabajadoresDataGridView_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
+        }
 
         private void listaTrabajadoresBindingSource_CurrentChanged(object sender, EventArgs e)
         {
 
         }
 
-        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void fotoPictureBox_Click(object sender, EventArgs e)
-        {
-
-        }
         private void listaTrabajadoresBindingNavigator_RefreshItems(object sender, EventArgs e)
         {
 
         }
 
         private void groupBox1_Enter(object sender, EventArgs e)
+        {
+
+        }
+
+        private void fotoPictureBox_Click(object sender, EventArgs e)
         {
 
         }
@@ -248,12 +260,30 @@ namespace RRHHPlanilla
             this.Close();
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        private void bindingNavigatorMoveNextItem_Click(object sender, EventArgs e)
         {
-            listaTrabajadoresBindingNavigatorSaveItem.Enabled = true;
-            toolStripCancelar.Visible = true;
-            toolStripCancelar.Enabled = true;
-            HabilitarEdicion();
+
         }
+
+        private void metodoPagoIdLabel_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void bindingNavigatorMovePreviousItem_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void button4_Click(object sender, EventArgs e)
+        {
+            listaTrabajadoresBindingSource.DataSource = _trabajadores.ListaTrabajadores;
+            listaTrabajadoresBindingSource.ResetBindings(false);
+        }
+
+        private void nombreTextBox_Leave(object sender, EventArgs e)
+        {
+
+        }       
     }
 }

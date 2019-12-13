@@ -79,6 +79,8 @@ namespace RRHHPlanilla
             else
             {
                 MessageBox.Show("Usuario o contraseña incorrecta");
+                alphaBlendTextBox1.Clear();
+                alphaBlendTextBox2.Clear();
             }
         }
         #endregion
@@ -171,7 +173,7 @@ namespace RRHHPlanilla
                 {
                     c = u;
                     Program.usuario = resultado;
-
+                    
                     this.Close();
                 }
                 else

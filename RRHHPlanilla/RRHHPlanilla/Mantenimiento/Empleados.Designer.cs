@@ -42,6 +42,7 @@
             System.Windows.Forms.Label estadoCivilIdLabel;
             System.Windows.Forms.Label label1;
             System.Windows.Forms.Label label2;
+            System.Windows.Forms.Label codigoBarrasLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Empleados));
             this.listaTrabajadoresBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
             this.listaTrabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
@@ -57,7 +58,6 @@
             this.bindingNavigatorAddNewItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorDeleteItem = new System.Windows.Forms.ToolStripButton();
             this.listaTrabajadoresBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
-            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             this.toolStripSeparator1 = new System.Windows.Forms.ToolStripSeparator();
             this.toolStripCancelar = new System.Windows.Forms.ToolStripButton();
             this.apellidoTextBox = new System.Windows.Forms.TextBox();
@@ -75,6 +75,7 @@
             this.estadoCivilIdComboBox = new System.Windows.Forms.ComboBox();
             this.listaEstadoCivilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.codigoBarrasPictureBox = new System.Windows.Forms.PictureBox();
             this.fechaInicioDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.cedulaTextBox = new System.Windows.Forms.TextBox();
             this.comboBox1 = new System.Windows.Forms.ComboBox();
@@ -85,6 +86,8 @@
             this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
             this.groupBox2 = new System.Windows.Forms.GroupBox();
             this.piccerrar = new System.Windows.Forms.PictureBox();
+            this.textBox1 = new System.Windows.Forms.TextBox();
+            this.button3 = new System.Windows.Forms.Button();
             apellidoLabel = new System.Windows.Forms.Label();
             direccionLabel = new System.Windows.Forms.Label();
             edadLabel = new System.Windows.Forms.Label();
@@ -98,6 +101,7 @@
             estadoCivilIdLabel = new System.Windows.Forms.Label();
             label1 = new System.Windows.Forms.Label();
             label2 = new System.Windows.Forms.Label();
+            codigoBarrasLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingNavigator)).BeginInit();
             this.listaTrabajadoresBindingNavigator.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingSource)).BeginInit();
@@ -106,6 +110,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaJornadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaEstadoCivilesBindingSource)).BeginInit();
             this.groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.codigoBarrasPictureBox)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaSexosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).BeginInit();
             this.groupBox2.SuspendLayout();
@@ -116,9 +121,10 @@
             // 
             apellidoLabel.AutoSize = true;
             apellidoLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            apellidoLabel.Location = new System.Drawing.Point(72, 114);
+            apellidoLabel.Location = new System.Drawing.Point(54, 93);
+            apellidoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             apellidoLabel.Name = "apellidoLabel";
-            apellidoLabel.Size = new System.Drawing.Size(86, 21);
+            apellidoLabel.Size = new System.Drawing.Size(67, 17);
             apellidoLabel.TabIndex = 19;
             apellidoLabel.Text = "Apellido:";
             // 
@@ -126,9 +132,10 @@
             // 
             direccionLabel.AutoSize = true;
             direccionLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            direccionLabel.Location = new System.Drawing.Point(51, 242);
+            direccionLabel.Location = new System.Drawing.Point(38, 197);
+            direccionLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             direccionLabel.Name = "direccionLabel";
-            direccionLabel.Size = new System.Drawing.Size(96, 21);
+            direccionLabel.Size = new System.Drawing.Size(75, 17);
             direccionLabel.TabIndex = 21;
             direccionLabel.Text = "Direccion:";
             // 
@@ -136,9 +143,10 @@
             // 
             edadLabel.AutoSize = true;
             edadLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            edadLabel.Location = new System.Drawing.Point(95, 146);
+            edadLabel.Location = new System.Drawing.Point(71, 119);
+            edadLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             edadLabel.Name = "edadLabel";
-            edadLabel.Size = new System.Drawing.Size(58, 21);
+            edadLabel.Size = new System.Drawing.Size(48, 17);
             edadLabel.TabIndex = 23;
             edadLabel.Text = "Edad:";
             // 
@@ -146,9 +154,10 @@
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(121, 58);
+            idLabel.Location = new System.Drawing.Point(91, 47);
+            idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(35, 21);
+            idLabel.Size = new System.Drawing.Size(29, 17);
             idLabel.TabIndex = 27;
             idLabel.Text = "Id:";
             // 
@@ -156,9 +165,10 @@
             // 
             nombreLabel.AutoSize = true;
             nombreLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(72, 87);
+            nombreLabel.Location = new System.Drawing.Point(54, 71);
+            nombreLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             nombreLabel.Name = "nombreLabel";
-            nombreLabel.Size = new System.Drawing.Size(84, 21);
+            nombreLabel.Size = new System.Drawing.Size(69, 17);
             nombreLabel.TabIndex = 29;
             nombreLabel.Text = "Nombre:";
             // 
@@ -166,9 +176,10 @@
             // 
             sexoLabel.AutoSize = true;
             sexoLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sexoLabel.Location = new System.Drawing.Point(95, 180);
+            sexoLabel.Location = new System.Drawing.Point(71, 146);
+            sexoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             sexoLabel.Name = "sexoLabel";
-            sexoLabel.Size = new System.Drawing.Size(58, 21);
+            sexoLabel.Size = new System.Drawing.Size(47, 17);
             sexoLabel.TabIndex = 31;
             sexoLabel.Text = "Sexo:";
             // 
@@ -176,9 +187,10 @@
             // 
             sueldoLabel.AutoSize = true;
             sueldoLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sueldoLabel.Location = new System.Drawing.Point(77, 214);
+            sueldoLabel.Location = new System.Drawing.Point(58, 174);
+            sueldoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             sueldoLabel.Name = "sueldoLabel";
-            sueldoLabel.Size = new System.Drawing.Size(75, 21);
+            sueldoLabel.Size = new System.Drawing.Size(60, 17);
             sueldoLabel.TabIndex = 33;
             sueldoLabel.Text = "Sueldo:";
             // 
@@ -186,9 +198,10 @@
             // 
             cargoIdLabel.AutoSize = true;
             cargoIdLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            cargoIdLabel.Location = new System.Drawing.Point(80, 295);
+            cargoIdLabel.Location = new System.Drawing.Point(60, 240);
+            cargoIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             cargoIdLabel.Name = "cargoIdLabel";
-            cargoIdLabel.Size = new System.Drawing.Size(66, 21);
+            cargoIdLabel.Size = new System.Drawing.Size(55, 17);
             cargoIdLabel.TabIndex = 34;
             cargoIdLabel.Text = "Cargo:";
             // 
@@ -196,19 +209,22 @@
             // 
             metodoPagoIdLabel.AutoSize = true;
             metodoPagoIdLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            metodoPagoIdLabel.Location = new System.Drawing.Point(17, 334);
+            metodoPagoIdLabel.Location = new System.Drawing.Point(13, 271);
+            metodoPagoIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             metodoPagoIdLabel.Name = "metodoPagoIdLabel";
-            metodoPagoIdLabel.Size = new System.Drawing.Size(129, 21);
+            metodoPagoIdLabel.Size = new System.Drawing.Size(105, 17);
             metodoPagoIdLabel.TabIndex = 35;
             metodoPagoIdLabel.Text = "Metodo Pago:";
+            metodoPagoIdLabel.Click += new System.EventHandler(this.metodoPagoIdLabel_Click);
             // 
             // jornadaIdLabel
             // 
             jornadaIdLabel.AutoSize = true;
             jornadaIdLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            jornadaIdLabel.Location = new System.Drawing.Point(61, 382);
+            jornadaIdLabel.Location = new System.Drawing.Point(46, 310);
+            jornadaIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             jornadaIdLabel.Name = "jornadaIdLabel";
-            jornadaIdLabel.Size = new System.Drawing.Size(85, 21);
+            jornadaIdLabel.Size = new System.Drawing.Size(69, 17);
             jornadaIdLabel.TabIndex = 36;
             jornadaIdLabel.Text = "Jornada:";
             // 
@@ -216,9 +232,10 @@
             // 
             estadoCivilIdLabel.AutoSize = true;
             estadoCivilIdLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            estadoCivilIdLabel.Location = new System.Drawing.Point(28, 287);
+            estadoCivilIdLabel.Location = new System.Drawing.Point(21, 233);
+            estadoCivilIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             estadoCivilIdLabel.Name = "estadoCivilIdLabel";
-            estadoCivilIdLabel.Size = new System.Drawing.Size(115, 21);
+            estadoCivilIdLabel.Size = new System.Drawing.Size(92, 17);
             estadoCivilIdLabel.TabIndex = 37;
             estadoCivilIdLabel.Text = "Estado Civil:";
             // 
@@ -226,9 +243,10 @@
             // 
             label1.AutoSize = true;
             label1.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label1.Location = new System.Drawing.Point(71, 330);
+            label1.Location = new System.Drawing.Point(53, 268);
+            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(74, 21);
+            label1.Size = new System.Drawing.Size(60, 17);
             label1.TabIndex = 41;
             label1.Text = "Cedula:";
             // 
@@ -236,11 +254,22 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(5, 366);
+            label2.Location = new System.Drawing.Point(4, 297);
+            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(146, 21);
+            label2.Size = new System.Drawing.Size(116, 17);
             label2.TabIndex = 42;
             label2.Text = "Fecha de Inicio:";
+            // 
+            // codigoBarrasLabel
+            // 
+            codigoBarrasLabel.AutoSize = true;
+            codigoBarrasLabel.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            codigoBarrasLabel.Location = new System.Drawing.Point(16, 334);
+            codigoBarrasLabel.Name = "codigoBarrasLabel";
+            codigoBarrasLabel.Size = new System.Drawing.Size(103, 16);
+            codigoBarrasLabel.TabIndex = 44;
+            codigoBarrasLabel.Text = "Codigo Barras:";
             // 
             // listaTrabajadoresBindingNavigator
             // 
@@ -264,7 +293,6 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaTrabajadoresBindingNavigatorSaveItem,
-            this.toolStripButton1,
             this.toolStripSeparator1,
             this.toolStripCancelar});
             this.listaTrabajadoresBindingNavigator.Location = new System.Drawing.Point(0, 0);
@@ -274,7 +302,7 @@
             this.listaTrabajadoresBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaTrabajadoresBindingNavigator.Name = "listaTrabajadoresBindingNavigator";
             this.listaTrabajadoresBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaTrabajadoresBindingNavigator.Size = new System.Drawing.Size(471, 33);
+            this.listaTrabajadoresBindingNavigator.Size = new System.Drawing.Size(353, 27);
             this.listaTrabajadoresBindingNavigator.TabIndex = 1;
             this.listaTrabajadoresBindingNavigator.Text = "bindingNavigator1";
             this.listaTrabajadoresBindingNavigator.RefreshItems += new System.EventHandler(this.listaTrabajadoresBindingNavigator_RefreshItems);
@@ -287,7 +315,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 30);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -298,7 +326,7 @@
             this.bindingNavigatorMoveFirstItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveFirstItem.Name = "bindingNavigatorMoveFirstItem";
             this.bindingNavigatorMoveFirstItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorMoveFirstItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveFirstItem.Text = "Mover primero";
             // 
             // bindingNavigatorMovePreviousItem
@@ -308,27 +336,28 @@
             this.bindingNavigatorMovePreviousItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMovePreviousItem.Name = "bindingNavigatorMovePreviousItem";
             this.bindingNavigatorMovePreviousItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorMovePreviousItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMovePreviousItem.Text = "Mover anterior";
+            this.bindingNavigatorMovePreviousItem.Click += new System.EventHandler(this.bindingNavigatorMovePreviousItem_Click);
             // 
             // bindingNavigatorSeparator
             // 
             this.bindingNavigatorSeparator.Name = "bindingNavigatorSeparator";
-            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorPositionItem
             // 
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
             // bindingNavigatorSeparator1
             // 
             this.bindingNavigatorSeparator1.Name = "bindingNavigatorSeparator1";
-            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorMoveNextItem
             // 
@@ -337,7 +366,7 @@
             this.bindingNavigatorMoveNextItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveNextItem.Name = "bindingNavigatorMoveNextItem";
             this.bindingNavigatorMoveNextItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorMoveNextItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveNextItem.Text = "Mover siguiente";
             this.bindingNavigatorMoveNextItem.Click += new System.EventHandler(this.bindingNavigatorMoveNextItem_Click);
             // 
@@ -348,13 +377,13 @@
             this.bindingNavigatorMoveLastItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorMoveLastItem.Name = "bindingNavigatorMoveLastItem";
             this.bindingNavigatorMoveLastItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorMoveLastItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorMoveLastItem.Text = "Mover último";
             // 
             // bindingNavigatorSeparator2
             // 
             this.bindingNavigatorSeparator2.Name = "bindingNavigatorSeparator2";
-            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 33);
+            this.bindingNavigatorSeparator2.Size = new System.Drawing.Size(6, 27);
             // 
             // bindingNavigatorAddNewItem
             // 
@@ -363,7 +392,7 @@
             this.bindingNavigatorAddNewItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorAddNewItem.Name = "bindingNavigatorAddNewItem";
             this.bindingNavigatorAddNewItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorAddNewItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorAddNewItem.Text = "Agregar nuevo";
             this.bindingNavigatorAddNewItem.Click += new System.EventHandler(this.bindingNavigatorAddNewItem_Click);
             // 
@@ -374,8 +403,9 @@
             this.bindingNavigatorDeleteItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.bindingNavigatorDeleteItem.Name = "bindingNavigatorDeleteItem";
             this.bindingNavigatorDeleteItem.RightToLeftAutoMirrorImage = true;
-            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 30);
+            this.bindingNavigatorDeleteItem.Size = new System.Drawing.Size(23, 24);
             this.bindingNavigatorDeleteItem.Text = "Eliminar";
+            this.bindingNavigatorDeleteItem.Visible = false;
             this.bindingNavigatorDeleteItem.Click += new System.EventHandler(this.bindingNavigatorDeleteItem_Click);
             // 
             // listaTrabajadoresBindingNavigatorSaveItem
@@ -384,24 +414,14 @@
             this.listaTrabajadoresBindingNavigatorSaveItem.Image = ((System.Drawing.Image)(resources.GetObject("listaTrabajadoresBindingNavigatorSaveItem.Image")));
             this.listaTrabajadoresBindingNavigatorSaveItem.ImageScaling = System.Windows.Forms.ToolStripItemImageScaling.None;
             this.listaTrabajadoresBindingNavigatorSaveItem.Name = "listaTrabajadoresBindingNavigatorSaveItem";
-            this.listaTrabajadoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 30);
+            this.listaTrabajadoresBindingNavigatorSaveItem.Size = new System.Drawing.Size(23, 24);
             this.listaTrabajadoresBindingNavigatorSaveItem.Text = "Guardar datos";
             this.listaTrabajadoresBindingNavigatorSaveItem.Click += new System.EventHandler(this.listaTrabajadoresBindingNavigatorSaveItem_Click);
-            // 
-            // toolStripButton1
-            // 
-            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
-            this.toolStripButton1.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButton1.Image")));
-            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
-            this.toolStripButton1.Name = "toolStripButton1";
-            this.toolStripButton1.Size = new System.Drawing.Size(24, 30);
-            this.toolStripButton1.Text = "Editar Datos";
-            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
             // 
             // toolStripSeparator1
             // 
             this.toolStripSeparator1.Name = "toolStripSeparator1";
-            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 33);
+            this.toolStripSeparator1.Size = new System.Drawing.Size(6, 27);
             // 
             // toolStripCancelar
             // 
@@ -409,63 +429,64 @@
             this.toolStripCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripCancelar.Image")));
             this.toolStripCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripCancelar.Name = "toolStripCancelar";
-            this.toolStripCancelar.Size = new System.Drawing.Size(70, 30);
+            this.toolStripCancelar.Size = new System.Drawing.Size(57, 24);
             this.toolStripCancelar.Text = "Cancelar";
             this.toolStripCancelar.Click += new System.EventHandler(this.toolStripCancelar_Click);
             // 
             // apellidoTextBox
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Apellido", true));
-            this.apellidoTextBox.Location = new System.Drawing.Point(196, 114);
-            this.apellidoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.apellidoTextBox.Location = new System.Drawing.Point(147, 93);
+            this.apellidoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.apellidoTextBox.Name = "apellidoTextBox";
-            this.apellidoTextBox.Size = new System.Drawing.Size(255, 22);
+            this.apellidoTextBox.Size = new System.Drawing.Size(192, 20);
             this.apellidoTextBox.TabIndex = 2;
             // 
             // direccionTextBox
             // 
             this.direccionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Direccion", true));
-            this.direccionTextBox.Location = new System.Drawing.Point(195, 247);
-            this.direccionTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.direccionTextBox.Location = new System.Drawing.Point(146, 201);
+            this.direccionTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.direccionTextBox.Name = "direccionTextBox";
-            this.direccionTextBox.Size = new System.Drawing.Size(255, 22);
+            this.direccionTextBox.Size = new System.Drawing.Size(192, 20);
             this.direccionTextBox.TabIndex = 6;
             // 
             // edadTextBox
             // 
             this.edadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Edad", true));
-            this.edadTextBox.Location = new System.Drawing.Point(195, 143);
-            this.edadTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.edadTextBox.Location = new System.Drawing.Point(146, 116);
+            this.edadTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.edadTextBox.Name = "edadTextBox";
-            this.edadTextBox.Size = new System.Drawing.Size(100, 22);
+            this.edadTextBox.Size = new System.Drawing.Size(76, 20);
             this.edadTextBox.TabIndex = 3;
             // 
             // idTextBox
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Id", true));
             this.idTextBox.Enabled = false;
-            this.idTextBox.Location = new System.Drawing.Point(196, 58);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.idTextBox.Location = new System.Drawing.Point(147, 47);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(255, 22);
+            this.idTextBox.Size = new System.Drawing.Size(192, 20);
             this.idTextBox.TabIndex = 28;
             // 
             // nombreTextBox
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Nombre", true));
-            this.nombreTextBox.Location = new System.Drawing.Point(196, 87);
-            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.nombreTextBox.Location = new System.Drawing.Point(147, 71);
+            this.nombreTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.nombreTextBox.Name = "nombreTextBox";
-            this.nombreTextBox.Size = new System.Drawing.Size(255, 22);
+            this.nombreTextBox.Size = new System.Drawing.Size(192, 20);
             this.nombreTextBox.TabIndex = 1;
+            this.nombreTextBox.Leave += new System.EventHandler(this.nombreTextBox_Leave);
             // 
             // sueldoTextBox
             // 
             this.sueldoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Sueldo", true));
-            this.sueldoTextBox.Location = new System.Drawing.Point(195, 214);
-            this.sueldoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.sueldoTextBox.Location = new System.Drawing.Point(146, 174);
+            this.sueldoTextBox.Margin = new System.Windows.Forms.Padding(2);
             this.sueldoTextBox.Name = "sueldoTextBox";
-            this.sueldoTextBox.Size = new System.Drawing.Size(255, 22);
+            this.sueldoTextBox.Size = new System.Drawing.Size(192, 20);
             this.sueldoTextBox.TabIndex = 5;
             // 
             // cargoIdComboBox
@@ -475,10 +496,10 @@
             this.cargoIdComboBox.DisplayMember = "Descripcion";
             this.cargoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cargoIdComboBox.FormattingEnabled = true;
-            this.cargoIdComboBox.Location = new System.Drawing.Point(156, 292);
-            this.cargoIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.cargoIdComboBox.Location = new System.Drawing.Point(117, 237);
+            this.cargoIdComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.cargoIdComboBox.Name = "cargoIdComboBox";
-            this.cargoIdComboBox.Size = new System.Drawing.Size(172, 24);
+            this.cargoIdComboBox.Size = new System.Drawing.Size(130, 21);
             this.cargoIdComboBox.TabIndex = 10;
             this.cargoIdComboBox.ValueMember = "Id";
             // 
@@ -493,10 +514,10 @@
             this.metodoPagoIdComboBox.DisplayMember = "Descripcion";
             this.metodoPagoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.metodoPagoIdComboBox.FormattingEnabled = true;
-            this.metodoPagoIdComboBox.Location = new System.Drawing.Point(156, 335);
-            this.metodoPagoIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.metodoPagoIdComboBox.Location = new System.Drawing.Point(117, 272);
+            this.metodoPagoIdComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.metodoPagoIdComboBox.Name = "metodoPagoIdComboBox";
-            this.metodoPagoIdComboBox.Size = new System.Drawing.Size(172, 24);
+            this.metodoPagoIdComboBox.Size = new System.Drawing.Size(130, 21);
             this.metodoPagoIdComboBox.TabIndex = 11;
             this.metodoPagoIdComboBox.ValueMember = "Id";
             // 
@@ -511,10 +532,10 @@
             this.jornadaIdComboBox.DisplayMember = "Descripcion";
             this.jornadaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jornadaIdComboBox.FormattingEnabled = true;
-            this.jornadaIdComboBox.Location = new System.Drawing.Point(156, 379);
-            this.jornadaIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.jornadaIdComboBox.Location = new System.Drawing.Point(117, 308);
+            this.jornadaIdComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.jornadaIdComboBox.Name = "jornadaIdComboBox";
-            this.jornadaIdComboBox.Size = new System.Drawing.Size(172, 24);
+            this.jornadaIdComboBox.Size = new System.Drawing.Size(130, 21);
             this.jornadaIdComboBox.TabIndex = 12;
             this.jornadaIdComboBox.ValueMember = "Id";
             // 
@@ -529,10 +550,10 @@
             this.estadoCivilIdComboBox.DisplayMember = "Descripcion";
             this.estadoCivilIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.estadoCivilIdComboBox.FormattingEnabled = true;
-            this.estadoCivilIdComboBox.Location = new System.Drawing.Point(195, 287);
-            this.estadoCivilIdComboBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.estadoCivilIdComboBox.Location = new System.Drawing.Point(146, 233);
+            this.estadoCivilIdComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.estadoCivilIdComboBox.Name = "estadoCivilIdComboBox";
-            this.estadoCivilIdComboBox.Size = new System.Drawing.Size(255, 24);
+            this.estadoCivilIdComboBox.Size = new System.Drawing.Size(192, 21);
             this.estadoCivilIdComboBox.TabIndex = 7;
             this.estadoCivilIdComboBox.ValueMember = "Id";
             // 
@@ -542,6 +563,8 @@
             // 
             // groupBox1
             // 
+            this.groupBox1.Controls.Add(codigoBarrasLabel);
+            this.groupBox1.Controls.Add(this.codigoBarrasPictureBox);
             this.groupBox1.Controls.Add(label2);
             this.groupBox1.Controls.Add(label1);
             this.groupBox1.Controls.Add(this.fechaInicioDateTimePicker);
@@ -562,33 +585,41 @@
             this.groupBox1.Controls.Add(this.apellidoTextBox);
             this.groupBox1.Controls.Add(this.direccionTextBox);
             this.groupBox1.Controls.Add(direccionLabel);
-            this.groupBox1.Location = new System.Drawing.Point(41, 49);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Location = new System.Drawing.Point(31, 82);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox1.Size = new System.Drawing.Size(551, 425);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Size = new System.Drawing.Size(413, 419);
             this.groupBox1.TabIndex = 39;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
             this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
             // 
+            // codigoBarrasPictureBox
+            // 
+            this.codigoBarrasPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaTrabajadoresBindingSource, "CodigoBarras", true));
+            this.codigoBarrasPictureBox.Location = new System.Drawing.Point(135, 334);
+            this.codigoBarrasPictureBox.Name = "codigoBarrasPictureBox";
+            this.codigoBarrasPictureBox.Size = new System.Drawing.Size(245, 67);
+            this.codigoBarrasPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.codigoBarrasPictureBox.TabIndex = 45;
+            this.codigoBarrasPictureBox.TabStop = false;
+            // 
             // fechaInicioDateTimePicker
             // 
             this.fechaInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTrabajadoresBindingSource, "FechaInicio", true));
             this.fechaInicioDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(195, 366);
-            this.fechaInicioDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
+            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(146, 297);
             this.fechaInicioDateTimePicker.Name = "fechaInicioDateTimePicker";
-            this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(255, 22);
+            this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(192, 20);
             this.fechaInicioDateTimePicker.TabIndex = 9;
             // 
             // cedulaTextBox
             // 
             this.cedulaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Cedula", true));
-            this.cedulaTextBox.Location = new System.Drawing.Point(195, 330);
-            this.cedulaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.cedulaTextBox.Location = new System.Drawing.Point(147, 268);
             this.cedulaTextBox.Name = "cedulaTextBox";
-            this.cedulaTextBox.Size = new System.Drawing.Size(255, 22);
+            this.cedulaTextBox.Size = new System.Drawing.Size(192, 20);
             this.cedulaTextBox.TabIndex = 8;
             // 
             // comboBox1
@@ -598,10 +629,9 @@
             this.comboBox1.DisplayMember = "Descripcion";
             this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.comboBox1.FormattingEnabled = true;
-            this.comboBox1.Location = new System.Drawing.Point(196, 180);
-            this.comboBox1.Margin = new System.Windows.Forms.Padding(4);
+            this.comboBox1.Location = new System.Drawing.Point(147, 146);
             this.comboBox1.Name = "comboBox1";
-            this.comboBox1.Size = new System.Drawing.Size(160, 24);
+            this.comboBox1.Size = new System.Drawing.Size(121, 21);
             this.comboBox1.TabIndex = 4;
             this.comboBox1.ValueMember = "Id";
             // 
@@ -614,21 +644,20 @@
             this.fotoPictureBox.BackColor = System.Drawing.SystemColors.Control;
             this.fotoPictureBox.DataBindings.Add(new System.Windows.Forms.Binding("Image", this.listaTrabajadoresBindingSource, "Foto", true, System.Windows.Forms.DataSourceUpdateMode.Never));
             this.fotoPictureBox.Image = global::RRHHPlanilla.Properties.Resources.male_close_up_silhouette_with_tie1;
-            this.fotoPictureBox.Location = new System.Drawing.Point(101, 28);
-            this.fotoPictureBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.fotoPictureBox.Location = new System.Drawing.Point(76, 23);
+            this.fotoPictureBox.Margin = new System.Windows.Forms.Padding(2);
             this.fotoPictureBox.Name = "fotoPictureBox";
-            this.fotoPictureBox.Size = new System.Drawing.Size(205, 199);
+            this.fotoPictureBox.Size = new System.Drawing.Size(154, 162);
             this.fotoPictureBox.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;
             this.fotoPictureBox.TabIndex = 38;
             this.fotoPictureBox.TabStop = false;
-            this.fotoPictureBox.Click += new System.EventHandler(this.fotoPictureBox_Click);
             // 
             // button1
             // 
-            this.button1.Location = new System.Drawing.Point(84, 233);
-            this.button1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button1.Location = new System.Drawing.Point(63, 189);
+            this.button1.Margin = new System.Windows.Forms.Padding(2);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(120, 46);
+            this.button1.Size = new System.Drawing.Size(90, 37);
             this.button1.TabIndex = 40;
             this.button1.Text = "Agregar Foto";
             this.button1.UseVisualStyleBackColor = true;
@@ -636,10 +665,10 @@
             // 
             // button2
             // 
-            this.button2.Location = new System.Drawing.Point(211, 233);
-            this.button2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.button2.Location = new System.Drawing.Point(158, 189);
+            this.button2.Margin = new System.Windows.Forms.Padding(2);
             this.button2.Name = "button2";
-            this.button2.Size = new System.Drawing.Size(117, 46);
+            this.button2.Size = new System.Drawing.Size(88, 37);
             this.button2.TabIndex = 41;
             this.button2.Text = "Remover Foto";
             this.button2.UseVisualStyleBackColor = true;
@@ -660,11 +689,11 @@
             this.groupBox2.Controls.Add(jornadaIdLabel);
             this.groupBox2.Controls.Add(metodoPagoIdLabel);
             this.groupBox2.Controls.Add(this.jornadaIdComboBox);
-            this.groupBox2.Location = new System.Drawing.Point(603, 49);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Location = new System.Drawing.Point(452, 84);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
-            this.groupBox2.Size = new System.Drawing.Size(377, 425);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Size = new System.Drawing.Size(283, 417);
             this.groupBox2.TabIndex = 39;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Perfil";
@@ -675,28 +704,46 @@
             this.piccerrar.BackColor = System.Drawing.Color.Transparent;
             this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
             this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
-            this.piccerrar.Location = new System.Drawing.Point(1085, 0);
-            this.piccerrar.Margin = new System.Windows.Forms.Padding(4);
+            this.piccerrar.Location = new System.Drawing.Point(1041, 0);
             this.piccerrar.Name = "piccerrar";
-            this.piccerrar.Size = new System.Drawing.Size(44, 42);
+            this.piccerrar.Size = new System.Drawing.Size(33, 34);
             this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
             this.piccerrar.TabIndex = 40;
             this.piccerrar.TabStop = false;
             this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
             // 
+            // textBox1
+            // 
+            this.textBox1.Location = new System.Drawing.Point(31, 45);
+            this.textBox1.Name = "textBox1";
+            this.textBox1.Size = new System.Drawing.Size(164, 20);
+            this.textBox1.TabIndex = 41;
+            // 
+            // button3
+            // 
+            this.button3.Location = new System.Drawing.Point(201, 43);
+            this.button3.Name = "button3";
+            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.TabIndex = 42;
+            this.button3.Text = "Buscar";
+            this.button3.UseVisualStyleBackColor = true;
+            this.button3.Click += new System.EventHandler(this.button3_Click);
+            // 
             // Empleados
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoValidate = System.Windows.Forms.AutoValidate.EnablePreventFocusChange;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1129, 564);
+            this.ClientSize = new System.Drawing.Size(1074, 552);
+            this.Controls.Add(this.button3);
+            this.Controls.Add(this.textBox1);
             this.Controls.Add(this.piccerrar);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.listaTrabajadoresBindingNavigator);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Empleados";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "Empleados";
@@ -711,12 +758,14 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaEstadoCivilesBindingSource)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.codigoBarrasPictureBox)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaSexosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.fotoPictureBox)).EndInit();
             this.groupBox2.ResumeLayout(false);
             this.groupBox2.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).EndInit();
             this.ResumeLayout(false);
+            this.PerformLayout();
 
         }
 
@@ -764,6 +813,8 @@
         private System.Windows.Forms.BindingSource listaSexosBindingSource;
         private System.Windows.Forms.DateTimePicker fechaInicioDateTimePicker;
         private System.Windows.Forms.TextBox cedulaTextBox;
-        private System.Windows.Forms.ToolStripButton toolStripButton1;
+        private System.Windows.Forms.TextBox textBox1;
+        private System.Windows.Forms.Button button3;
+        private System.Windows.Forms.PictureBox codigoBarrasPictureBox;
     }
 }

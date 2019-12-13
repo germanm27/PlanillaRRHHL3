@@ -41,39 +41,23 @@ namespace RRHHPlanilla
 
         private void Planillas_Load(object sender, EventArgs e)
         {
-            DesabilitarEdicion();
+
         }
 
         private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
         {
-            _planillaBL.AgregarPlanilla();
-            listaPlanillasBindingSource.MoveLast();
-            HabilitarEdicion();
-            DeshabilitarHabilitarBotones(false);
-        }
-        #region BotonesEdicion
-        public void HabilitarEdicion()
-        {
+
             fechaDateTimePicker.Enabled = true;
             cargoIdComboBox.Enabled = true;
             metodoPagoIdComboBox.Enabled = true;
             jornadaIdComboBox.Enabled = true;
-            button1.Enabled = true;
-            button2.Enabled = true;
-            planillaDetalleDataGridView.Enabled = true;
-        }
+            button3.Enabled = true;
 
-        public void DesabilitarEdicion()
-        {
-            fechaDateTimePicker.Enabled = false;
-            cargoIdComboBox.Enabled = false;
-            metodoPagoIdComboBox.Enabled = false;
-            jornadaIdComboBox.Enabled = false;
-            button1.Enabled = false;
-            button2.Enabled = false;
-            planillaDetalleDataGridView.Enabled = false;
+            _planillaBL.AgregarPlanilla();
+            listaPlanillasBindingSource.MoveLast();
+
+            DeshabilitarHabilitarBotones(false);
         }
-        #endregion
 
         private void DeshabilitarHabilitarBotones(bool valor)
         {
@@ -85,12 +69,17 @@ namespace RRHHPlanilla
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
-            toolStripButton1.Enabled = valor;
 
         }
 
         private void listaPlanillasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
+            fechaDateTimePicker.Enabled = false;
+            cargoIdComboBox.Enabled = false;
+            metodoPagoIdComboBox.Enabled = false;
+            jornadaIdComboBox.Enabled = false;
+            button3.Enabled = false;
+
             listaPlanillasBindingSource.EndEdit();
 
             var planilla = (Planilla)listaPlanillasBindingSource.Current;
@@ -111,8 +100,13 @@ namespace RRHHPlanilla
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
+            fechaDateTimePicker.Enabled = false;
+            cargoIdComboBox.Enabled = false;
+            metodoPagoIdComboBox.Enabled = false;
+            jornadaIdComboBox.Enabled = false;
+            button3.Enabled = false;
+
             DeshabilitarHabilitarBotones(true);
-            DesabilitarEdicion();
             _planillaBL.CancelarCambios();
         }
 
@@ -130,11 +124,6 @@ namespace RRHHPlanilla
             var planillaDetalle = (PlanillaDetalle)planillaDetalleBindingSource.Current;
 
             _planillaBL.RemoverPlanillaDetalle(planilla, planillaDetalle);
-
-
-            _planillaBL.RemoverDetalle(planilla);
-
-            listaPlanillasBindingSource.ResetBindings(false);
         }
 
         private void planillaDetalleDataGridView_DataError(object sender, DataGridViewDataErrorEventArgs e)
@@ -160,14 +149,14 @@ namespace RRHHPlanilla
             var planilla = (Planilla)listaPlanillasBindingSource.Current;
             _planillaBL.CalcularPlanilla(planilla);
 
-            //LinQ
+            //BUSQUEDA
             //var planillaDetalle = (PlanillaDetalle)planillaDetalleBindingSource.Current;
             //if (planillaDetalle != null)
             //{
             //    var trabajador = _trabajoresBL.ObtenerTrabajador(planillaDetalle.TrabajadorId);
             //    listaCargosBindingSource.DataSource = _cargosBL.ObtenerCargos(trabajador.CargoId);
             //}
-
+            
             listaPlanillasBindingSource.ResetBindings(false);
         }
 
@@ -175,6 +164,12 @@ namespace RRHHPlanilla
         {
             if (idTextBox1.Text != "")
             {
+                fechaDateTimePicker.Enabled = false;
+                cargoIdComboBox.Enabled = false;
+                metodoPagoIdComboBox.Enabled = false;
+                jornadaIdComboBox.Enabled = false;
+                button3.Enabled = false;
+
                 var resultado = MessageBox.Show("Desea Anular esta Planilla", "Anular", MessageBoxButtons.YesNo);
                 if ( resultado == DialogResult.Yes)
                 {
@@ -212,12 +207,54 @@ namespace RRHHPlanilla
             }
         }
 
-        private void toolStripButton1_Click(object sender, EventArgs e)
+        
+        private void cargoIdComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
-            listaPlanillasBindingNavigatorSaveItem.Enabled = true;
-            toolStripButtonCancelar.Visible = true;
-            toolStripButtonCancelar.Enabled = true;
-            HabilitarEdicion();
+
+        }
+
+        private void button3_Click(object sender, EventArgs e)
+        {
+            if (cargoIdComboBox.SelectedIndex != -1 || jornadaIdComboBox.SelectedIndex != -1 ||
+                metodoPagoIdComboBox.SelectedIndex != -1)
+            {
+                var cargo = cargoIdComboBox.Text;
+                var metodo = metodoPagoIdComboBox.Text;
+                var jornada = jornadaIdComboBox.Text;
+
+                var planillaDetalle = (PlanillaDetalle)planillaDetalleBindingSource.Current;
+
+                listaPlanillasBindingSource.EndEdit();
+
+                if (planillaDetalle != null || planillaDetalle == null)
+                {
+                    var trabajadores = _trabajoresBL.ObtenerTrabajadores2(cargo, metodo, jornada);
+                    listaTrabajadoresBindingSource.DataSource = trabajadores;
+
+                    var planilla = (Planilla)listaPlanillasBindingSource.Current;
+
+                    foreach (var trabajador in trabajadores)
+                    {
+                        _planillaBL.AgregarPlanillaDetalle(planilla, trabajador);
+                    }
+
+                    _planillaBL.CalcularPlanilla(planilla);
+
+                    listaPlanillasBindingSource.ResetBindings(false);
+
+                    //listaTrabajadoresBindingSource.DataSource =
+                    //    _trabajoresBL.ObtenerTrabajadores(prueba);
+
+                    //var planilla = (Planilla)listaPlanillasBindingSource.Current;
+                    //_planillaBL.AgregarPlanillaDetalle(planilla);
+                    //listaTrabajadoresBindingSource.DataSource = _cargosBL.ObtenerCargos(trabajador.CargoId);
+                }
+            }
+            if (cargoIdComboBox.SelectedIndex == -1 || jornadaIdComboBox.SelectedIndex == -1 ||
+            metodoPagoIdComboBox.SelectedIndex == -1)
+            {
+                MessageBox.Show("No se permiten Campos Vacios");
+            }
         }
     }
 }

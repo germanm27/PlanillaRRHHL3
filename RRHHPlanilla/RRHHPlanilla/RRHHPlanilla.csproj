@@ -12,6 +12,7 @@
     <TargetFrameworkVersion>v4.6.1</TargetFrameworkVersion>
     <FileAlignment>512</FileAlignment>
     <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+    <TargetFrameworkProfile />
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
     <PlatformTarget>AnyCPU</PlatformTarget>
@@ -37,9 +38,13 @@
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\AlphaBlendTextBox\AlphaBlendTextBox.dll</HintPath>
     </Reference>
+    <Reference Include="BarcodeLib, Version=1.2.0.0, Culture=neutral, PublicKeyToken=5f09bda868cc39e7, processorArchitecture=MSIL">
+      <HintPath>..\packages\BarcodeLib.1.2.0.0\lib\net20\BarcodeLib.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
     <Reference Include="CrystalDecisions.CrystalReports.Engine, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
-    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
+    <Reference Include="CrystalDecisions.ReportSource, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
+    <Reference Include="CrystalDecisions.Shared, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304" />
     <Reference Include="CrystalDecisions.Windows.Forms, Version=13.0.3500.0, Culture=neutral, PublicKeyToken=692fbea5521e1304, processorArchitecture=MSIL" />
     <Reference Include="EntityFramework, Version=6.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <HintPath>..\packages\EntityFramework.6.2.0\lib\net45\EntityFramework.dll</HintPath>
@@ -71,13 +76,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="DataSetEmpleado.cs">
-      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    <Compile Include="Asistencia.cs">
+      <SubType>Form</SubType>
     </Compile>
-    <Compile Include="DataSetEmpleado.Designer.cs">
+    <Compile Include="Asistencia.Designer.cs">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPlanilla.cs">
+      <DependentUpon>DataSetPlanilla.xsd</DependentUpon>
+    </Compile>
+    <Compile Include="DataSetPlanilla.Designer.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
-      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+      <DependentUpon>DataSetPlanilla.xsd</DependentUpon>
     </Compile>
     <Compile Include="EXTRA\FrmConfigurarUsuario.cs">
       <SubType>Form</SubType>
@@ -85,16 +96,22 @@
     <Compile Include="EXTRA\FrmConfigurarUsuario.Designer.cs">
       <DependentUpon>FrmConfigurarUsuario.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\FormReportePlanilla.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\FormReportePlanilla.Designer.cs">
-      <DependentUpon>FormReportePlanilla.cs</DependentUpon>
-    </Compile>
     <Compile Include="ReporteEmpleados.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
       <DependentUpon>ReporteEmpleados.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteExEmpleado.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteExEmpleado.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
+    <Compile Include="ReporteHorasExtra.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteHorasExtra.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
     <Compile Include="ReportePlanilla.cs">
@@ -103,16 +120,196 @@
       <DependentUpon>ReportePlanilla.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
-    <Compile Include="Reportes\FormReporteEmpleado.cs">
+    <Compile Include="Reportes\ReportEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Reportes\FormReporteEmpleado.Designer.cs">
-      <DependentUpon>FormReporteEmpleado.cs</DependentUpon>
+    <Compile Include="Reportes\ReportEmpleado.Designer.cs">
+      <DependentUpon>ReportEmpleado.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transacciones\RprtAnticipos.cs">
+    <Compile Include="Reportes\ReportedePlanilla.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transacciones\RprtAnticipos.Designer.cs">
+    <Compile Include="Reportes\ReportedePlanilla.Designer.cs">
+      <DependentUpon>ReportedePlanilla.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportEvalPersonal.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportEvalPersonal.Designer.cs">
+      <DependentUpon>ReportEvalPersonal.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportHoraExtras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportHoraExtras.Designer.cs">
+      <DependentUpon>ReportHoraExtras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportPrestaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportPrestaciones.Designer.cs">
+      <DependentUpon>ReportPrestaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Anticipo\ResultadoAnticipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Anticipo\ResultadoAnticipo.Designer.cs">
+      <DependentUpon>ResultadoAnticipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Evaluacion\EvaluacionMenu.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Evaluacion\EvaluacionMenu.Designer.cs">
+      <DependentUpon>EvaluacionMenu.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Evaluacion\ResultadoEva.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Evaluacion\ResultadoEva.Designer.cs">
+      <DependentUpon>ResultadoEva.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Horas Extras\HorasExtras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Horas Extras\HorasExtras.Designer.cs">
+      <DependentUpon>HorasExtras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Horas Extras\ResultadoHoras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Horas Extras\ResultadoHoras.Designer.cs">
+      <DependentUpon>ResultadoHoras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Form3.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Form3.Designer.cs">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Form4.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Form4.Designer.cs">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\MBTI.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\MBTI.Designer.cs">
+      <DependentUpon>MBTI.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENFJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENFJ.Designer.cs">
+      <DependentUpon>ENFJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENFP.Designer.cs">
+      <DependentUpon>ENFP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENTJ.Designer.cs">
+      <DependentUpon>ENTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ENTP.Designer.cs">
+      <DependentUpon>ENTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESFJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESFJ.Designer.cs">
+      <DependentUpon>ESFJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESFP.Designer.cs">
+      <DependentUpon>ESFP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESTJ.Designer.cs">
+      <DependentUpon>ESTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ESTP.Designer.cs">
+      <DependentUpon>ESTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INFJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INFJ.Designer.cs">
+      <DependentUpon>INFJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\info.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\info.Designer.cs">
+      <DependentUpon>info.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INFP.Designer.cs">
+      <DependentUpon>INFP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INTJ.Designer.cs">
+      <DependentUpon>INTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\INTP.Designer.cs">
+      <DependentUpon>INTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISFJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISFJ.Designer.cs">
+      <DependentUpon>ISFJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISFP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISFP.Designer.cs">
+      <DependentUpon>ISFP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISTJ.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISTJ.Designer.cs">
+      <DependentUpon>ISTJ.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISTP.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\MBTI\Personalidades\ISTP.Designer.cs">
+      <DependentUpon>ISTP.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Prestaciones\TablaPrestaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Prestaciones\TablaPrestaciones.Designer.cs">
+      <DependentUpon>TablaPrestaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Anticipo\RprtAnticipos.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Anticipo\RprtAnticipos.Designer.cs">
       <DependentUpon>RprtAnticipos.cs</DependentUpon>
     </Compile>
     <Compile Include="Mantenimiento\Busqueda.cs">
@@ -126,12 +323,6 @@
     </Compile>
     <Compile Include="Mantenimiento\Capacitaciones.Designer.cs">
       <DependentUpon>Capacitaciones.cs</DependentUpon>
-    </Compile>
-    <Compile Include="Transacciones\RprtDeducciones.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Transacciones\RprtDeducciones.Designer.cs">
-      <DependentUpon>RprtDeducciones.cs</DependentUpon>
     </Compile>
     <Compile Include="FormLogin.cs">
       <SubType>Form</SubType>
@@ -169,10 +360,10 @@
     <Compile Include="Transacciones\Planillas.Designer.cs">
       <DependentUpon>Planillas.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transacciones\Prestaciones.cs">
+    <Compile Include="Transacciones\Prestaciones\Prestaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transacciones\Prestaciones.Designer.cs">
+    <Compile Include="Transacciones\Prestaciones\Prestaciones.Designer.cs">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
@@ -183,17 +374,23 @@
     <Compile Include="Mantenimiento\Empleados.Designer.cs">
       <DependentUpon>Empleados.cs</DependentUpon>
     </Compile>
-    <Compile Include="Transacciones\Vacaciones.cs">
+    <Compile Include="Transacciones\Vacaciones\ResultadoVacaciones.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="Transacciones\Vacaciones.Designer.cs">
+    <Compile Include="Transacciones\Vacaciones\ResultadoVacaciones.Designer.cs">
+      <DependentUpon>ResultadoVacaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Transacciones\Vacaciones\Vacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Transacciones\Vacaciones\Vacaciones.Designer.cs">
       <DependentUpon>Vacaciones.cs</DependentUpon>
     </Compile>
+    <EmbeddedResource Include="Asistencia.resx">
+      <DependentUpon>Asistencia.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="EXTRA\FrmConfigurarUsuario.resx">
       <DependentUpon>FrmConfigurarUsuario.cs</DependentUpon>
-    </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FormReportePlanilla.resx">
-      <DependentUpon>FormReportePlanilla.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Mantenimiento\Busqueda.resx">
       <DependentUpon>Busqueda.cs</DependentUpon>
@@ -205,15 +402,113 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteEmpleados.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteExEmpleado.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteExEmpleado.cs</LastGenOutput>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteHorasExtra.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteHorasExtra.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReportePlanilla.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportePlanilla.cs</LastGenOutput>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\FormReporteEmpleado.resx">
-      <DependentUpon>FormReporteEmpleado.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ReportEmpleado.resx">
+      <DependentUpon>ReportEmpleado.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transacciones\RprtDeducciones.resx">
-      <DependentUpon>RprtDeducciones.cs</DependentUpon>
+    <EmbeddedResource Include="Reportes\ReportedePlanilla.resx">
+      <DependentUpon>ReportedePlanilla.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportEvalPersonal.resx">
+      <DependentUpon>ReportEvalPersonal.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportHoraExtras.resx">
+      <DependentUpon>ReportHoraExtras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportPrestaciones.resx">
+      <DependentUpon>ReportPrestaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Anticipo\ResultadoAnticipo.resx">
+      <DependentUpon>ResultadoAnticipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Evaluacion\EvaluacionMenu.resx">
+      <DependentUpon>EvaluacionMenu.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Evaluacion\ResultadoEva.resx">
+      <DependentUpon>ResultadoEva.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Horas Extras\HorasExtras.resx">
+      <DependentUpon>HorasExtras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Horas Extras\ResultadoHoras.resx">
+      <DependentUpon>ResultadoHoras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Form3.resx">
+      <DependentUpon>Form3.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Form4.resx">
+      <DependentUpon>Form4.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\MBTI.resx">
+      <DependentUpon>MBTI.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ENFJ.resx">
+      <DependentUpon>ENFJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ENFP.resx">
+      <DependentUpon>ENFP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ENTJ.resx">
+      <DependentUpon>ENTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ENTP.resx">
+      <DependentUpon>ENTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ESFJ.resx">
+      <DependentUpon>ESFJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ESFP.resx">
+      <DependentUpon>ESFP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ESTJ.resx">
+      <DependentUpon>ESTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ESTP.resx">
+      <DependentUpon>ESTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\INFJ.resx">
+      <DependentUpon>INFJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\info.resx">
+      <DependentUpon>info.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\INFP.resx">
+      <DependentUpon>INFP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\INTJ.resx">
+      <DependentUpon>INTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\INTP.resx">
+      <DependentUpon>INTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ISFJ.resx">
+      <DependentUpon>ISFJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ISFP.resx">
+      <DependentUpon>ISFP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ISTJ.resx">
+      <DependentUpon>ISTJ.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\MBTI\Personalidades\ISTP.resx">
+      <DependentUpon>ISTP.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Prestaciones\TablaPrestaciones.resx">
+      <DependentUpon>TablaPrestaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Anticipo\RprtAnticipos.resx">
+      <DependentUpon>RprtAnticipos.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="FormLogin.resx">
       <DependentUpon>FormLogin.cs</DependentUpon>
@@ -233,7 +528,7 @@
     <EmbeddedResource Include="Transacciones\Planillas.resx">
       <DependentUpon>Planillas.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transacciones\Prestaciones.resx">
+    <EmbeddedResource Include="Transacciones\Prestaciones\Prestaciones.resx">
       <DependentUpon>Prestaciones.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
@@ -249,24 +544,31 @@
     <EmbeddedResource Include="Mantenimiento\Empleados.resx">
       <DependentUpon>Empleados.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Transacciones\Vacaciones.resx">
+    <EmbeddedResource Include="Transacciones\Vacaciones\ResultadoVacaciones.resx">
+      <DependentUpon>ResultadoVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Transacciones\Vacaciones\Vacaciones.resx">
       <DependentUpon>Vacaciones.cs</DependentUpon>
     </EmbeddedResource>
-    <None Include="DataSetEmpleado.xsc">
-      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    <None Include="DataSetPlanilla.xsc">
+      <DependentUpon>DataSetPlanilla.xsd</DependentUpon>
     </None>
-    <None Include="DataSetEmpleado.xsd">
+    <None Include="DataSetPlanilla.xsd">
       <SubType>Designer</SubType>
       <Generator>MSDataSetGenerator</Generator>
-      <LastGenOutput>DataSetEmpleado.Designer.cs</LastGenOutput>
+      <LastGenOutput>DataSetPlanilla.Designer.cs</LastGenOutput>
     </None>
-    <None Include="DataSetEmpleado.xss">
-      <DependentUpon>DataSetEmpleado.xsd</DependentUpon>
+    <None Include="DataSetPlanilla.xss">
+      <DependentUpon>DataSetPlanilla.xsd</DependentUpon>
     </None>
+    <None Include="EXTRA\app.config" />
     <None Include="packages.config" />
+    <None Include="Properties\DataSources\RRHH.BL.AnticiposBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.CapacitacionesBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.CargosBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.EstadoCivilBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.ExTrabajadoresBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.HorasExtrasBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.JornadaBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.MetodoPagoBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.PlanillaBL.datasource" />
@@ -275,6 +577,7 @@
     <None Include="Properties\DataSources\RRHH.BL.SexoBL.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.Trabajador.datasource" />
     <None Include="Properties\DataSources\RRHH.BL.TrabajadoresBL.datasource" />
+    <None Include="Properties\DataSources\RRHH.BL.VacacionesBL.datasource" />
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
@@ -411,7 +714,9 @@
   <ItemGroup>
     <None Include="Resources\kisspng-question-mark-royalty-free-illustration-vector-gra-preguntas-ms-frecuentes-psicologa-5c00b264119d82.1938272815435495400722.png" />
   </ItemGroup>
-  <ItemGroup />
+  <ItemGroup>
+    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
+  </ItemGroup>
   <ItemGroup>
     <None Include="Resources\ojo2.png" />
   </ItemGroup>
@@ -441,9 +746,6 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\salir1.png" />
-  </ItemGroup>
-  <ItemGroup>
-    <Service Include="{C0C07587-41A7-46C8-8FBD-3F9C8EBE2DDC}" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

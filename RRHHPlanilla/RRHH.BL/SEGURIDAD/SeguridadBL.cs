@@ -185,6 +185,11 @@ namespace RRHH.BL
 
         public int PrivilegioId { get; set; }
         public Privilegio Privilegio { get; set; }
+
+        public Usuario()
+        {
+            FechaInicio = DateTime.Now;
+        }
     }
 
     public class Resultado3

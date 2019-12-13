@@ -1,11 +1,11 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Data.Entity;
-using System.Globalization;
-using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.IO;
+using System.Drawing;
 
 namespace RRHH.BL
 {
@@ -13,16 +13,25 @@ namespace RRHH.BL
     {
         protected override void Seed(Contexto contexto)
         {
+            //RUTA
+            string ruta = @"C:\Users\gfmen\OneDrive\Escritorio\Proyecto Final\Prueba-master\RRHHPlanilla\CODIGO DE BARRAS\";
+
+
             #region SEXO
 
             var sexo1 = new Sexo();
             sexo1.Descripcion = "Masculino";
+            contexto.Sexos.Add(sexo1);
 
             var sexo2 = new Sexo();
             sexo2.Descripcion = "Femenino";
+            contexto.Sexos.Add(sexo2);
+
 
             var sexo3 = new Sexo();
             sexo3.Descripcion = "Otro..";
+            contexto.Sexos.Add(sexo3);
+
 
             #endregion
 
@@ -46,33 +55,30 @@ namespace RRHH.BL
             //SEGURIDAD
             usuario1.NombUsuario = "admin";
             usuario1.Contrasena = "123";
-            contexto.Usuarios.Add(usuario1);
-
             usuario1.Nombre = "Kevin";
             usuario1.Apellido = "Rivera";
             usuario1.Correo = "prueba1234@gmail.com";
             usuario1.edad = 22;
             usuario1.Foto = null;
-            usuario1.FechaInicio = new DateTime(2000, 4, 29);
+            usuario1.FechaInicio = new DateTime(1997, 4, 29);
             usuario1.Cedula = 0512199700879;
             usuario1.PrivilegioId = 1;
-
+            contexto.Usuarios.Add(usuario1);
 
             var usuario2 = new Usuario();
 
             //SEGURIDAD
-            usuario2.NombUsuario = "admin2";
-            usuario2.Contrasena = "1234";
-            contexto.Usuarios.Add(usuario2);
-
+            usuario2.NombUsuario = "gerente";
+            usuario2.Contrasena = "123";
             usuario2.Nombre = "German";
-            usuario2.Apellido = "Mendoza";
+            usuario2.Apellido = "No me Acuerdo";
             usuario2.Correo = "prueba1234@gmail.com";
             usuario2.edad = 21;
             usuario2.Foto = null;
-            usuario2.FechaInicio = new DateTime(2000, 10, 18);
-            usuario2.Cedula = 0504199800263;
-            usuario2.PrivilegioId = 1;
+            usuario2.FechaInicio = new DateTime(1998, 10, 18);
+            usuario2.Cedula = 0512199700666;
+            usuario2.PrivilegioId = 2;
+            contexto.Usuarios.Add(usuario2);
 
 
             var usuario3 = new Usuario();
@@ -80,8 +86,6 @@ namespace RRHH.BL
             //SEGURIDAD
             usuario3.NombUsuario = "super";
             usuario3.Contrasena = "123";
-            contexto.Usuarios.Add(usuario3);
-
             usuario3.Nombre = "Juan";
             usuario3.Apellido = "Lo mismo";
             usuario3.Correo = "prueba1234@gmail.com";
@@ -90,37 +94,7 @@ namespace RRHH.BL
             usuario3.FechaInicio = new DateTime(2002, 12, 9);
             usuario3.Cedula = 0512199700999;
             usuario3.PrivilegioId = 3;
-            #endregion
-
-            #region ArchivosCSV
-            //var archivo = "../../../Mantenimientos2.csv";
-            //using (var reader = new StreamReader(archivo))
-            //{
-            //    reader.ReadLine();
-
-            //    while (!reader.EndOfStream)
-            //    {
-            //        var line = reader.ReadLine();
-            //        var values = line.Split(',');
-            //        var nuevoTrabajador = new Trabajador()
-            //        {
-            //            Foto = null,
-            //            Nombre = values[0].ToString(),
-            //            Apellido = values[1].ToString(),
-            //            Edad = int.Parse(values[2].ToString()),
-            //            SexoId = int.Parse(values[3].ToString()),
-            //            Sueldo = double.Parse(values[4].ToString()),
-            //            Direccion = values[5].ToString(),
-            //            EstadoCivilId = int.Parse(values[6].ToString()),
-            //            CargoId = int.Parse(values[7].ToString()),
-            //            MetodoPagoId = int.Parse(values[8].ToString()),
-            //            JornadaId = int.Parse(values[9].ToString()),
-            //            FechaInicio = DateTime.Parse(values[10].ToString(), CultureInfo.GetCultureInfo("es")),
-            //            Cedula = double.Parse(values[11].ToString())
-            //        };
-            //        contexto.Trabajadores.Add(nuevoTrabajador);
-            //    }
-            //}
+            contexto.Usuarios.Add(usuario3);
             #endregion
 
             #region CARGO
@@ -245,9 +219,16 @@ namespace RRHH.BL
             trabajador1.CargoId = 1;
             trabajador1.MetodoPagoId = 1;
             trabajador1.JornadaId = 1;
-            trabajador1.FechaInicio = new DateTime(2002, 4, 21);
+            trabajador1.FechaInicio = new DateTime(2002, 4, 21) ;
+            trabajador1.FechaGenerado = 1;
             trabajador1.Cedula = 0512199700999;
+            trabajador1.DisponibleDia = 20;
+
+            var imagen1 = Image.FromFile(ruta + "1.png");
+            trabajador1.CodigoBarras = imageToByteArray(imagen1);
+
             contexto.Trabajadores.Add(trabajador1);
+
 
             var trabajador2 = new Trabajador();
             trabajador2.Nombre = "German";
@@ -261,7 +242,14 @@ namespace RRHH.BL
             trabajador2.MetodoPagoId = 1;
             trabajador2.JornadaId = 1;
             trabajador2.FechaInicio = new DateTime(2002, 8, 20);
+            trabajador2.FechaGenerado = 1;
+
             trabajador2.Cedula = 0512199754885;
+            trabajador2.DisponibleDia = 20;
+
+            var imagen2 = Image.FromFile(ruta + "2.png");
+            trabajador2.CodigoBarras = imageToByteArray(imagen2);
+
             contexto.Trabajadores.Add(trabajador2);
 
             var trabajador3 = new Trabajador();
@@ -276,7 +264,14 @@ namespace RRHH.BL
             trabajador3.MetodoPagoId = 1;
             trabajador3.JornadaId = 1;
             trabajador3.FechaInicio = new DateTime(2007, 1, 14);
+            trabajador3.FechaGenerado = 1;
+
             trabajador3.Cedula = 0512199778999;
+            trabajador3.DisponibleDia = 20;
+
+            var imagen3 = Image.FromFile(ruta + "3.png");
+            trabajador3.CodigoBarras = imageToByteArray(imagen3);
+
             contexto.Trabajadores.Add(trabajador3);
 
             var trabajador4 = new Trabajador();
@@ -291,7 +286,14 @@ namespace RRHH.BL
             trabajador4.MetodoPagoId = 1;
             trabajador4.JornadaId = 1;
             trabajador4.FechaInicio = new DateTime(2010, 11, 11);
+            trabajador4.FechaGenerado = 1;
+
             trabajador4.Cedula = 0512199707899;
+            trabajador4.DisponibleDia = 20;
+
+            var imagen4 = Image.FromFile(ruta + "4.png");
+            trabajador4.CodigoBarras = imageToByteArray(imagen4);
+
             contexto.Trabajadores.Add(trabajador4);
 
             var trabajador5 = new Trabajador();
@@ -305,8 +307,14 @@ namespace RRHH.BL
             trabajador5.CargoId = 2;
             trabajador5.MetodoPagoId = 1;
             trabajador5.JornadaId = 1;
-            trabajador5.FechaInicio = new DateTime(2000, 6, 16);
+            trabajador5.FechaInicio = new DateTime(1999, 6, 16);
+            trabajador5.FechaGenerado = 1;
             trabajador5.Cedula = 0512199499999;
+            trabajador5.DisponibleDia = 20;
+
+            var imagen5 = Image.FromFile(ruta + "5.png");
+            trabajador5.CodigoBarras = imageToByteArray(imagen5);
+
             contexto.Trabajadores.Add(trabajador5);
 
             var trabajador6 = new Trabajador();
@@ -321,7 +329,13 @@ namespace RRHH.BL
             trabajador6.MetodoPagoId = 1;
             trabajador6.JornadaId = 2;
             trabajador6.FechaInicio = new DateTime(2018, 2, 14);
+            trabajador6.FechaGenerado = 1;
             trabajador6.Cedula = 0812199714999;
+            trabajador6.DisponibleDia = 10;
+
+            var imagen6 = Image.FromFile(ruta + "6.png");
+            trabajador6.CodigoBarras = imageToByteArray(imagen6);
+
             contexto.Trabajadores.Add(trabajador6);
 
 
@@ -337,8 +351,18 @@ namespace RRHH.BL
             trabajador7.MetodoPagoId = 1;
             trabajador7.JornadaId = 2;
             trabajador7.FechaInicio = new DateTime(2012, 7, 30);
+            trabajador7.FechaGenerado = 1;
+
             trabajador7.Cedula = 0912199712989;
+            trabajador7.DisponibleDia = 20;
+
+            var imagen7 = Image.FromFile(ruta + "7.png");
+            trabajador7.CodigoBarras = imageToByteArray(imagen7);
+
             contexto.Trabajadores.Add(trabajador7);
+
+
+
             #endregion
 
             #region CAPACITACION
@@ -386,7 +410,168 @@ namespace RRHH.BL
 
             #endregion
 
+            #region ExEmpleados
+
+            //var Extrabajador1 = new ExTrabajador();
+            //Extrabajador1.Nombre = "Hector";
+            //Extrabajador1.Apellido = "Acosta";
+            ////Extrabajador1.Edad = 39;
+            ////Extrabajador1.Sexo = sexo1;
+            //Extrabajador1.Sueldo = 15000;
+            ////Extrabajador1.Direccion = "Unah vs";
+            ////Extrabajador1.EstadoCivilId = 2;
+            //Extrabajador1.CargoId = 3;
+            //Extrabajador1.MetodoPagoId = 1;
+            //Extrabajador1.JornadaId = 1;
+            //Extrabajador1.FechaInicio = new DateTime(2005, 4, 21);
+            //Extrabajador1.Cedula = 0512199700999;
+            //Extrabajador1.FechaFinal = new DateTime(2018, 4, 21);
+            //Extrabajador1.Motivo = "Restructuracion";
+            //Extrabajador1.SueldoMensual = 17500;
+            //Extrabajador1.SueldoDiario = 583;
+            //Extrabajador1.Preaviso = 1166;
+            //Extrabajador1.Cesantia = 227500;
+            //Extrabajador1.CesantiaPro = 0;
+            //Extrabajador1.Vacaciones = 0;
+            //Extrabajador1.TotalPrestaciones = 228666;
+            //contexto.ExTrabajadores.Add(Extrabajador1);
+
+            //var Extrabajador2 = new ExTrabajador();
+            //Extrabajador2.Nombre = "Roberto";
+            //Extrabajador2.Apellido = "Mendez";
+            ////Extrabajador2.Edad = 37;
+            ////Extrabajador2.Sexo = sexo1;
+            //Extrabajador2.Sueldo = 15000;
+            ////Extrabajador2.Direccion = "Unah vs";
+            ////Extrabajador2.EstadoCivilId = 1;
+            //Extrabajador2.CargoId = 3;
+            //Extrabajador2.MetodoPagoId = 1;
+            //Extrabajador2.JornadaId = 1;
+            //Extrabajador2.FechaInicio = new DateTime(2005, 4, 21);
+            //Extrabajador2.Cedula = 0512199700997;
+            //Extrabajador2.FechaFinal = new DateTime(2018, 4, 21);
+            //Extrabajador2.Motivo = "Restructuracion";
+            //Extrabajador2.SueldoMensual = 17500;
+            //Extrabajador2.SueldoDiario = 583;
+            //Extrabajador2.Preaviso = 1166;
+            //Extrabajador2.Cesantia = 227500;
+            //Extrabajador2.CesantiaPro = 0;
+            //Extrabajador2.Vacaciones = 0;
+            //Extrabajador2.TotalPrestaciones = 228666;
+            //contexto.ExTrabajadores.Add(Extrabajador2);
+
+            //var Extrabajador3 = new ExTrabajador();
+            //Extrabajador3.Nombre = "Christiano";
+            //Extrabajador3.Apellido = "Ronaldo";
+            ////Extrabajador3.Edad = 35;
+            ////Extrabajador3.Sexo = sexo1;
+            //Extrabajador3.Sueldo = 15000;
+            ////Extrabajador3.Direccion = "Unah vs";
+            ////Extrabajador3.EstadoCivilId = 2;
+            //Extrabajador3.CargoId = 3;
+            //Extrabajador3.MetodoPagoId = 1;
+            //Extrabajador3.JornadaId = 1;
+            //Extrabajador3.FechaInicio = new DateTime(2005, 4, 21);
+            //Extrabajador3.Cedula = 0512199700997;
+            //Extrabajador3.FechaFinal = new DateTime(2018, 4, 21);
+            //Extrabajador3.Motivo = "Restructuracion";
+            //Extrabajador3.SueldoMensual = 17500;
+            //Extrabajador3.SueldoDiario = 583;
+            //Extrabajador3.Preaviso = 1166;
+            //Extrabajador3.Cesantia = 227500;
+            //Extrabajador3.CesantiaPro = 0;
+            //Extrabajador3.Vacaciones = 0;
+            //Extrabajador3.TotalPrestaciones = 228666;
+            //contexto.ExTrabajadores.Add(Extrabajador3);
+
+
+
+
+            #endregion
+
+            #region Vacaciones
+
+            var Vacacion1 = new Vacacion();
+                 Vacacion1.Nombre = "Juanito";
+                 Vacacion1.Disponible = 15;
+                 Vacacion1.Obtenido = 5;
+                 Vacacion1.Iniciavacacion = new DateTime(2019, 4, 11);
+                 Vacacion1.Finalizavacacion = new DateTime(2019, 4, 15);
+                 Vacacion1.Pago = 4860;
+                 Vacacion1.TrabajadorId = 2;
+                 contexto.Vacaciones.Add(Vacacion1);
+
+                 var Vacacion2 = new Vacacion();
+                 Vacacion2.Nombre = "German";
+                 Vacacion2.Disponible = 15;
+                 Vacacion2.Obtenido = 5;
+                 Vacacion2.Iniciavacacion = new DateTime(2019, 5, 23);
+                 Vacacion2.Finalizavacacion = new DateTime(2019, 5, 27);
+                 Vacacion2.Pago = 4860;
+                 Vacacion2.TrabajadorId = 1;
+                 contexto.Vacaciones.Add(Vacacion2);
+
+                 var Vacacion3 = new Vacacion();
+                 Vacacion3.Nombre = "Luisito";
+                 Vacacion3.Disponible = 10;
+                 Vacacion3.Obtenido = 5;
+                 Vacacion3.Iniciavacacion = new DateTime(2019, 6, 3);
+                 Vacacion3.Finalizavacacion = new DateTime(2019, 6, 7);
+                 Vacacion3.Pago = 4860;
+                 Vacacion3.TrabajadorId = 3;
+                 contexto.Vacaciones.Add(Vacacion3);
+
+
+                 //var Vacacion4 = new Vacacion();
+                 //Vacacion4.Disponible = 5;
+                 //Vacacion4.Obtenido = 5;
+                 //Vacacion4.Iniciavacacion = new DateTime(2019, 5, 23);
+                 //Vacacion4.Finalizavacacion = new DateTime(2019, 5, 27);
+                 //Vacacion4.Pago = 4860;
+                 //Vacacion4.TrabajadorId = 4;
+                 //contexto.Vacaciones.Add(Vacacion4);
+
+                 //var Vacacion5 = new Vacacion();
+                 //Vacacion5.Disponible = 15;
+                 //Vacacion5.Obtenido = 5;
+                 //Vacacion5.Iniciavacacion = new DateTime(2019, 8, 23);
+                 //Vacacion5.Finalizavacacion = new DateTime(2019, 8, 27);
+                 //Vacacion5.Pago = 2915;
+                 //Vacacion5.TrabajadorId = 5;
+                 //contexto.Vacaciones.Add(Vacacion5);
+
+                 //var Vacacion6 = new Vacacion();
+                 //Vacacion6.Disponible = 5;
+                 //Vacacion6.Obtenido = 5;
+                 //Vacacion6.Iniciavacacion = new DateTime(2019, 8, 23);
+                 //Vacacion6.Finalizavacacion = new DateTime(2019, 8, 27);
+                 //Vacacion6.Pago = 2330;
+                 //Vacacion6.TrabajadorId = 6;
+                 //contexto.Vacaciones.Add(Vacacion6);
+
+                 //var Vacacion7 = new Vacacion();
+                 //Vacacion7.Disponible = 5;
+                 //Vacacion7.Obtenido = 5;
+                 //Vacacion7.Iniciavacacion = new DateTime(2019, 11, 18);
+                 //Vacacion7.Finalizavacacion = new DateTime(2019, 11, 22);
+                 //Vacacion7.Pago = 1905;
+                 //Vacacion7.TrabajadorId = 7;
+                 //contexto.Vacaciones.Add(Vacacion7);
+
+
+            #endregion
+            
+          
+    
             base.Seed(contexto);
+        }
+
+        public byte[] imageToByteArray(Image ImageIn)
+        {
+            MemoryStream ms = new MemoryStream();
+            ImageIn.Save(ms, ImageIn.RawFormat);
+
+            return ms.ToArray();
         }
     }
 }

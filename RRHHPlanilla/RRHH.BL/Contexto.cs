@@ -10,19 +10,13 @@ namespace RRHH.BL
 {
     public class Contexto: DbContext
     {
-        public Contexto() : base("Data Source=yourfunnypics.db.4232052.hostedresource.com; Initial Catalog=yourfunnypics; User ID=yourfunnypics; Password='Temp%123';")
+        public Contexto(): base("RRHHDB")
         {
 
         }
 
-        //public Contexto() : base("RRHH")
-        //{
-
-        //}
-
         protected override void OnModelCreating(DbModelBuilder modelBuilder)
         {
-            modelBuilder.HasDefaultSchema("RRHH");
             modelBuilder.Conventions.Remove<PluralizingTableNameConvention>();
             Database.SetInitializer(new DatosdeInicio());
         }
@@ -39,6 +33,10 @@ namespace RRHH.BL
         public DbSet<Jornada> Jornadas { get; set; }
         public DbSet<EstadoCivil> EstadoCiviles { get; set; }
         public DbSet<Capacitacion> Capacitaciones { get; set; }
-       
-    }
+        public DbSet<ExTrabajador> ExTrabajadores { get; set; }
+        public DbSet<Vacacion> Vacaciones { get; set; }
+        public DbSet<Anticipo> Anticipos { get; set; }
+        public DbSet<HoraExtra> HoraExtras { get; set; }
+
+       }
 }

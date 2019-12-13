@@ -165,6 +165,7 @@
             this.txtnuevcont.ReadOnly = true;
             this.txtnuevcont.Size = new System.Drawing.Size(182, 20);
             this.txtnuevcont.TabIndex = 48;
+            this.txtnuevcont.UseSystemPasswordChar = true;
             // 
             // txtcorreo
             // 
