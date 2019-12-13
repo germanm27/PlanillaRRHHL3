@@ -163,27 +163,31 @@ namespace RRHHPlanilla.Transacciones.Horas_Extras
 
         private void button3_Click_2(object sender, EventArgs e)
         {
-            
-                int sueldoBruto = 0, sueldodia = 0, Horas = 0;
-                double sueldohora, horaextra, pago;
 
-                sueldoBruto = Convert.ToInt32(sueldoTextBox.Text);
-                sueldodia = sueldoBruto / 30;
-                sueldohora = sueldodia / 8;
-                horaextra = sueldohora * 1.25;
 
-                if (textBox1.Text == "")
-                {
-                    MessageBox.Show("Ingrese las horas extras que desea");
-                }
-                else
-                {
-                    Horas = Convert.ToInt32(textBox1.Text);
-                    pago = horaextra * Horas;
-                    textBox2.Text = Convert.ToString(pago);
-                }
-          }
-        
+            int sueldoBruto = 0, sueldodia = 0, Horas = 0;
+            double sueldohora, horaextra, pago;
+
+            sueldoBruto = Convert.ToInt32(sueldoTextBox.Text);
+            sueldodia = sueldoBruto / 30;
+            sueldohora = sueldodia / 8;
+            horaextra = sueldohora * 1.25;
+
+            if (textBox1.Text == "")
+            {
+                MessageBox.Show("Ingrese las horas extras que desea");
+            }
+            else
+            {
+                Horas = Convert.ToInt32(textBox1.Text);
+                pago = horaextra * Horas;
+                textBox2.Text = Convert.ToString(pago);
+            }
+
+            button2.Enabled = true;
+
+        }
+
 
         private void button1_Click_1(object sender, EventArgs e)
         {
@@ -208,7 +212,7 @@ namespace RRHHPlanilla.Transacciones.Horas_Extras
             horaextra.Nombre = nombreTextBox.Text;
             horaextra.Cantidad = Convert.ToInt32(textBox1.Text);
             horaextra.Fecha = dateTimePicker1.Value;
-            horaextra.Pago = Convert.ToInt32(textBox2.Text);
+            horaextra.Pago = Convert.ToDouble(textBox2.Text);
             horaextra.TrabajadorId = Convert.ToInt32(idTextBox.Text);
             _horaextrasBL.GuardaHoraExtras(horaextra);
 
@@ -231,9 +235,14 @@ namespace RRHHPlanilla.Transacciones.Horas_Extras
             }
 
 
+            idTextBox.Clear();
+            nombreTextBox.Clear();
+            apellidoTextBox.Clear();
+            sueldoTextBox.Clear();
+            cedulaTextBox.Clear();
             textBox1.Clear();
             textBox2.Clear();
-            
+
         }
 
         private void pictureBox1_Click(object sender, EventArgs e)

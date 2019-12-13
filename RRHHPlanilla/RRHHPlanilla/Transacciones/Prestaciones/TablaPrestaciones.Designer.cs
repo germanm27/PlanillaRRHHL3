@@ -40,15 +40,6 @@
             this.dataGridViewTextBoxColumn17 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.listaTrabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox2 = new System.Windows.Forms.GroupBox();
-            this.listaExTrabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.label1 = new System.Windows.Forms.Label();
-            this.piccerrar = new System.Windows.Forms.PictureBox();
-            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
-            this.listaCargosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaEstadoCivilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaMetodoPagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaJornadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
-            this.listaSexosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.listaExTrabajadoresDataGridView = new System.Windows.Forms.DataGridView();
             this.dataGridViewTextBoxColumn4 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn5 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -65,10 +56,20 @@
             this.dataGridViewTextBoxColumn26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
+            this.listaExTrabajadoresBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.label1 = new System.Windows.Forms.Label();
+            this.piccerrar = new System.Windows.Forms.PictureBox();
+            this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.listaCargosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaEstadoCivilesBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaMetodoPagosBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaJornadasBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.listaSexosBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.groupBox1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingSource)).BeginInit();
             this.groupBox2.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
@@ -77,18 +78,17 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaMetodoPagosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaJornadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaSexosBindingSource)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresDataGridView)).BeginInit();
             this.SuspendLayout();
             // 
             // groupBox1
             // 
             this.groupBox1.Controls.Add(this.listaTrabajadoresDataGridView);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox1.Location = new System.Drawing.Point(11, 70);
-            this.groupBox1.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox1.Location = new System.Drawing.Point(15, 86);
+            this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox1.Size = new System.Drawing.Size(497, 440);
+            this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox1.Size = new System.Drawing.Size(663, 542);
             this.groupBox1.TabIndex = 83;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Tabla de Empleados";
@@ -107,11 +107,11 @@
             this.dataGridViewTextBoxColumn8,
             this.dataGridViewTextBoxColumn17});
             this.listaTrabajadoresDataGridView.DataSource = this.listaTrabajadoresBindingSource;
-            this.listaTrabajadoresDataGridView.Location = new System.Drawing.Point(13, 25);
-            this.listaTrabajadoresDataGridView.Margin = new System.Windows.Forms.Padding(2);
+            this.listaTrabajadoresDataGridView.Location = new System.Drawing.Point(17, 31);
+            this.listaTrabajadoresDataGridView.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.listaTrabajadoresDataGridView.Name = "listaTrabajadoresDataGridView";
             this.listaTrabajadoresDataGridView.RowTemplate.Height = 24;
-            this.listaTrabajadoresDataGridView.Size = new System.Drawing.Size(470, 411);
+            this.listaTrabajadoresDataGridView.Size = new System.Drawing.Size(627, 506);
             this.listaTrabajadoresDataGridView.TabIndex = 0;
             // 
             // dataGridViewTextBoxColumn1
@@ -164,68 +164,14 @@
             // 
             this.groupBox2.Controls.Add(this.listaExTrabajadoresDataGridView);
             this.groupBox2.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.groupBox2.Location = new System.Drawing.Point(522, 70);
-            this.groupBox2.Margin = new System.Windows.Forms.Padding(2);
+            this.groupBox2.Location = new System.Drawing.Point(696, 86);
+            this.groupBox2.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Padding = new System.Windows.Forms.Padding(2);
-            this.groupBox2.Size = new System.Drawing.Size(476, 440);
+            this.groupBox2.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.groupBox2.Size = new System.Drawing.Size(635, 542);
             this.groupBox2.TabIndex = 84;
             this.groupBox2.TabStop = false;
             this.groupBox2.Text = "Tabla de Ex empleados";
-            // 
-            // listaExTrabajadoresBindingSource
-            // 
-            this.listaExTrabajadoresBindingSource.DataSource = typeof(RRHH.BL.ExTrabajador);
-            // 
-            // label1
-            // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label1.Location = new System.Drawing.Point(231, 10);
-            this.label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(469, 33);
-            this.label1.TabIndex = 85;
-            this.label1.Text = "Sistema de Control de Empleados";
-            // 
-            // piccerrar
-            // 
-            this.piccerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.piccerrar.BackColor = System.Drawing.Color.Transparent;
-            this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
-            this.piccerrar.Location = new System.Drawing.Point(982, 10);
-            this.piccerrar.Margin = new System.Windows.Forms.Padding(2);
-            this.piccerrar.Name = "piccerrar";
-            this.piccerrar.Size = new System.Drawing.Size(30, 29);
-            this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.piccerrar.TabIndex = 86;
-            this.piccerrar.TabStop = false;
-            this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
-            // 
-            // bindingSource1
-            // 
-            this.bindingSource1.DataSource = typeof(RRHH.BL.Trabajador);
-            // 
-            // listaCargosBindingSource
-            // 
-            this.listaCargosBindingSource.DataSource = typeof(RRHH.BL.Cargo);
-            // 
-            // listaEstadoCivilesBindingSource
-            // 
-            this.listaEstadoCivilesBindingSource.DataSource = typeof(RRHH.BL.EstadoCivil);
-            // 
-            // listaMetodoPagosBindingSource
-            // 
-            this.listaMetodoPagosBindingSource.DataSource = typeof(RRHH.BL.MetodoPago);
-            // 
-            // listaJornadasBindingSource
-            // 
-            this.listaJornadasBindingSource.DataSource = typeof(RRHH.BL.Jornada);
-            // 
-            // listaSexosBindingSource
-            // 
-            this.listaSexosBindingSource.DataSource = typeof(RRHH.BL.Sexo);
             // 
             // listaExTrabajadoresDataGridView
             // 
@@ -248,9 +194,10 @@
             this.dataGridViewTextBoxColumn27,
             this.dataGridViewTextBoxColumn28});
             this.listaExTrabajadoresDataGridView.DataSource = this.listaExTrabajadoresBindingSource;
-            this.listaExTrabajadoresDataGridView.Location = new System.Drawing.Point(17, 35);
+            this.listaExTrabajadoresDataGridView.Location = new System.Drawing.Point(23, 43);
+            this.listaExTrabajadoresDataGridView.Margin = new System.Windows.Forms.Padding(4, 4, 4, 4);
             this.listaExTrabajadoresDataGridView.Name = "listaExTrabajadoresDataGridView";
-            this.listaExTrabajadoresDataGridView.Size = new System.Drawing.Size(454, 400);
+            this.listaExTrabajadoresDataGridView.Size = new System.Drawing.Size(605, 492);
             this.listaExTrabajadoresDataGridView.TabIndex = 0;
             this.listaExTrabajadoresDataGridView.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.listaExTrabajadoresDataGridView_CellContentClick);
             // 
@@ -344,18 +291,71 @@
             this.dataGridViewTextBoxColumn28.HeaderText = "TotalPrestaciones";
             this.dataGridViewTextBoxColumn28.Name = "dataGridViewTextBoxColumn28";
             // 
+            // listaExTrabajadoresBindingSource
+            // 
+            this.listaExTrabajadoresBindingSource.DataSource = typeof(RRHH.BL.ExTrabajador);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(308, 12);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(573, 40);
+            this.label1.TabIndex = 85;
+            this.label1.Text = "Sistema de Control de Empleados";
+            // 
+            // piccerrar
+            // 
+            this.piccerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.piccerrar.BackColor = System.Drawing.Color.Transparent;
+            this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
+            this.piccerrar.Location = new System.Drawing.Point(1309, 12);
+            this.piccerrar.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.piccerrar.Name = "piccerrar";
+            this.piccerrar.Size = new System.Drawing.Size(40, 36);
+            this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piccerrar.TabIndex = 86;
+            this.piccerrar.TabStop = false;
+            this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
+            // 
+            // bindingSource1
+            // 
+            this.bindingSource1.DataSource = typeof(RRHH.BL.Trabajador);
+            // 
+            // listaCargosBindingSource
+            // 
+            this.listaCargosBindingSource.DataSource = typeof(RRHH.BL.Cargo);
+            // 
+            // listaEstadoCivilesBindingSource
+            // 
+            this.listaEstadoCivilesBindingSource.DataSource = typeof(RRHH.BL.EstadoCivil);
+            // 
+            // listaMetodoPagosBindingSource
+            // 
+            this.listaMetodoPagosBindingSource.DataSource = typeof(RRHH.BL.MetodoPago);
+            // 
+            // listaJornadasBindingSource
+            // 
+            this.listaJornadasBindingSource.DataSource = typeof(RRHH.BL.Jornada);
+            // 
+            // listaSexosBindingSource
+            // 
+            this.listaSexosBindingSource.DataSource = typeof(RRHH.BL.Sexo);
+            // 
             // TablaPrestaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.ClientSize = new System.Drawing.Size(1025, 521);
+            this.BackColor = System.Drawing.SystemColors.Control;
+            this.ClientSize = new System.Drawing.Size(1367, 641);
             this.Controls.Add(this.piccerrar);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.groupBox2);
             this.Controls.Add(this.groupBox1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "TablaPrestaciones";
             this.StartPosition = System.Windows.Forms.FormStartPosition.CenterScreen;
             this.Text = "TablaPrestaciones";
@@ -364,6 +364,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaTrabajadoresBindingSource)).EndInit();
             this.groupBox2.ResumeLayout(false);
+            ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
@@ -372,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaMetodoPagosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaJornadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaSexosBindingSource)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.listaExTrabajadoresDataGridView)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 

@@ -18,6 +18,7 @@ namespace RRHHPlanilla.Properties
     {
 
         private static Settings defaultInstance = ((Settings)(global::System.Configuration.ApplicationSettingsBase.Synchronized(new Settings())));
+        internal string RRHHDBConnectionString;
 
         public static Settings Default
         {

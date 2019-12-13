@@ -87,16 +87,16 @@ namespace RRHH.BL
             if (vacacion == null)
             {
                 resultado.Mensaje = "Agregar una Vacacion";
-                resultado.Exitoso = false;
+                resultado.Exitoso = true;
             }
-            
+
             if (vacacion.Disponible == 0)
 
             {
                 resultado.Mensaje = "Ingrese vacaciones disponibles";
-                resultado.Exitoso = false;
+                resultado.Exitoso = true;
             }
-            
+
             return resultado;
         }
     }

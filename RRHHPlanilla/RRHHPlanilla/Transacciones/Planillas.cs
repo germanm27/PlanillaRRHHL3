@@ -41,21 +41,48 @@ namespace RRHHPlanilla
 
         private void Planillas_Load(object sender, EventArgs e)
         {
-
+            DesabilitarEdicion();
+            DesabilitarTextBox();
         }
 
-        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        #region BotonesEdicion
+        public void HabilitarEdicion()
         {
-
             fechaDateTimePicker.Enabled = true;
             cargoIdComboBox.Enabled = true;
             metodoPagoIdComboBox.Enabled = true;
             jornadaIdComboBox.Enabled = true;
             button3.Enabled = true;
+            planillaDetalleDataGridView.Enabled = true;
+        }
+
+        public void DesabilitarEdicion()
+        {
+            fechaDateTimePicker.Enabled = false;
+            cargoIdComboBox.Enabled = false;
+            metodoPagoIdComboBox.Enabled = false;
+            jornadaIdComboBox.Enabled = false;
+            button3.Enabled = false;
+            planillaDetalleDataGridView.Enabled = false;
+            listaPlanillasBindingNavigatorSaveItem.Enabled = false;
+        }
+
+        public void DesabilitarTextBox()
+        {
+            cantEmpleadosTextBox.Enabled = false;
+            tOTDeduccionesTextBox.Enabled = false;
+            tOTSalarioNetoTextBox.Enabled = false;
+            tOTSueldoBaseTextBox.Enabled = false;
+        }
+        #endregion
+
+        private void bindingNavigatorAddNewItem_Click(object sender, EventArgs e)
+        {
+            HabilitarEdicion();
 
             _planillaBL.AgregarPlanilla();
             listaPlanillasBindingSource.MoveLast();
-
+            listaPlanillasBindingNavigatorSaveItem.Enabled = true;
             DeshabilitarHabilitarBotones(false);
         }
 
@@ -69,16 +96,14 @@ namespace RRHHPlanilla
             bindingNavigatorAddNewItem.Enabled = valor;
             bindingNavigatorDeleteItem.Enabled = valor;
             toolStripButtonCancelar.Visible = !valor;
+            toolStripButton1.Enabled = valor;
 
         }
 
         private void listaPlanillasBindingNavigatorSaveItem_Click(object sender, EventArgs e)
         {
-            fechaDateTimePicker.Enabled = false;
-            cargoIdComboBox.Enabled = false;
-            metodoPagoIdComboBox.Enabled = false;
-            jornadaIdComboBox.Enabled = false;
-            button3.Enabled = false;
+            DesabilitarEdicion();
+            DesabilitarTextBox();
 
             listaPlanillasBindingSource.EndEdit();
 
@@ -100,13 +125,10 @@ namespace RRHHPlanilla
 
         private void toolStripButtonCancelar_Click(object sender, EventArgs e)
         {
-            fechaDateTimePicker.Enabled = false;
-            cargoIdComboBox.Enabled = false;
-            metodoPagoIdComboBox.Enabled = false;
-            jornadaIdComboBox.Enabled = false;
-            button3.Enabled = false;
+            DesabilitarTextBox();
 
             DeshabilitarHabilitarBotones(true);
+            DesabilitarEdicion();
             _planillaBL.CancelarCambios();
         }
 
@@ -255,6 +277,19 @@ namespace RRHHPlanilla
             {
                 MessageBox.Show("No se permiten Campos Vacios");
             }
+        }
+
+        private void piccerrar_Click(object sender, EventArgs e)
+        {
+            this.Close();
+        }
+
+        private void toolStripButton1_Click(object sender, EventArgs e)
+        {
+            listaPlanillasBindingNavigatorSaveItem.Enabled = true;
+            toolStripButtonCancelar.Visible = true;
+            toolStripButtonCancelar.Enabled = true;
+            HabilitarEdicion();
         }
     }
 }

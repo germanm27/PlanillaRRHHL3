@@ -103,6 +103,7 @@
             this.metodoPagoIdComboBox = new System.Windows.Forms.ComboBox();
             this.jornadaIdComboBox = new System.Windows.Forms.ComboBox();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
+            this.fechaGeneradoTextBox = new System.Windows.Forms.TextBox();
             this.fechaInicioDateTimePicker = new System.Windows.Forms.DateTimePicker();
             this.cedulaTextBox = new System.Windows.Forms.TextBox();
             this.sueldoTextBox = new System.Windows.Forms.TextBox();
@@ -113,7 +114,6 @@
             this.textBox12 = new System.Windows.Forms.TextBox();
             this.button5 = new System.Windows.Forms.Button();
             this.comboBox2 = new System.Windows.Forms.ComboBox();
-            this.fechaGeneradoTextBox = new System.Windows.Forms.TextBox();
             label3 = new System.Windows.Forms.Label();
             label4 = new System.Windows.Forms.Label();
             label5 = new System.Windows.Forms.Label();
@@ -274,7 +274,7 @@
             // 
             label7.AutoSize = true;
             label7.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label7.Location = new System.Drawing.Point(211, 188);
+            label7.Location = new System.Drawing.Point(220, 173);
             label7.Name = "label7";
             label7.Size = new System.Drawing.Size(74, 21);
             label7.TabIndex = 41;
@@ -284,7 +284,7 @@
             // 
             sueldoLabel.AutoSize = true;
             sueldoLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            sueldoLabel.Location = new System.Drawing.Point(217, 151);
+            sueldoLabel.Location = new System.Drawing.Point(226, 136);
             sueldoLabel.Name = "sueldoLabel";
             sueldoLabel.Size = new System.Drawing.Size(75, 21);
             sueldoLabel.TabIndex = 33;
@@ -294,7 +294,7 @@
             // 
             nombreLabel.AutoSize = true;
             nombreLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            nombreLabel.Location = new System.Drawing.Point(211, 79);
+            nombreLabel.Location = new System.Drawing.Point(220, 64);
             nombreLabel.Name = "nombreLabel";
             nombreLabel.Size = new System.Drawing.Size(84, 21);
             nombreLabel.TabIndex = 29;
@@ -304,7 +304,7 @@
             // 
             idLabel.AutoSize = true;
             idLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(260, 42);
+            idLabel.Location = new System.Drawing.Point(269, 27);
             idLabel.Name = "idLabel";
             idLabel.Size = new System.Drawing.Size(35, 21);
             idLabel.TabIndex = 27;
@@ -314,7 +314,7 @@
             // 
             apellidoLabel.AutoSize = true;
             apellidoLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            apellidoLabel.Location = new System.Drawing.Point(211, 114);
+            apellidoLabel.Location = new System.Drawing.Point(220, 99);
             apellidoLabel.Name = "apellidoLabel";
             apellidoLabel.Size = new System.Drawing.Size(86, 21);
             apellidoLabel.TabIndex = 19;
@@ -454,11 +454,21 @@
             // 
             label2.AutoSize = true;
             label2.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label2.Location = new System.Drawing.Point(146, 231);
+            label2.Location = new System.Drawing.Point(155, 216);
             label2.Name = "label2";
             label2.Size = new System.Drawing.Size(146, 21);
             label2.TabIndex = 42;
             label2.Text = "Fecha de Inicio:";
+            // 
+            // label14
+            // 
+            label14.AutoSize = true;
+            label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            label14.Location = new System.Drawing.Point(99, 247);
+            label14.Name = "label14";
+            label14.Size = new System.Drawing.Size(207, 21);
+            label14.TabIndex = 46;
+            label14.Text = "Vacaciones Generadas:";
             // 
             // textBox1
             // 
@@ -915,13 +925,23 @@
             this.groupBox1.TabIndex = 53;
             this.groupBox1.TabStop = false;
             this.groupBox1.Text = "Datos Personales";
+            this.groupBox1.Enter += new System.EventHandler(this.groupBox1_Enter);
+            // 
+            // fechaGeneradoTextBox
+            // 
+            this.fechaGeneradoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "FechaGenerado", true));
+            this.fechaGeneradoTextBox.Enabled = false;
+            this.fechaGeneradoTextBox.Location = new System.Drawing.Point(344, 248);
+            this.fechaGeneradoTextBox.Name = "fechaGeneradoTextBox";
+            this.fechaGeneradoTextBox.Size = new System.Drawing.Size(255, 22);
+            this.fechaGeneradoTextBox.TabIndex = 45;
             // 
             // fechaInicioDateTimePicker
             // 
             this.fechaInicioDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaTrabajadoresBindingSource, "FechaInicio", true));
             this.fechaInicioDateTimePicker.Enabled = false;
             this.fechaInicioDateTimePicker.Format = System.Windows.Forms.DateTimePickerFormat.Short;
-            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(335, 231);
+            this.fechaInicioDateTimePicker.Location = new System.Drawing.Point(344, 216);
             this.fechaInicioDateTimePicker.Margin = new System.Windows.Forms.Padding(4);
             this.fechaInicioDateTimePicker.Name = "fechaInicioDateTimePicker";
             this.fechaInicioDateTimePicker.Size = new System.Drawing.Size(255, 22);
@@ -931,7 +951,7 @@
             // 
             this.cedulaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Cedula", true));
             this.cedulaTextBox.Enabled = false;
-            this.cedulaTextBox.Location = new System.Drawing.Point(335, 188);
+            this.cedulaTextBox.Location = new System.Drawing.Point(344, 173);
             this.cedulaTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cedulaTextBox.Name = "cedulaTextBox";
             this.cedulaTextBox.Size = new System.Drawing.Size(255, 22);
@@ -941,7 +961,7 @@
             // 
             this.sueldoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Sueldo", true));
             this.sueldoTextBox.Enabled = false;
-            this.sueldoTextBox.Location = new System.Drawing.Point(335, 151);
+            this.sueldoTextBox.Location = new System.Drawing.Point(344, 136);
             this.sueldoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.sueldoTextBox.Name = "sueldoTextBox";
             this.sueldoTextBox.Size = new System.Drawing.Size(255, 22);
@@ -951,7 +971,7 @@
             // 
             this.nombreTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Nombre", true));
             this.nombreTextBox.Enabled = false;
-            this.nombreTextBox.Location = new System.Drawing.Point(335, 79);
+            this.nombreTextBox.Location = new System.Drawing.Point(344, 64);
             this.nombreTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.nombreTextBox.Name = "nombreTextBox";
             this.nombreTextBox.Size = new System.Drawing.Size(255, 22);
@@ -961,7 +981,7 @@
             // 
             this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Id", true));
             this.idTextBox.Enabled = false;
-            this.idTextBox.Location = new System.Drawing.Point(335, 42);
+            this.idTextBox.Location = new System.Drawing.Point(344, 27);
             this.idTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.idTextBox.Name = "idTextBox";
             this.idTextBox.Size = new System.Drawing.Size(255, 22);
@@ -971,7 +991,7 @@
             // 
             this.apellidoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "Apellido", true));
             this.apellidoTextBox.Enabled = false;
-            this.apellidoTextBox.Location = new System.Drawing.Point(335, 114);
+            this.apellidoTextBox.Location = new System.Drawing.Point(344, 99);
             this.apellidoTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.apellidoTextBox.Name = "apellidoTextBox";
             this.apellidoTextBox.Size = new System.Drawing.Size(255, 22);
@@ -1025,25 +1045,6 @@
             this.comboBox2.Name = "comboBox2";
             this.comboBox2.Size = new System.Drawing.Size(172, 24);
             this.comboBox2.TabIndex = 60;
-            // 
-            // label14
-            // 
-            label14.AutoSize = true;
-            label14.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            label14.Location = new System.Drawing.Point(90, 262);
-            label14.Name = "label14";
-            label14.Size = new System.Drawing.Size(207, 21);
-            label14.TabIndex = 46;
-            label14.Text = "Vacaciones Generadas:";
-            // 
-            // fechaGeneradoTextBox
-            // 
-            this.fechaGeneradoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaTrabajadoresBindingSource, "FechaGenerado", true));
-            this.fechaGeneradoTextBox.Enabled = false;
-            this.fechaGeneradoTextBox.Location = new System.Drawing.Point(335, 263);
-            this.fechaGeneradoTextBox.Name = "fechaGeneradoTextBox";
-            this.fechaGeneradoTextBox.Size = new System.Drawing.Size(255, 22);
-            this.fechaGeneradoTextBox.TabIndex = 45;
             // 
             // Vacaciones
             // 

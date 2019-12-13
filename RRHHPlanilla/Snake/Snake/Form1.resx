@@ -124,19 +124,6 @@
     <value>104, 17</value>
   </metadata>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="btnMinimizar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
-    <value>
-        iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAAcNJREFUaEPt
-        mssrRFEcgCcyshAW8qpZTSxQimyUjf/Byl9hwxYre1slZWGShdfGRslKISs205QQRR7JI4zvd8+5zcKY
-        OVOae87tfPXVfZy553yLM1PTTRQjn8+34SQe4AW+YJS84TWe4Bx266WWhoF1OIPPaDOfuIgteum/4WYT
-        7qJLnGNaJxTgYj3uywgHucQunaLgwmxwy102dUoQ04lRb/r/YCwMmlbnzpMJg/bUufM8Yq0EyaaKCx0S
-        9KGOY8GABMWJYR9kOT7IdnyQ7fgg2/FBtuODbMcH2Y4Psh0fZDs+yHYqCnrABZyqovOYQ1OMg76wP/hn
-        ssowbzNeySIMMA7K6udHAvOvqmWUxTjoTD87Eph/WS2jLD4oEpj/34Ny+tmRwPxrahllMQ76xhH9/KrC
-        vO14J4swwDhIeMUNzFTRdbxFUyoKcoEgSH4048KQBN2o41iQkqBDdew875iUINffUQjZDr8WezEO+2gi
-        CBI4WVLXnOUYa3ROENSIp3LHQe6xR6cU4GIaszLCIeRlC/VKTDG42YpbMtIBjrBPL700DBzFFXxCm5Cv
-        5h0cx8KeMYUPJTGFgxYoW6JBL+0PEokfn9Il7DeJ6SoAAAAASUVORK5CYII=
-</value>
-  </data>
   <data name="btnCerrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAADQAAAA0CAYAAADFeBvrAAAABGdBTUEAALGPC/xhBQAAA0RJREFUaEPt

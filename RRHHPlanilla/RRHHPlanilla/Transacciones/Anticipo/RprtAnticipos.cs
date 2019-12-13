@@ -180,8 +180,10 @@ namespace RRHHPlanilla
                 anticipo = Convert.ToInt32(textBox1.Text);
                 sueldoNeto = sueldoBruto - anticipo;
                 textBox2.Text = Convert.ToString(sueldoNeto);
+                button2.Enabled = true;
+
             }
-           
+
 
 
 
@@ -260,9 +262,10 @@ namespace RRHHPlanilla
                 button2.Enabled = false;
                 textBox1.Enabled = false;
             }
-               
 
-            
+            button2.Enabled = false;
+
+
         }
     }
     }

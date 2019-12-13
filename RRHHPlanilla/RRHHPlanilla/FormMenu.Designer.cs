@@ -57,6 +57,7 @@
             this.Interrogacion = new System.Windows.Forms.PictureBox();
             this.pnlayuda = new MZControls.MZSombraPanel();
             this.button12 = new System.Windows.Forms.Button();
+            this.button11 = new System.Windows.Forms.Button();
             this.picrehavi = new System.Windows.Forms.PictureBox();
             this.picmaxi = new System.Windows.Forms.PictureBox();
             this.picmini = new System.Windows.Forms.PictureBox();
@@ -66,6 +67,9 @@
             this.lblinicio = new System.Windows.Forms.Label();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
             this.panel3 = new System.Windows.Forms.Panel();
+            this.button25 = new System.Windows.Forms.Button();
+            this.button20 = new System.Windows.Forms.Button();
+            this.button6 = new System.Windows.Forms.Button();
             this.button27 = new System.Windows.Forms.Button();
             this.button28 = new System.Windows.Forms.Button();
             this.button7 = new System.Windows.Forms.Button();
@@ -456,6 +460,7 @@
             this.pnlayuda.AddControl = null;
             this.pnlayuda.BackColor = System.Drawing.Color.Transparent;
             this.pnlayuda.Controls.Add(this.button12);
+            this.pnlayuda.Controls.Add(this.button11);
             this.pnlayuda.Location = new System.Drawing.Point(51, -1);
             this.pnlayuda.Margin = new System.Windows.Forms.Padding(4);
             this.pnlayuda.Name = "pnlayuda";
@@ -466,21 +471,37 @@
             // 
             // button12
             // 
-            this.button12.Dock = System.Windows.Forms.DockStyle.Top;
             this.button12.FlatAppearance.BorderSize = 0;
             this.button12.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
             this.button12.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button12.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.button12.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.button12.Location = new System.Drawing.Point(10, 0);
+            this.button12.Location = new System.Drawing.Point(5, 24);
             this.button12.Margin = new System.Windows.Forms.Padding(4);
             this.button12.Name = "button12";
             this.button12.Size = new System.Drawing.Size(95, 25);
-            this.button12.TabIndex = 45;
+            this.button12.TabIndex = 47;
             this.button12.Text = "Acerca de";
             this.button12.TextAlign = System.Drawing.ContentAlignment.TopLeft;
             this.button12.UseVisualStyleBackColor = true;
-            this.button12.Click += new System.EventHandler(this.button12_Click_1);
+            this.button12.Click += new System.EventHandler(this.button12_Click);
+            // 
+            // button11
+            // 
+            this.button11.FlatAppearance.BorderSize = 0;
+            this.button11.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Black;
+            this.button11.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button11.Font = new System.Drawing.Font("Microsoft Sans Serif", 7F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button11.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button11.Location = new System.Drawing.Point(5, 0);
+            this.button11.Margin = new System.Windows.Forms.Padding(4);
+            this.button11.Name = "button11";
+            this.button11.Size = new System.Drawing.Size(95, 25);
+            this.button11.TabIndex = 46;
+            this.button11.Text = "Snake";
+            this.button11.TextAlign = System.Drawing.ContentAlignment.TopLeft;
+            this.button11.UseVisualStyleBackColor = true;
+            this.button11.Click += new System.EventHandler(this.button11_Click);
             // 
             // picrehavi
             // 
@@ -611,6 +632,9 @@
             // panel3
             // 
             this.panel3.BackColor = System.Drawing.Color.Transparent;
+            this.panel3.Controls.Add(this.button25);
+            this.panel3.Controls.Add(this.button20);
+            this.panel3.Controls.Add(this.button6);
             this.panel3.Controls.Add(this.button27);
             this.panel3.Controls.Add(this.button28);
             this.panel3.Controls.Add(this.button7);
@@ -622,6 +646,66 @@
             this.panel3.Name = "panel3";
             this.panel3.Size = new System.Drawing.Size(287, 367);
             this.panel3.TabIndex = 2;
+            // 
+            // button25
+            // 
+            this.button25.BackColor = System.Drawing.Color.Transparent;
+            this.button25.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button25.FlatAppearance.BorderSize = 0;
+            this.button25.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button25.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.button25.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button25.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button25.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button25.Location = new System.Drawing.Point(0, 279);
+            this.button25.Margin = new System.Windows.Forms.Padding(4);
+            this.button25.Name = "button25";
+            this.button25.Size = new System.Drawing.Size(287, 50);
+            this.button25.TabIndex = 27;
+            this.button25.Text = "Reporte de Vacaciones";
+            this.button25.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button25.UseVisualStyleBackColor = false;
+            this.button25.Click += new System.EventHandler(this.button25_Click_1);
+            // 
+            // button20
+            // 
+            this.button20.BackColor = System.Drawing.Color.Transparent;
+            this.button20.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button20.FlatAppearance.BorderSize = 0;
+            this.button20.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button20.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.button20.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button20.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button20.Location = new System.Drawing.Point(0, 229);
+            this.button20.Margin = new System.Windows.Forms.Padding(4);
+            this.button20.Name = "button20";
+            this.button20.Size = new System.Drawing.Size(287, 50);
+            this.button20.TabIndex = 26;
+            this.button20.Text = "Reporte de Anticipos";
+            this.button20.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button20.UseVisualStyleBackColor = false;
+            this.button20.Click += new System.EventHandler(this.button20_Click);
+            // 
+            // button6
+            // 
+            this.button6.BackColor = System.Drawing.Color.Transparent;
+            this.button6.Dock = System.Windows.Forms.DockStyle.Top;
+            this.button6.FlatAppearance.BorderSize = 0;
+            this.button6.FlatAppearance.MouseDownBackColor = System.Drawing.Color.Transparent;
+            this.button6.FlatAppearance.MouseOverBackColor = System.Drawing.Color.RoyalBlue;
+            this.button6.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.button6.Font = new System.Drawing.Font("Tahoma", 9.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.button6.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.button6.Location = new System.Drawing.Point(0, 179);
+            this.button6.Margin = new System.Windows.Forms.Padding(4);
+            this.button6.Name = "button6";
+            this.button6.Size = new System.Drawing.Size(287, 50);
+            this.button6.TabIndex = 25;
+            this.button6.Text = "Reporte de Horas Extras";
+            this.button6.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.button6.UseVisualStyleBackColor = false;
+            this.button6.Click += new System.EventHandler(this.button6_Click);
             // 
             // button27
             // 
@@ -1116,7 +1200,6 @@
         private System.Windows.Forms.Button button13;
         private System.Windows.Forms.Button button14;
         private MZControls.MZSombraPanel pnlayuda;
-        private System.Windows.Forms.Button button12;
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
         private System.Windows.Forms.Button button18;
         private System.Windows.Forms.Button button17;
@@ -1129,5 +1212,10 @@
         private System.Windows.Forms.Button button27;
         private System.Windows.Forms.Button button28;
         private System.Windows.Forms.Button button9;
+        private System.Windows.Forms.Button button6;
+        private System.Windows.Forms.Button button12;
+        private System.Windows.Forms.Button button11;
+        private System.Windows.Forms.Button button25;
+        private System.Windows.Forms.Button button20;
     }
 }

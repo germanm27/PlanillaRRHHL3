@@ -14,7 +14,7 @@ namespace RRHH.BL
         protected override void Seed(Contexto contexto)
         {
             //RUTA
-            string ruta = @"C:\Users\gfmen\OneDrive\Escritorio\Proyecto Final\Prueba-master\RRHHPlanilla\CODIGO DE BARRAS\";
+            string ruta = @"C:\Users\gfmen\OneDrive\Escritorio\Proyecto Final\RRHH-master\RRHHPlanilla\CODIGO DE BARRAS\";
 
 
             #region SEXO
@@ -371,7 +371,7 @@ namespace RRHH.BL
             capacitacion1.Horas = "12";
             capacitacion1.Poblacion = "San Pedro Sula";
             capacitacion1.Personal = "German Mendoza y Kevin Amaya";
-            capacitacion1.Fecha = "10-Noviembre";
+            capacitacion1.Fecha = new DateTime(2019, 4, 21);
             capacitacion1.Horario = "1:30 Pm a 5:00Pm";
             capacitacion1.Modalidad = "Presencial";
             capacitacion1.Proveedor = "CCIC";
@@ -385,7 +385,7 @@ namespace RRHH.BL
             capacitacion2.Horas = "8";
             capacitacion2.Poblacion = "San Pedro Sula";
             capacitacion2.Personal = "Ariana Mendoza";
-            capacitacion2.Fecha = "20-Noviembre";
+            capacitacion2.Fecha = new DateTime(2019, 5, 21);
             capacitacion2.Horario = "1:30 Pm a 5:00Pm";
             capacitacion2.Modalidad = "Presencial";
             capacitacion2.Proveedor = "CCIC";
@@ -399,7 +399,7 @@ namespace RRHH.BL
             capacitacion3.Horas = "12";
             capacitacion3.Poblacion = "San Pedro Sula";
             capacitacion3.Personal = "Luis Lopez";
-            capacitacion3.Fecha = "20-Noviembre";
+            capacitacion3.Fecha = new DateTime(2019, 6, 21);
             capacitacion3.Horario = "1:30 Pm a 5:00Pm";
             capacitacion3.Modalidad = "Presencial";
             capacitacion3.Proveedor = "FUNDAHRSE";

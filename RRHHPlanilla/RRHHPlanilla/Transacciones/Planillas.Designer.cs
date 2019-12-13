@@ -87,6 +87,8 @@
             this.dataGridViewTextBoxColumn14 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn15 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.button3 = new System.Windows.Forms.Button();
+            this.piccerrar = new System.Windows.Forms.PictureBox();
+            this.toolStripButton1 = new System.Windows.Forms.ToolStripButton();
             activoLabel = new System.Windows.Forms.Label();
             fechaLabel = new System.Windows.Forms.Label();
             idLabel = new System.Windows.Forms.Label();
@@ -106,6 +108,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaJornadasBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaMetodoPagosBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.planillaDetalleDataGridView)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).BeginInit();
             this.SuspendLayout();
             // 
             // activoLabel
@@ -113,10 +116,9 @@
             activoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             activoLabel.AutoSize = true;
-            activoLabel.Location = new System.Drawing.Point(57, 169);
-            activoLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            activoLabel.Location = new System.Drawing.Point(76, 208);
             activoLabel.Name = "activoLabel";
-            activoLabel.Size = new System.Drawing.Size(40, 13);
+            activoLabel.Size = new System.Drawing.Size(50, 17);
             activoLabel.TabIndex = 1;
             activoLabel.Text = "Activo:";
             // 
@@ -125,10 +127,9 @@
             fechaLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             fechaLabel.AutoSize = true;
-            fechaLabel.Location = new System.Drawing.Point(57, 63);
-            fechaLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            fechaLabel.Location = new System.Drawing.Point(76, 78);
             fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(40, 13);
+            fechaLabel.Size = new System.Drawing.Size(51, 17);
             fechaLabel.TabIndex = 7;
             fechaLabel.Text = "Fecha:";
             // 
@@ -137,10 +138,9 @@
             idLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             idLabel.AutoSize = true;
-            idLabel.Location = new System.Drawing.Point(57, 41);
-            idLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            idLabel.Location = new System.Drawing.Point(76, 50);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(19, 13);
+            idLabel.Size = new System.Drawing.Size(23, 17);
             idLabel.TabIndex = 9;
             idLabel.Text = "Id:";
             // 
@@ -149,10 +149,9 @@
             jornadaIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             jornadaIdLabel.AutoSize = true;
-            jornadaIdLabel.Location = new System.Drawing.Point(57, 138);
-            jornadaIdLabel.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            jornadaIdLabel.Location = new System.Drawing.Point(76, 170);
             jornadaIdLabel.Name = "jornadaIdLabel";
-            jornadaIdLabel.Size = new System.Drawing.Size(48, 13);
+            jornadaIdLabel.Size = new System.Drawing.Size(64, 17);
             jornadaIdLabel.TabIndex = 11;
             jornadaIdLabel.Text = "Jornada:";
             // 
@@ -161,10 +160,9 @@
             label1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             label1.AutoSize = true;
-            label1.Location = new System.Drawing.Point(57, 114);
-            label1.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label1.Location = new System.Drawing.Point(76, 140);
             label1.Name = "label1";
-            label1.Size = new System.Drawing.Size(89, 13);
+            label1.Size = new System.Drawing.Size(116, 17);
             label1.TabIndex = 36;
             label1.Text = "Metodo de Pago:";
             // 
@@ -172,9 +170,10 @@
             // 
             tOTDeduccionesLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             tOTDeduccionesLabel.AutoSize = true;
-            tOTDeduccionesLabel.Location = new System.Drawing.Point(892, 495);
+            tOTDeduccionesLabel.Location = new System.Drawing.Point(1189, 609);
+            tOTDeduccionesLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tOTDeduccionesLabel.Name = "tOTDeduccionesLabel";
-            tOTDeduccionesLabel.Size = new System.Drawing.Size(95, 13);
+            tOTDeduccionesLabel.Size = new System.Drawing.Size(123, 17);
             tOTDeduccionesLabel.TabIndex = 36;
             tOTDeduccionesLabel.Text = "TOTDeducciones:";
             // 
@@ -182,9 +181,10 @@
             // 
             tOTSalarioNetoLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             tOTSalarioNetoLabel.AutoSize = true;
-            tOTSalarioNetoLabel.Location = new System.Drawing.Point(897, 522);
+            tOTSalarioNetoLabel.Location = new System.Drawing.Point(1196, 642);
+            tOTSalarioNetoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tOTSalarioNetoLabel.Name = "tOTSalarioNetoLabel";
-            tOTSalarioNetoLabel.Size = new System.Drawing.Size(90, 13);
+            tOTSalarioNetoLabel.Size = new System.Drawing.Size(119, 17);
             tOTSalarioNetoLabel.TabIndex = 37;
             tOTSalarioNetoLabel.Text = "TOTSalario Neto:";
             // 
@@ -192,9 +192,10 @@
             // 
             tOTSueldoBaseLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             tOTSueldoBaseLabel.AutoSize = true;
-            tOTSueldoBaseLabel.Location = new System.Drawing.Point(895, 469);
+            tOTSueldoBaseLabel.Location = new System.Drawing.Point(1193, 577);
+            tOTSueldoBaseLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             tOTSueldoBaseLabel.Name = "tOTSueldoBaseLabel";
-            tOTSueldoBaseLabel.Size = new System.Drawing.Size(92, 13);
+            tOTSueldoBaseLabel.Size = new System.Drawing.Size(121, 17);
             tOTSueldoBaseLabel.TabIndex = 38;
             tOTSueldoBaseLabel.Text = "TOTSueldo Base:";
             // 
@@ -202,9 +203,10 @@
             // 
             cantEmpleadosLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             cantEmpleadosLabel.AutoSize = true;
-            cantEmpleadosLabel.Location = new System.Drawing.Point(900, 443);
+            cantEmpleadosLabel.Location = new System.Drawing.Point(1200, 545);
+            cantEmpleadosLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             cantEmpleadosLabel.Name = "cantEmpleadosLabel";
-            cantEmpleadosLabel.Size = new System.Drawing.Size(87, 13);
+            cantEmpleadosLabel.Size = new System.Drawing.Size(115, 17);
             cantEmpleadosLabel.TabIndex = 39;
             cantEmpleadosLabel.Text = "Cant Empleados:";
             // 
@@ -213,10 +215,9 @@
             label2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             label2.AutoSize = true;
-            label2.Location = new System.Drawing.Point(57, 87);
-            label2.Margin = new System.Windows.Forms.Padding(2, 0, 2, 0);
+            label2.Location = new System.Drawing.Point(76, 107);
             label2.Name = "label2";
-            label2.Size = new System.Drawing.Size(38, 13);
+            label2.Size = new System.Drawing.Size(50, 17);
             label2.TabIndex = 43;
             label2.Text = "Cargo:";
             // 
@@ -241,6 +242,7 @@
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
             this.listaPlanillasBindingNavigatorSaveItem,
+            this.toolStripButton1,
             this.toolStripButtonCancelar});
             this.listaPlanillasBindingNavigator.Location = new System.Drawing.Point(0, 0);
             this.listaPlanillasBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
@@ -249,7 +251,7 @@
             this.listaPlanillasBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaPlanillasBindingNavigator.Name = "listaPlanillasBindingNavigator";
             this.listaPlanillasBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaPlanillasBindingNavigator.Size = new System.Drawing.Size(1115, 27);
+            this.listaPlanillasBindingNavigator.Size = new System.Drawing.Size(1487, 27);
             this.listaPlanillasBindingNavigator.TabIndex = 0;
             this.listaPlanillasBindingNavigator.Text = "bindingNavigator1";
             // 
@@ -261,7 +263,7 @@
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -293,7 +295,7 @@
             this.bindingNavigatorPositionItem.AccessibleName = "Posición";
             this.bindingNavigatorPositionItem.AutoSize = false;
             this.bindingNavigatorPositionItem.Name = "bindingNavigatorPositionItem";
-            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(38, 23);
+            this.bindingNavigatorPositionItem.Size = new System.Drawing.Size(49, 27);
             this.bindingNavigatorPositionItem.Text = "0";
             this.bindingNavigatorPositionItem.ToolTipText = "Posición actual";
             // 
@@ -363,7 +365,7 @@
             this.toolStripButtonCancelar.Image = ((System.Drawing.Image)(resources.GetObject("toolStripButtonCancelar.Image")));
             this.toolStripButtonCancelar.ImageTransparentColor = System.Drawing.Color.Magenta;
             this.toolStripButtonCancelar.Name = "toolStripButtonCancelar";
-            this.toolStripButtonCancelar.Size = new System.Drawing.Size(57, 24);
+            this.toolStripButtonCancelar.Size = new System.Drawing.Size(70, 24);
             this.toolStripButtonCancelar.Text = "Cancelar";
             this.toolStripButtonCancelar.Visible = false;
             this.toolStripButtonCancelar.Click += new System.EventHandler(this.toolStripButtonCancelar_Click);
@@ -374,10 +376,10 @@
             | System.Windows.Forms.AnchorStyles.Left)));
             this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaPlanillasBindingSource, "Fecha", true));
             this.fechaDateTimePicker.Enabled = false;
-            this.fechaDateTimePicker.Location = new System.Drawing.Point(154, 59);
-            this.fechaDateTimePicker.Margin = new System.Windows.Forms.Padding(2);
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(205, 73);
+            this.fechaDateTimePicker.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.fechaDateTimePicker.Name = "fechaDateTimePicker";
-            this.fechaDateTimePicker.Size = new System.Drawing.Size(200, 20);
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(265, 22);
             this.fechaDateTimePicker.TabIndex = 8;
             // 
             // planillaDetalleBindingSource
@@ -390,10 +392,11 @@
             // 
             this.tOTDeduccionesTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tOTDeduccionesTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPlanillasBindingSource, "TOTDeducciones", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.tOTDeduccionesTextBox.Location = new System.Drawing.Point(1003, 488);
+            this.tOTDeduccionesTextBox.Location = new System.Drawing.Point(1337, 601);
+            this.tOTDeduccionesTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.tOTDeduccionesTextBox.Name = "tOTDeduccionesTextBox";
             this.tOTDeduccionesTextBox.ReadOnly = true;
-            this.tOTDeduccionesTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tOTDeduccionesTextBox.Size = new System.Drawing.Size(132, 22);
             this.tOTDeduccionesTextBox.TabIndex = 37;
             this.tOTDeduccionesTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -401,10 +404,11 @@
             // 
             this.tOTSalarioNetoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tOTSalarioNetoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPlanillasBindingSource, "TOTSalarioNeto", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.tOTSalarioNetoTextBox.Location = new System.Drawing.Point(1003, 515);
+            this.tOTSalarioNetoTextBox.Location = new System.Drawing.Point(1337, 634);
+            this.tOTSalarioNetoTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.tOTSalarioNetoTextBox.Name = "tOTSalarioNetoTextBox";
             this.tOTSalarioNetoTextBox.ReadOnly = true;
-            this.tOTSalarioNetoTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tOTSalarioNetoTextBox.Size = new System.Drawing.Size(132, 22);
             this.tOTSalarioNetoTextBox.TabIndex = 38;
             this.tOTSalarioNetoTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -412,10 +416,11 @@
             // 
             this.tOTSueldoBaseTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.tOTSueldoBaseTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPlanillasBindingSource, "TOTSueldoBase", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "N2"));
-            this.tOTSueldoBaseTextBox.Location = new System.Drawing.Point(1003, 462);
+            this.tOTSueldoBaseTextBox.Location = new System.Drawing.Point(1337, 569);
+            this.tOTSueldoBaseTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.tOTSueldoBaseTextBox.Name = "tOTSueldoBaseTextBox";
             this.tOTSueldoBaseTextBox.ReadOnly = true;
-            this.tOTSueldoBaseTextBox.Size = new System.Drawing.Size(100, 20);
+            this.tOTSueldoBaseTextBox.Size = new System.Drawing.Size(132, 22);
             this.tOTSueldoBaseTextBox.TabIndex = 39;
             this.tOTSueldoBaseTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -423,10 +428,11 @@
             // 
             this.cantEmpleadosTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
             this.cantEmpleadosTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPlanillasBindingSource, "CantEmpleados", true));
-            this.cantEmpleadosTextBox.Location = new System.Drawing.Point(1003, 436);
+            this.cantEmpleadosTextBox.Location = new System.Drawing.Point(1337, 537);
+            this.cantEmpleadosTextBox.Margin = new System.Windows.Forms.Padding(4);
             this.cantEmpleadosTextBox.Name = "cantEmpleadosTextBox";
             this.cantEmpleadosTextBox.ReadOnly = true;
-            this.cantEmpleadosTextBox.Size = new System.Drawing.Size(100, 20);
+            this.cantEmpleadosTextBox.Size = new System.Drawing.Size(132, 22);
             this.cantEmpleadosTextBox.TabIndex = 40;
             this.cantEmpleadosTextBox.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
@@ -435,10 +441,11 @@
             this.idTextBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
             | System.Windows.Forms.AnchorStyles.Left)));
             this.idTextBox1.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaPlanillasBindingSource, "Id", true, System.Windows.Forms.DataSourceUpdateMode.OnValidation, null, "00000"));
-            this.idTextBox1.Location = new System.Drawing.Point(154, 34);
+            this.idTextBox1.Location = new System.Drawing.Point(205, 42);
+            this.idTextBox1.Margin = new System.Windows.Forms.Padding(4);
             this.idTextBox1.Name = "idTextBox1";
             this.idTextBox1.ReadOnly = true;
-            this.idTextBox1.Size = new System.Drawing.Size(100, 20);
+            this.idTextBox1.Size = new System.Drawing.Size(132, 22);
             this.idTextBox1.TabIndex = 41;
             // 
             // listaTrabajadoresBindingSource
@@ -461,9 +468,10 @@
             // 
             this.activoCheckBox.DataBindings.Add(new System.Windows.Forms.Binding("CheckState", this.listaPlanillasBindingSource, "Activo", true));
             this.activoCheckBox.Enabled = false;
-            this.activoCheckBox.Location = new System.Drawing.Point(154, 162);
+            this.activoCheckBox.Location = new System.Drawing.Point(205, 199);
+            this.activoCheckBox.Margin = new System.Windows.Forms.Padding(4);
             this.activoCheckBox.Name = "activoCheckBox";
-            this.activoCheckBox.Size = new System.Drawing.Size(45, 24);
+            this.activoCheckBox.Size = new System.Drawing.Size(60, 30);
             this.activoCheckBox.TabIndex = 47;
             this.activoCheckBox.UseVisualStyleBackColor = true;
             // 
@@ -475,9 +483,10 @@
             this.cargoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cargoIdComboBox.Enabled = false;
             this.cargoIdComboBox.FormattingEnabled = true;
-            this.cargoIdComboBox.Location = new System.Drawing.Point(154, 85);
+            this.cargoIdComboBox.Location = new System.Drawing.Point(205, 105);
+            this.cargoIdComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.cargoIdComboBox.Name = "cargoIdComboBox";
-            this.cargoIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.cargoIdComboBox.Size = new System.Drawing.Size(160, 24);
             this.cargoIdComboBox.TabIndex = 48;
             this.cargoIdComboBox.ValueMember = "Id";
             this.cargoIdComboBox.SelectedIndexChanged += new System.EventHandler(this.cargoIdComboBox_SelectedIndexChanged);
@@ -490,9 +499,10 @@
             this.jornadaIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.jornadaIdComboBox.Enabled = false;
             this.jornadaIdComboBox.FormattingEnabled = true;
-            this.jornadaIdComboBox.Location = new System.Drawing.Point(154, 135);
+            this.jornadaIdComboBox.Location = new System.Drawing.Point(205, 166);
+            this.jornadaIdComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.jornadaIdComboBox.Name = "jornadaIdComboBox";
-            this.jornadaIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.jornadaIdComboBox.Size = new System.Drawing.Size(160, 24);
             this.jornadaIdComboBox.TabIndex = 49;
             this.jornadaIdComboBox.ValueMember = "Id";
             // 
@@ -504,9 +514,10 @@
             this.metodoPagoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.metodoPagoIdComboBox.Enabled = false;
             this.metodoPagoIdComboBox.FormattingEnabled = true;
-            this.metodoPagoIdComboBox.Location = new System.Drawing.Point(154, 111);
+            this.metodoPagoIdComboBox.Location = new System.Drawing.Point(205, 137);
+            this.metodoPagoIdComboBox.Margin = new System.Windows.Forms.Padding(4);
             this.metodoPagoIdComboBox.Name = "metodoPagoIdComboBox";
-            this.metodoPagoIdComboBox.Size = new System.Drawing.Size(121, 21);
+            this.metodoPagoIdComboBox.Size = new System.Drawing.Size(160, 24);
             this.metodoPagoIdComboBox.TabIndex = 50;
             this.metodoPagoIdComboBox.ValueMember = "Id";
             // 
@@ -516,9 +527,10 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Microsoft Sans Serif", 25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label3.ForeColor = System.Drawing.Color.Red;
-            this.label3.Location = new System.Drawing.Point(913, 120);
+            this.label3.Location = new System.Drawing.Point(1217, 148);
+            this.label3.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(190, 39);
+            this.label3.Size = new System.Drawing.Size(229, 48);
             this.label3.TabIndex = 51;
             this.label3.Text = "ANULADO";
             this.label3.Visible = false;
@@ -546,9 +558,10 @@
             this.dataGridViewTextBoxColumn14,
             this.dataGridViewTextBoxColumn15});
             this.planillaDetalleDataGridView.DataSource = this.planillaDetalleBindingSource;
-            this.planillaDetalleDataGridView.Location = new System.Drawing.Point(23, 192);
+            this.planillaDetalleDataGridView.Location = new System.Drawing.Point(31, 236);
+            this.planillaDetalleDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.planillaDetalleDataGridView.Name = "planillaDetalleDataGridView";
-            this.planillaDetalleDataGridView.Size = new System.Drawing.Size(1080, 220);
+            this.planillaDetalleDataGridView.Size = new System.Drawing.Size(1440, 271);
             this.planillaDetalleDataGridView.TabIndex = 51;
             this.planillaDetalleDataGridView.CellEndEdit += new System.Windows.Forms.DataGridViewCellEventHandler(this.planillaDetalleDataGridView_CellEndEdit_1);
             this.planillaDetalleDataGridView.DataError += new System.Windows.Forms.DataGridViewDataErrorEventHandler(this.planillaDetalleDataGridView_DataError_1);
@@ -559,7 +572,7 @@
             this.dataGridViewTextBoxColumn1.DataPropertyName = "Id";
             this.dataGridViewTextBoxColumn1.HeaderText = "Id";
             this.dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            this.dataGridViewTextBoxColumn1.Width = 41;
+            this.dataGridViewTextBoxColumn1.Width = 48;
             // 
             // dataGridViewTextBoxColumn3
             // 
@@ -573,7 +586,7 @@
             this.dataGridViewTextBoxColumn3.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn3.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn3.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn3.Width = 83;
+            this.dataGridViewTextBoxColumn3.Width = 107;
             // 
             // dataGridViewTextBoxColumn4
             // 
@@ -593,7 +606,7 @@
             this.dataGridViewTextBoxColumn5.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn5.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn5.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn5.Width = 60;
+            this.dataGridViewTextBoxColumn5.Width = 75;
             // 
             // dataGridViewTextBoxColumn6
             // 
@@ -607,7 +620,7 @@
             this.dataGridViewTextBoxColumn6.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn6.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn6.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn6.Width = 70;
+            this.dataGridViewTextBoxColumn6.Width = 89;
             // 
             // dataGridViewTextBoxColumn7
             // 
@@ -621,7 +634,6 @@
             this.dataGridViewTextBoxColumn7.Resizable = System.Windows.Forms.DataGridViewTriState.True;
             this.dataGridViewTextBoxColumn7.SortMode = System.Windows.Forms.DataGridViewColumnSortMode.Automatic;
             this.dataGridViewTextBoxColumn7.ValueMember = "Id";
-            this.dataGridViewTextBoxColumn7.Width = 79;
             // 
             // dataGridViewTextBoxColumn8
             // 
@@ -674,20 +686,46 @@
             // button3
             // 
             this.button3.Enabled = false;
-            this.button3.Location = new System.Drawing.Point(403, 135);
+            this.button3.Location = new System.Drawing.Point(537, 166);
+            this.button3.Margin = new System.Windows.Forms.Padding(4);
             this.button3.Name = "button3";
-            this.button3.Size = new System.Drawing.Size(75, 23);
+            this.button3.Size = new System.Drawing.Size(100, 28);
             this.button3.TabIndex = 52;
             this.button3.Text = "AGREGAR";
             this.button3.UseVisualStyleBackColor = true;
             this.button3.Click += new System.EventHandler(this.button3_Click);
             // 
+            // piccerrar
+            // 
+            this.piccerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.piccerrar.BackColor = System.Drawing.Color.Transparent;
+            this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
+            this.piccerrar.Location = new System.Drawing.Point(1435, 12);
+            this.piccerrar.Name = "piccerrar";
+            this.piccerrar.Size = new System.Drawing.Size(40, 36);
+            this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piccerrar.TabIndex = 53;
+            this.piccerrar.TabStop = false;
+            this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
+            // 
+            // toolStripButton1
+            // 
+            this.toolStripButton1.DisplayStyle = System.Windows.Forms.ToolStripItemDisplayStyle.Image;
+            this.toolStripButton1.Image = global::RRHHPlanilla.Properties.Resources.documentediting_editdocuments_text_documentedi_2820;
+            this.toolStripButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripButton1.Name = "toolStripButton1";
+            this.toolStripButton1.Size = new System.Drawing.Size(24, 24);
+            this.toolStripButton1.Text = "toolStripButton1";
+            this.toolStripButton1.Click += new System.EventHandler(this.toolStripButton1_Click);
+            // 
             // Planillas
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1115, 589);
+            this.ClientSize = new System.Drawing.Size(1487, 725);
+            this.Controls.Add(this.piccerrar);
             this.Controls.Add(this.button3);
             this.Controls.Add(this.planillaDetalleDataGridView);
             this.Controls.Add(this.label3);
@@ -712,7 +750,8 @@
             this.Controls.Add(idLabel);
             this.Controls.Add(jornadaIdLabel);
             this.Controls.Add(this.listaPlanillasBindingNavigator);
-            this.Margin = new System.Windows.Forms.Padding(2);
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
+            this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "Planillas";
             this.Text = "Planilla";
             this.Load += new System.EventHandler(this.Planillas_Load);
@@ -726,6 +765,7 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaJornadasBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaMetodoPagosBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.planillaDetalleDataGridView)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -780,5 +820,7 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn14;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn15;
+        private System.Windows.Forms.PictureBox piccerrar;
+        private System.Windows.Forms.ToolStripButton toolStripButton1;
     }
 }

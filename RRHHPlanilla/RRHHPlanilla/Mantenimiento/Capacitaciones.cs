@@ -32,6 +32,10 @@ namespace RRHHPlanilla
         {
             listaCapacitacionesBindingSource.EndEdit();
             var capacitacion = (Capacitacion)listaCapacitacionesBindingSource.Current;
+            capacitacion.Poblacion = comboBox1.Text;
+            capacitacion.Modalidad = comboBox2.Text;
+            capacitacion.Proveedor = comboBox3.Text;
+            capacitacion.Status = comboBox4.Text;
             var resultado = _capacitacionesBL.GuardarCapacitacion(capacitacion);
 
             if (resultado.Exitoso == true)

@@ -95,11 +95,11 @@ namespace RRHH.BL
                 resultado.Exitoso = false;
             }
 
-            if (string.IsNullOrEmpty(capacitacion.Fecha) == true)
-            {
-                resultado.Mensaje = "Ingrese el Tema";
-                resultado.Exitoso = false;
-            }
+            //if (string.IsNullOrEmpty(capacitacion.Fecha) == true)
+            //{
+            //    resultado.Mensaje = "Ingrese el Tema";
+            //    resultado.Exitoso = false;
+            //}
 
             if (string.IsNullOrEmpty(capacitacion.Horario) == true)
             {
@@ -149,7 +149,7 @@ namespace RRHH.BL
             public string Horas { get; set; }
             public string Poblacion { get; set; }
             public string Personal { get; set; }
-            public string Fecha { get; set; }
+            public DateTime Fecha { get; set; }
             public string Horario { get; set; }
             public string Modalidad { get; set; }
             public string Proveedor { get; set; }

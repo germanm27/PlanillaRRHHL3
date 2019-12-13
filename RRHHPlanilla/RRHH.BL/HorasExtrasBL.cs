@@ -108,7 +108,7 @@ namespace RRHH.BL
         public string Nombre { get; set; }
         public int Cantidad { get; set; }
         public DateTime Fecha { get; set; }
-        public int Pago { get; set; }
+        public double Pago { get; set; }
         public int TrabajadorId { get; set; }
         public Trabajador Trabajador { get; set; }
 

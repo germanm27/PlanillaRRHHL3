@@ -7,7 +7,7 @@ using System.IO;
 using WindowsFormsApplication1;
 using RRHHPlanilla.Transacciones.Horas_Extras;
 using RRHHPlanilla.Reportes;
-
+using System.Diagnostics;
 
 namespace RRHHPlanilla
 {
@@ -721,12 +721,6 @@ namespace RRHHPlanilla
             }
         }
 
-        private void button11_Click(object sender, EventArgs e)
-        {
-            {
-            }
-        }
-
         private void button28_Click(object sender, EventArgs e)
         {
 
@@ -751,9 +745,6 @@ namespace RRHHPlanilla
 
         private void button26_Click(object sender, EventArgs e)
         {
-            ReporteHorasExtras fms = new ReporteHorasExtras();
-            fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
-            abrirformhija(fms);
         }
 
         private void button9_Click(object sender, EventArgs e)
@@ -778,6 +769,39 @@ namespace RRHHPlanilla
 
                 //f4.Show();
             }
+        }
+
+        private void button6_Click(object sender, EventArgs e)
+        {
+            RepoteDeHorasExtras fms = new RepoteDeHorasExtras();
+            fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fms);
+        }
+
+        private void button12_Click(object sender, EventArgs e)
+        {
+            FrmAcercaDe frm = new FrmAcercaDe();
+            frm.ShowDialog();
+        }
+
+        private void button11_Click(object sender, EventArgs e)
+        {
+
+            //Process.Start(@"C:\Users\gfmen\OneDrive\Escritorio\Proyecto Fina\PlanillaRRHHL3-master\RRHHPlanilla\Snake\Snake\bin\Debug\app.publish\Snake.exe");
+        }
+
+        private void button20_Click(object sender, EventArgs e)
+        {
+            ReportedeAnticipo fms = new ReportedeAnticipo();
+            fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fms);
+        }
+
+        private void button25_Click_1(object sender, EventArgs e)
+        {
+            ReportedeVacaciones fms = new ReportedeVacaciones();
+            fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
+            abrirformhija(fms);
         }
 
         /*

@@ -43,7 +43,6 @@
             System.Windows.Forms.Label temaLabel;
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(Capacitaciones));
             this.listaCapacitacionesBindingNavigator = new System.Windows.Forms.BindingNavigator(this.components);
-            this.listaCapacitacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.bindingNavigatorCountItem = new System.Windows.Forms.ToolStripLabel();
             this.bindingNavigatorMoveFirstItem = new System.Windows.Forms.ToolStripButton();
             this.bindingNavigatorMovePreviousItem = new System.Windows.Forms.ToolStripButton();
@@ -58,6 +57,19 @@
             this.listaCapacitacionesBindingNavigatorSaveItem = new System.Windows.Forms.ToolStripButton();
             this.toolStripCancelar = new System.Windows.Forms.ToolStripLabel();
             this.listaCapacitacionesDataGridView = new System.Windows.Forms.DataGridView();
+            this.horarioTextBox = new System.Windows.Forms.TextBox();
+            this.horasTextBox = new System.Windows.Forms.TextBox();
+            this.idTextBox = new System.Windows.Forms.TextBox();
+            this.lugarTextBox = new System.Windows.Forms.TextBox();
+            this.personalTextBox = new System.Windows.Forms.TextBox();
+            this.presupuestoTextBox = new System.Windows.Forms.TextBox();
+            this.temaTextBox = new System.Windows.Forms.TextBox();
+            this.piccerrar = new System.Windows.Forms.PictureBox();
+            this.comboBox1 = new System.Windows.Forms.ComboBox();
+            this.comboBox2 = new System.Windows.Forms.ComboBox();
+            this.comboBox3 = new System.Windows.Forms.ComboBox();
+            this.comboBox4 = new System.Windows.Forms.ComboBox();
+            this.listaCapacitacionesBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.dataGridViewTextBoxColumn1 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn2 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn3 = new System.Windows.Forms.DataGridViewTextBoxColumn();
@@ -70,19 +82,7 @@
             this.dataGridViewTextBoxColumn10 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn11 = new System.Windows.Forms.DataGridViewTextBoxColumn();
             this.dataGridViewTextBoxColumn12 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.fechaTextBox = new System.Windows.Forms.TextBox();
-            this.horarioTextBox = new System.Windows.Forms.TextBox();
-            this.horasTextBox = new System.Windows.Forms.TextBox();
-            this.idTextBox = new System.Windows.Forms.TextBox();
-            this.lugarTextBox = new System.Windows.Forms.TextBox();
-            this.modalidadTextBox = new System.Windows.Forms.TextBox();
-            this.personalTextBox = new System.Windows.Forms.TextBox();
-            this.poblacionTextBox = new System.Windows.Forms.TextBox();
-            this.presupuestoTextBox = new System.Windows.Forms.TextBox();
-            this.proveedorTextBox = new System.Windows.Forms.TextBox();
-            this.statusTextBox = new System.Windows.Forms.TextBox();
-            this.temaTextBox = new System.Windows.Forms.TextBox();
-            this.piccerrar = new System.Windows.Forms.PictureBox();
+            this.fechaDateTimePicker = new System.Windows.Forms.DateTimePicker();
             fechaLabel = new System.Windows.Forms.Label();
             horarioLabel = new System.Windows.Forms.Label();
             horasLabel = new System.Windows.Forms.Label();
@@ -97,9 +97,9 @@
             temaLabel = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingNavigator)).BeginInit();
             this.listaCapacitacionesBindingNavigator.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingSource)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesDataGridView)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingSource)).BeginInit();
             this.SuspendLayout();
             // 
             // fechaLabel
@@ -109,10 +109,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             fechaLabel.AutoSize = true;
             fechaLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            fechaLabel.Location = new System.Drawing.Point(70, 280);
+            fechaLabel.Location = new System.Drawing.Point(89, 280);
             fechaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             fechaLabel.Name = "fechaLabel";
-            fechaLabel.Size = new System.Drawing.Size(53, 17);
+            fechaLabel.Size = new System.Drawing.Size(66, 21);
             fechaLabel.TabIndex = 2;
             fechaLabel.Text = "Fecha:";
             // 
@@ -123,10 +123,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             horarioLabel.AutoSize = true;
             horarioLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            horarioLabel.Location = new System.Drawing.Point(56, 318);
+            horarioLabel.Location = new System.Drawing.Point(75, 321);
             horarioLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             horarioLabel.Name = "horarioLabel";
-            horarioLabel.Size = new System.Drawing.Size(65, 17);
+            horarioLabel.Size = new System.Drawing.Size(80, 21);
             horarioLabel.TabIndex = 4;
             horarioLabel.Text = "Horario:";
             // 
@@ -137,10 +137,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             horasLabel.AutoSize = true;
             horasLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            horasLabel.Location = new System.Drawing.Point(70, 163);
+            horasLabel.Location = new System.Drawing.Point(89, 163);
             horasLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             horasLabel.Name = "horasLabel";
-            horasLabel.Size = new System.Drawing.Size(54, 17);
+            horasLabel.Size = new System.Drawing.Size(66, 21);
             horasLabel.TabIndex = 6;
             horasLabel.Text = "Horas:";
             // 
@@ -151,10 +151,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             idLabel.AutoSize = true;
             idLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            idLabel.Location = new System.Drawing.Point(97, 92);
+            idLabel.Location = new System.Drawing.Point(116, 92);
             idLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             idLabel.Name = "idLabel";
-            idLabel.Size = new System.Drawing.Size(29, 17);
+            idLabel.Size = new System.Drawing.Size(35, 21);
             idLabel.TabIndex = 8;
             idLabel.Text = "Id:";
             // 
@@ -168,7 +168,7 @@
             lugarLabel.Location = new System.Drawing.Point(737, 166);
             lugarLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             lugarLabel.Name = "lugarLabel";
-            lugarLabel.Size = new System.Drawing.Size(53, 17);
+            lugarLabel.Size = new System.Drawing.Size(65, 21);
             lugarLabel.TabIndex = 10;
             lugarLabel.Text = "Lugar:";
             // 
@@ -182,7 +182,7 @@
             modalidadLabel.Location = new System.Drawing.Point(698, 85);
             modalidadLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             modalidadLabel.Name = "modalidadLabel";
-            modalidadLabel.Size = new System.Drawing.Size(83, 17);
+            modalidadLabel.Size = new System.Drawing.Size(105, 21);
             modalidadLabel.TabIndex = 12;
             modalidadLabel.Text = "Modalidad:";
             // 
@@ -196,9 +196,9 @@
             personalLabel.Location = new System.Drawing.Point(46, 237);
             personalLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             personalLabel.Name = "personalLabel";
-            personalLabel.Size = new System.Drawing.Size(72, 17);
+            personalLabel.Size = new System.Drawing.Size(109, 21);
             personalLabel.TabIndex = 14;
-            personalLabel.Text = "Personal:";
+            personalLabel.Text = "Empleados:";
             // 
             // poblacionLabel
             // 
@@ -207,10 +207,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             poblacionLabel.AutoSize = true;
             poblacionLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            poblacionLabel.Location = new System.Drawing.Point(36, 200);
+            poblacionLabel.Location = new System.Drawing.Point(55, 199);
             poblacionLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             poblacionLabel.Name = "poblacionLabel";
-            poblacionLabel.Size = new System.Drawing.Size(79, 17);
+            poblacionLabel.Size = new System.Drawing.Size(100, 21);
             poblacionLabel.TabIndex = 16;
             poblacionLabel.Text = "Poblacion:";
             // 
@@ -224,7 +224,7 @@
             presupuestoLabel.Location = new System.Drawing.Point(680, 202);
             presupuestoLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             presupuestoLabel.Name = "presupuestoLabel";
-            presupuestoLabel.Size = new System.Drawing.Size(100, 17);
+            presupuestoLabel.Size = new System.Drawing.Size(123, 21);
             presupuestoLabel.TabIndex = 18;
             presupuestoLabel.Text = "Presupuesto:";
             // 
@@ -238,7 +238,7 @@
             proveedorLabel.Location = new System.Drawing.Point(698, 129);
             proveedorLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             proveedorLabel.Name = "proveedorLabel";
-            proveedorLabel.Size = new System.Drawing.Size(85, 17);
+            proveedorLabel.Size = new System.Drawing.Size(104, 21);
             proveedorLabel.TabIndex = 20;
             proveedorLabel.Text = "Proveedor:";
             // 
@@ -252,7 +252,7 @@
             statusLabel.Location = new System.Drawing.Point(731, 241);
             statusLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             statusLabel.Name = "statusLabel";
-            statusLabel.Size = new System.Drawing.Size(58, 17);
+            statusLabel.Size = new System.Drawing.Size(71, 21);
             statusLabel.TabIndex = 22;
             statusLabel.Text = "Status:";
             // 
@@ -263,10 +263,10 @@
             | System.Windows.Forms.AnchorStyles.Right)));
             temaLabel.AutoSize = true;
             temaLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            temaLabel.Location = new System.Drawing.Point(70, 125);
+            temaLabel.Location = new System.Drawing.Point(89, 129);
             temaLabel.Margin = new System.Windows.Forms.Padding(4, 0, 4, 0);
             temaLabel.Name = "temaLabel";
-            temaLabel.Size = new System.Drawing.Size(51, 17);
+            temaLabel.Size = new System.Drawing.Size(62, 21);
             temaLabel.TabIndex = 24;
             temaLabel.Text = "Tema:";
             // 
@@ -293,28 +293,24 @@
             this.bindingNavigatorSeparator2,
             this.bindingNavigatorAddNewItem,
             this.bindingNavigatorDeleteItem,
-            this.listaCapacitacionesBindingNavigatorSaveItem,
-            this.toolStripCancelar});
-            this.listaCapacitacionesBindingNavigator.Location = new System.Drawing.Point(0, 0);
+            this.toolStripCancelar,
+            this.listaCapacitacionesBindingNavigatorSaveItem});
+            this.listaCapacitacionesBindingNavigator.Location = new System.Drawing.Point(9, 1);
             this.listaCapacitacionesBindingNavigator.MoveFirstItem = this.bindingNavigatorMoveFirstItem;
             this.listaCapacitacionesBindingNavigator.MoveLastItem = this.bindingNavigatorMoveLastItem;
             this.listaCapacitacionesBindingNavigator.MoveNextItem = this.bindingNavigatorMoveNextItem;
             this.listaCapacitacionesBindingNavigator.MovePreviousItem = this.bindingNavigatorMovePreviousItem;
             this.listaCapacitacionesBindingNavigator.Name = "listaCapacitacionesBindingNavigator";
             this.listaCapacitacionesBindingNavigator.PositionItem = this.bindingNavigatorPositionItem;
-            this.listaCapacitacionesBindingNavigator.Size = new System.Drawing.Size(297, 27);
+            this.listaCapacitacionesBindingNavigator.Size = new System.Drawing.Size(308, 27);
             this.listaCapacitacionesBindingNavigator.TabIndex = 0;
             this.listaCapacitacionesBindingNavigator.Text = "bindingNavigator1";
             this.listaCapacitacionesBindingNavigator.RefreshItems += new System.EventHandler(this.listaCapacitacionesBindingNavigator_RefreshItems);
             // 
-            // listaCapacitacionesBindingSource
-            // 
-            this.listaCapacitacionesBindingSource.DataSource = typeof(RRHH.BL.Capacitacion);
-            // 
             // bindingNavigatorCountItem
             // 
             this.bindingNavigatorCountItem.Name = "bindingNavigatorCountItem";
-            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(37, 24);
+            this.bindingNavigatorCountItem.Size = new System.Drawing.Size(48, 24);
             this.bindingNavigatorCountItem.Text = "de {0}";
             this.bindingNavigatorCountItem.ToolTipText = "Número total de elementos";
             // 
@@ -417,7 +413,7 @@
             // toolStripCancelar
             // 
             this.toolStripCancelar.Name = "toolStripCancelar";
-            this.toolStripCancelar.Size = new System.Drawing.Size(53, 15);
+            this.toolStripCancelar.Size = new System.Drawing.Size(66, 20);
             this.toolStripCancelar.Text = "Cancelar";
             this.toolStripCancelar.Visible = false;
             this.toolStripCancelar.Click += new System.EventHandler(this.toolStripCancelar_Click);
@@ -447,8 +443,164 @@
             this.listaCapacitacionesDataGridView.Margin = new System.Windows.Forms.Padding(4);
             this.listaCapacitacionesDataGridView.Name = "listaCapacitacionesDataGridView";
             this.listaCapacitacionesDataGridView.RowTemplate.Height = 24;
-            this.listaCapacitacionesDataGridView.Size = new System.Drawing.Size(1250, 289);
+            this.listaCapacitacionesDataGridView.Size = new System.Drawing.Size(1271, 289);
             this.listaCapacitacionesDataGridView.TabIndex = 1;
+            // 
+            // horarioTextBox
+            // 
+            this.horarioTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.horarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Horario", true));
+            this.horarioTextBox.Location = new System.Drawing.Point(191, 314);
+            this.horarioTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.horarioTextBox.Name = "horarioTextBox";
+            this.horarioTextBox.Size = new System.Drawing.Size(411, 28);
+            this.horarioTextBox.TabIndex = 6;
+            // 
+            // horasTextBox
+            // 
+            this.horasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.horasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Horas", true));
+            this.horasTextBox.Location = new System.Drawing.Point(191, 160);
+            this.horasTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.horasTextBox.Name = "horasTextBox";
+            this.horasTextBox.Size = new System.Drawing.Size(411, 28);
+            this.horasTextBox.TabIndex = 2;
+            // 
+            // idTextBox
+            // 
+            this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Id", true));
+            this.idTextBox.Enabled = false;
+            this.idTextBox.Location = new System.Drawing.Point(191, 85);
+            this.idTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.idTextBox.Name = "idTextBox";
+            this.idTextBox.Size = new System.Drawing.Size(411, 28);
+            this.idTextBox.TabIndex = 9;
+            // 
+            // lugarTextBox
+            // 
+            this.lugarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.lugarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Lugar", true));
+            this.lugarTextBox.Location = new System.Drawing.Point(833, 163);
+            this.lugarTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.lugarTextBox.Name = "lugarTextBox";
+            this.lugarTextBox.Size = new System.Drawing.Size(390, 28);
+            this.lugarTextBox.TabIndex = 9;
+            // 
+            // personalTextBox
+            // 
+            this.personalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.personalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Personal", true));
+            this.personalTextBox.Location = new System.Drawing.Point(191, 234);
+            this.personalTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.personalTextBox.Name = "personalTextBox";
+            this.personalTextBox.Size = new System.Drawing.Size(411, 28);
+            this.personalTextBox.TabIndex = 4;
+            // 
+            // presupuestoTextBox
+            // 
+            this.presupuestoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.presupuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Presupuesto", true));
+            this.presupuestoTextBox.Location = new System.Drawing.Point(833, 199);
+            this.presupuestoTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.presupuestoTextBox.Name = "presupuestoTextBox";
+            this.presupuestoTextBox.Size = new System.Drawing.Size(390, 28);
+            this.presupuestoTextBox.TabIndex = 10;
+            // 
+            // temaTextBox
+            // 
+            this.temaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
+            | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.temaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Tema", true));
+            this.temaTextBox.Location = new System.Drawing.Point(191, 122);
+            this.temaTextBox.Margin = new System.Windows.Forms.Padding(4);
+            this.temaTextBox.Name = "temaTextBox";
+            this.temaTextBox.Size = new System.Drawing.Size(411, 28);
+            this.temaTextBox.TabIndex = 1;
+            // 
+            // piccerrar
+            // 
+            this.piccerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
+            this.piccerrar.BackColor = System.Drawing.Color.Transparent;
+            this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
+            this.piccerrar.Location = new System.Drawing.Point(1352, 1);
+            this.piccerrar.Name = "piccerrar";
+            this.piccerrar.Size = new System.Drawing.Size(40, 36);
+            this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
+            this.piccerrar.TabIndex = 26;
+            this.piccerrar.TabStop = false;
+            this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
+            // 
+            // comboBox1
+            // 
+            this.comboBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox1.FormattingEnabled = true;
+            this.comboBox1.Items.AddRange(new object[] {
+            "San Pedro Sula",
+            "Tegucigalpa",
+            "Comayagua",
+            "La Ceiba",
+            "Puerto Cortes"});
+            this.comboBox1.Location = new System.Drawing.Point(191, 196);
+            this.comboBox1.Name = "comboBox1";
+            this.comboBox1.Size = new System.Drawing.Size(411, 29);
+            this.comboBox1.TabIndex = 3;
+            // 
+            // comboBox2
+            // 
+            this.comboBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox2.FormattingEnabled = true;
+            this.comboBox2.Items.AddRange(new object[] {
+            "Presencial",
+            "Virtual"});
+            this.comboBox2.Location = new System.Drawing.Point(833, 77);
+            this.comboBox2.Name = "comboBox2";
+            this.comboBox2.Size = new System.Drawing.Size(390, 29);
+            this.comboBox2.TabIndex = 7;
+            // 
+            // comboBox3
+            // 
+            this.comboBox3.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox3.FormattingEnabled = true;
+            this.comboBox3.Items.AddRange(new object[] {
+            "CCIC",
+            "INFOP",
+            "UNAH"});
+            this.comboBox3.Location = new System.Drawing.Point(833, 122);
+            this.comboBox3.Name = "comboBox3";
+            this.comboBox3.Size = new System.Drawing.Size(390, 29);
+            this.comboBox3.TabIndex = 8;
+            // 
+            // comboBox4
+            // 
+            this.comboBox4.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
+            this.comboBox4.FormattingEnabled = true;
+            this.comboBox4.Items.AddRange(new object[] {
+            "En Proceso",
+            "Impartida\t",
+            "Cancelada"});
+            this.comboBox4.Location = new System.Drawing.Point(833, 241);
+            this.comboBox4.Name = "comboBox4";
+            this.comboBox4.Size = new System.Drawing.Size(390, 29);
+            this.comboBox4.TabIndex = 11;
+            // 
+            // listaCapacitacionesBindingSource
+            // 
+            this.listaCapacitacionesBindingSource.DataSource = typeof(RRHH.BL.Capacitacion);
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -522,174 +674,27 @@
             this.dataGridViewTextBoxColumn12.HeaderText = "Status";
             this.dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
             // 
-            // fechaTextBox
+            // fechaDateTimePicker
             // 
-            this.fechaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.fechaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Fecha", true));
-            this.fechaTextBox.Location = new System.Drawing.Point(191, 277);
-            this.fechaTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.fechaTextBox.Name = "fechaTextBox";
-            this.fechaTextBox.Size = new System.Drawing.Size(390, 24);
-            this.fechaTextBox.TabIndex = 5;
-            // 
-            // horarioTextBox
-            // 
-            this.horarioTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.horarioTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Horario", true));
-            this.horarioTextBox.Location = new System.Drawing.Point(191, 314);
-            this.horarioTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.horarioTextBox.Name = "horarioTextBox";
-            this.horarioTextBox.Size = new System.Drawing.Size(390, 24);
-            this.horarioTextBox.TabIndex = 6;
-            // 
-            // horasTextBox
-            // 
-            this.horasTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.horasTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Horas", true));
-            this.horasTextBox.Location = new System.Drawing.Point(191, 160);
-            this.horasTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.horasTextBox.Name = "horasTextBox";
-            this.horasTextBox.Size = new System.Drawing.Size(390, 24);
-            this.horasTextBox.TabIndex = 2;
-            // 
-            // idTextBox
-            // 
-            this.idTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.idTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Id", true));
-            this.idTextBox.Enabled = false;
-            this.idTextBox.Location = new System.Drawing.Point(191, 85);
-            this.idTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.idTextBox.Name = "idTextBox";
-            this.idTextBox.Size = new System.Drawing.Size(390, 24);
-            this.idTextBox.TabIndex = 9;
-            // 
-            // lugarTextBox
-            // 
-            this.lugarTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.lugarTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Lugar", true));
-            this.lugarTextBox.Location = new System.Drawing.Point(833, 163);
-            this.lugarTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.lugarTextBox.Name = "lugarTextBox";
-            this.lugarTextBox.Size = new System.Drawing.Size(353, 24);
-            this.lugarTextBox.TabIndex = 9;
-            // 
-            // modalidadTextBox
-            // 
-            this.modalidadTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.modalidadTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Modalidad", true));
-            this.modalidadTextBox.Location = new System.Drawing.Point(833, 81);
-            this.modalidadTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.modalidadTextBox.Name = "modalidadTextBox";
-            this.modalidadTextBox.Size = new System.Drawing.Size(353, 24);
-            this.modalidadTextBox.TabIndex = 7;
-            // 
-            // personalTextBox
-            // 
-            this.personalTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.personalTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Personal", true));
-            this.personalTextBox.Location = new System.Drawing.Point(191, 234);
-            this.personalTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.personalTextBox.Name = "personalTextBox";
-            this.personalTextBox.Size = new System.Drawing.Size(390, 24);
-            this.personalTextBox.TabIndex = 4;
-            // 
-            // poblacionTextBox
-            // 
-            this.poblacionTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.poblacionTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Poblacion", true));
-            this.poblacionTextBox.Location = new System.Drawing.Point(191, 197);
-            this.poblacionTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.poblacionTextBox.Name = "poblacionTextBox";
-            this.poblacionTextBox.Size = new System.Drawing.Size(390, 24);
-            this.poblacionTextBox.TabIndex = 3;
-            // 
-            // presupuestoTextBox
-            // 
-            this.presupuestoTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.presupuestoTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Presupuesto", true));
-            this.presupuestoTextBox.Location = new System.Drawing.Point(833, 199);
-            this.presupuestoTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.presupuestoTextBox.Name = "presupuestoTextBox";
-            this.presupuestoTextBox.Size = new System.Drawing.Size(353, 24);
-            this.presupuestoTextBox.TabIndex = 10;
-            // 
-            // proveedorTextBox
-            // 
-            this.proveedorTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.proveedorTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Proveedor", true));
-            this.proveedorTextBox.Location = new System.Drawing.Point(833, 125);
-            this.proveedorTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.proveedorTextBox.Name = "proveedorTextBox";
-            this.proveedorTextBox.Size = new System.Drawing.Size(353, 24);
-            this.proveedorTextBox.TabIndex = 8;
-            // 
-            // statusTextBox
-            // 
-            this.statusTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.statusTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Status", true));
-            this.statusTextBox.Location = new System.Drawing.Point(833, 236);
-            this.statusTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.statusTextBox.Name = "statusTextBox";
-            this.statusTextBox.Size = new System.Drawing.Size(353, 24);
-            this.statusTextBox.TabIndex = 11;
-            // 
-            // temaTextBox
-            // 
-            this.temaTextBox.Anchor = ((System.Windows.Forms.AnchorStyles)((((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Bottom) 
-            | System.Windows.Forms.AnchorStyles.Left) 
-            | System.Windows.Forms.AnchorStyles.Right)));
-            this.temaTextBox.DataBindings.Add(new System.Windows.Forms.Binding("Text", this.listaCapacitacionesBindingSource, "Tema", true));
-            this.temaTextBox.Location = new System.Drawing.Point(191, 122);
-            this.temaTextBox.Margin = new System.Windows.Forms.Padding(4);
-            this.temaTextBox.Name = "temaTextBox";
-            this.temaTextBox.Size = new System.Drawing.Size(390, 24);
-            this.temaTextBox.TabIndex = 1;
-            // 
-            // piccerrar
-            // 
-            this.piccerrar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
-            this.piccerrar.BackColor = System.Drawing.Color.Transparent;
-            this.piccerrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.piccerrar.Image = global::RRHHPlanilla.Properties.Resources.close;
-            this.piccerrar.Location = new System.Drawing.Point(1331, 1);
-            this.piccerrar.Name = "piccerrar";
-            this.piccerrar.Size = new System.Drawing.Size(40, 36);
-            this.piccerrar.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.piccerrar.TabIndex = 26;
-            this.piccerrar.TabStop = false;
-            this.piccerrar.Click += new System.EventHandler(this.piccerrar_Click);
+            this.fechaDateTimePicker.DataBindings.Add(new System.Windows.Forms.Binding("Value", this.listaCapacitacionesBindingSource, "Fecha", true));
+            this.fechaDateTimePicker.Location = new System.Drawing.Point(191, 274);
+            this.fechaDateTimePicker.Name = "fechaDateTimePicker";
+            this.fechaDateTimePicker.Size = new System.Drawing.Size(411, 28);
+            this.fechaDateTimePicker.TabIndex = 5;
             // 
             // Capacitaciones
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(9F, 17F);
+            this.AutoScaleDimensions = new System.Drawing.SizeF(11F, 21F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1370, 749);
+            this.ClientSize = new System.Drawing.Size(1391, 749);
+            this.Controls.Add(this.fechaDateTimePicker);
+            this.Controls.Add(this.comboBox4);
+            this.Controls.Add(this.comboBox3);
+            this.Controls.Add(this.comboBox2);
+            this.Controls.Add(this.comboBox1);
             this.Controls.Add(this.piccerrar);
             this.Controls.Add(fechaLabel);
-            this.Controls.Add(this.fechaTextBox);
             this.Controls.Add(horarioLabel);
             this.Controls.Add(this.horarioTextBox);
             this.Controls.Add(horasLabel);
@@ -699,17 +704,13 @@
             this.Controls.Add(lugarLabel);
             this.Controls.Add(this.lugarTextBox);
             this.Controls.Add(modalidadLabel);
-            this.Controls.Add(this.modalidadTextBox);
             this.Controls.Add(personalLabel);
             this.Controls.Add(this.personalTextBox);
             this.Controls.Add(poblacionLabel);
-            this.Controls.Add(this.poblacionTextBox);
             this.Controls.Add(presupuestoLabel);
             this.Controls.Add(this.presupuestoTextBox);
             this.Controls.Add(proveedorLabel);
-            this.Controls.Add(this.proveedorTextBox);
             this.Controls.Add(statusLabel);
-            this.Controls.Add(this.statusTextBox);
             this.Controls.Add(temaLabel);
             this.Controls.Add(this.temaTextBox);
             this.Controls.Add(this.listaCapacitacionesDataGridView);
@@ -724,9 +725,9 @@
             ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingNavigator)).EndInit();
             this.listaCapacitacionesBindingNavigator.ResumeLayout(false);
             this.listaCapacitacionesBindingNavigator.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingSource)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesDataGridView)).EndInit();
             ((System.ComponentModel.ISupportInitialize)(this.piccerrar)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.listaCapacitacionesBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -761,19 +762,19 @@
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private System.Windows.Forms.DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
-        private System.Windows.Forms.TextBox fechaTextBox;
         private System.Windows.Forms.TextBox horarioTextBox;
         private System.Windows.Forms.TextBox horasTextBox;
         private System.Windows.Forms.TextBox idTextBox;
         private System.Windows.Forms.TextBox lugarTextBox;
-        private System.Windows.Forms.TextBox modalidadTextBox;
         private System.Windows.Forms.TextBox personalTextBox;
-        private System.Windows.Forms.TextBox poblacionTextBox;
         private System.Windows.Forms.TextBox presupuestoTextBox;
-        private System.Windows.Forms.TextBox proveedorTextBox;
-        private System.Windows.Forms.TextBox statusTextBox;
         private System.Windows.Forms.TextBox temaTextBox;
         private System.Windows.Forms.ToolStripLabel toolStripCancelar;
         private System.Windows.Forms.PictureBox piccerrar;
+        private System.Windows.Forms.ComboBox comboBox1;
+        private System.Windows.Forms.ComboBox comboBox2;
+        private System.Windows.Forms.ComboBox comboBox3;
+        private System.Windows.Forms.ComboBox comboBox4;
+        private System.Windows.Forms.DateTimePicker fechaDateTimePicker;
     }
 }

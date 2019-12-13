@@ -96,6 +96,12 @@
     <Compile Include="EXTRA\FrmConfigurarUsuario.Designer.cs">
       <DependentUpon>FrmConfigurarUsuario.cs</DependentUpon>
     </Compile>
+    <Compile Include="ReporteAnticipo.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteAnticipo.rpt</DependentUpon>
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="ReporteEmpleados.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -120,6 +126,18 @@
       <DependentUpon>ReportePlanilla.rpt</DependentUpon>
       <SubType>Component</SubType>
     </Compile>
+    <Compile Include="Reportes\ReportedeAnticipo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportedeAnticipo.Designer.cs">
+      <DependentUpon>ReportedeAnticipo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\ReportedeVacaciones.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\ReportedeVacaciones.Designer.cs">
+      <DependentUpon>ReportedeVacaciones.cs</DependentUpon>
+    </Compile>
     <Compile Include="Reportes\ReportEmpleado.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -138,17 +156,23 @@
     <Compile Include="Reportes\ReportEvalPersonal.Designer.cs">
       <DependentUpon>ReportEvalPersonal.cs</DependentUpon>
     </Compile>
-    <Compile Include="Reportes\ReportHoraExtras.cs">
-      <SubType>Form</SubType>
-    </Compile>
-    <Compile Include="Reportes\ReportHoraExtras.Designer.cs">
-      <DependentUpon>ReportHoraExtras.cs</DependentUpon>
-    </Compile>
     <Compile Include="Reportes\ReportPrestaciones.cs">
       <SubType>Form</SubType>
     </Compile>
     <Compile Include="Reportes\ReportPrestaciones.Designer.cs">
       <DependentUpon>ReportPrestaciones.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Reportes\RepoteDeHorasExtras.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Reportes\RepoteDeHorasExtras.Designer.cs">
+      <DependentUpon>RepoteDeHorasExtras.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ReporteVacaciones.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>ReporteVacaciones.rpt</DependentUpon>
+      <SubType>Component</SubType>
     </Compile>
     <Compile Include="Transacciones\Anticipo\ResultadoAnticipo.cs">
       <SubType>Form</SubType>
@@ -398,6 +422,10 @@
     <EmbeddedResource Include="Mantenimiento\Capacitaciones.resx">
       <DependentUpon>Capacitaciones.cs</DependentUpon>
     </EmbeddedResource>
+    <EmbeddedResource Include="ReporteAnticipo.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteAnticipo.cs</LastGenOutput>
+    </EmbeddedResource>
     <EmbeddedResource Include="ReporteEmpleados.rpt">
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReporteEmpleados.cs</LastGenOutput>
@@ -414,6 +442,12 @@
       <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
       <LastGenOutput>ReportePlanilla.cs</LastGenOutput>
     </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportedeAnticipo.resx">
+      <DependentUpon>ReportedeAnticipo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\ReportedeVacaciones.resx">
+      <DependentUpon>ReportedeVacaciones.cs</DependentUpon>
+    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportEmpleado.resx">
       <DependentUpon>ReportEmpleado.cs</DependentUpon>
     </EmbeddedResource>
@@ -423,11 +457,15 @@
     <EmbeddedResource Include="Reportes\ReportEvalPersonal.resx">
       <DependentUpon>ReportEvalPersonal.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="Reportes\ReportHoraExtras.resx">
-      <DependentUpon>ReportHoraExtras.cs</DependentUpon>
-    </EmbeddedResource>
     <EmbeddedResource Include="Reportes\ReportPrestaciones.resx">
       <DependentUpon>ReportPrestaciones.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Reportes\RepoteDeHorasExtras.resx">
+      <DependentUpon>RepoteDeHorasExtras.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ReporteVacaciones.rpt">
+      <Generator>CrystalDecisions.VSDesigner.CodeGen.ReportCodeGenerator</Generator>
+      <LastGenOutput>ReporteVacaciones.cs</LastGenOutput>
     </EmbeddedResource>
     <EmbeddedResource Include="Transacciones\Anticipo\ResultadoAnticipo.resx">
       <DependentUpon>ResultadoAnticipo.cs</DependentUpon>
@@ -746,6 +784,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Resources\salir1.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\documentediting_editdocuments_text_documentedi_2820.ico" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

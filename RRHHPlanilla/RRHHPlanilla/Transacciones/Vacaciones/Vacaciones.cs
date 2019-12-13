@@ -308,6 +308,16 @@ namespace RRHHPlanilla
 
         private void button1_Click(object sender, EventArgs e)
         {
+            int generado = 0;
+
+            //captura de vacaciones generadas
+            if (fechaGeneradoTextBox.Text == "Si")
+            {
+                generado = 1;
+            }
+
+
+
 
             if (disponibleDiaTextBox.Text == "0" || obtenidoTextBox.Text == null)
             {
@@ -342,7 +352,10 @@ namespace RRHHPlanilla
             //Guardando datos en tabla trabajador
             var diadisponible = (Trabajador)listaTrabajadoresBindingSource.Current;
             diadisponible.DisponibleDia = Convert.ToInt32(disponibleDiaTextBox.Text);
+            diadisponible.FechaGenerado = generado;
             _trabajadores.GuardarTrabajador(diadisponible);
+
+
 
 
             var resultado = _vacacionesBL.GuardaVacaciones(vacacion);
@@ -364,6 +377,7 @@ namespace RRHHPlanilla
 
             obtenidoTextBox.Clear();
             listaTrabajadoresBindingSource.Clear();
+            fechaGeneradoTextBox.Clear();
             textBox19.Clear();
             textBox20.Clear();
             textBox21.Clear();
@@ -457,6 +471,11 @@ namespace RRHHPlanilla
         }
 
         private void button6_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void groupBox1_Enter(object sender, EventArgs e)
         {
 
         }

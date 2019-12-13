@@ -143,6 +143,16 @@ namespace RRHHPlanilla.Properties {
         /// <summary>
         ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap documentediting_editdocuments_text_documentedi_2820 {
+            get {
+                object obj = ResourceManager.GetObject("documentediting_editdocuments_text_documentedi_2820", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Busca un recurso adaptado de tipo System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap equipo_de_trabajadores {
             get {
                 object obj = ResourceManager.GetObject("equipo-de-trabajadores", resourceCulture);
