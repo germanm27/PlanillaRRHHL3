@@ -53,7 +53,7 @@ namespace RRHHPlanilla
             {
                 BarcodeLib.Barcode Codigo = new BarcodeLib.Barcode();
                 Codigo.IncludeLabel = true;
-                codigoBarrasPictureBox.Image = Codigo.Encode(BarcodeLib.TYPE.CODE128, nombreTextBox.Text + apellidoTextBox.Text, Color.Black, Color.White, 400, 100);
+                codigoBarrasPictureBox.Image = Codigo.Encode(BarcodeLib.TYPE.CODE128, nombreTextBox.Text + " " + apellidoTextBox.Text, Color.Black, Color.White, 400, 100);
             }
             else
             {
@@ -100,6 +100,8 @@ namespace RRHHPlanilla
             {
                 MessageBox.Show(resultado.Mensaje);
             }
+
+            listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
         }
 
         //AGREGAR
@@ -112,7 +114,8 @@ namespace RRHHPlanilla
             listaTrabajadoresBindingNavigatorSaveItem.Enabled = true;
             _trabajadores.AgregarTrabajador();
             listaTrabajadoresBindingSource.MoveLast();
-
+            HabilitarEdicion();
+            
             DeshabilitarHabilitarBotones(false);        
         }
 
@@ -205,7 +208,7 @@ namespace RRHHPlanilla
         {
             _trabajadores.CancelarCambios();
             DesabilitarEdicion();
-            listaTrabajadoresBindingNavigatorSaveItem.Enabled = false;
+            
             DeshabilitarHabilitarBotones(true);
         }
 

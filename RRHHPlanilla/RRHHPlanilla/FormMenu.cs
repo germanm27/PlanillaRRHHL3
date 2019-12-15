@@ -698,7 +698,14 @@ namespace RRHHPlanilla
             Form3 fms = new Form3();
             fms.FormClosed += new FormClosedEventHandler(MostrarFormLogoAlCerrarForms);
             abrirformhija(fms);
-            
+
+            if (pnlmenu.Height == 105)
+            {
+                pictureBox3.Visible = false;
+                pnlUsuario.Width = 0;
+                this.tmContraerMenu.Start();
+            }
+
         }
 
         private void panel5_Paint(object sender, PaintEventArgs e)

@@ -35,7 +35,7 @@ namespace RRHHPlanilla
             bindingSource4.DataSource = _jornadaBL.ObtenerJornadas();
 
             var reporte = new ReporteExEmpleado();
-            //reporte.SetDataSource(bindingSource);
+            ////reporte.SetDataSource(bindingSource);
             reporte.Database.Tables["ExTrabajador"].SetDataSource(bindingSource);
             reporte.Database.Tables["Cargo"].SetDataSource(bindingSource2);
             reporte.Database.Tables["MetodoPago"].SetDataSource(bindingSource3);

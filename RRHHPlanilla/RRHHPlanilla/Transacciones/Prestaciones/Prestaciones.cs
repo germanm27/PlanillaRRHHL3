@@ -45,7 +45,7 @@ namespace RRHHPlanilla
             listaSexosBindingSource.DataSource = _sexoBL.ObtenerSexos();
 
             _trabajadores = new TrabajadoresBL();
-            listaTrabajadoresBindingSource.DataSource = _trabajadores.ObtenerTrabajador();
+            listaTrabajadoresBindingSource.DataSource = _trabajadores.ListaTrabajadores;   //ObtenerTrabajador();
 
             _cargosBL = new CargosBL();
             listaCargosBindingSource.DataSource = _cargosBL.ObtenerCargos();
@@ -419,6 +419,9 @@ namespace RRHHPlanilla
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question);
                 if (resulto == DialogResult.Yes)
                 {
+                    _trabajadores = new TrabajadoresBL();
+                    listaTrabajadoresBindingSource.DataSource = _trabajadores.ObtenerTrabajador();
+
                     var id = Convert.ToInt32(textBox15.Text);
                     Eliminar(id);
                     MessageBox.Show("Empleado eliminado satisfactoriamente");

@@ -14,7 +14,7 @@ namespace RRHH.BL
         protected override void Seed(Contexto contexto)
         {
             //RUTA
-            string ruta = @"C:\Users\gfmen\OneDrive\Escritorio\Proyecto Final\RRHH-master\RRHHPlanilla\CODIGO DE BARRAS\";
+            string ruta = @"C:\Users\gfmen\OneDrive\Escritorio\PlanillaRRHHL3\RRHHPlanilla\CODIGO DE BARRAS\";
 
 
             #region SEXO

@@ -49,6 +49,7 @@
             // 
             // cargoIdLabel
             // 
+            cargoIdLabel.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             cargoIdLabel.AutoSize = true;
             cargoIdLabel.Font = new System.Drawing.Font("Tahoma", 10.2F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             cargoIdLabel.Location = new System.Drawing.Point(692, 60);
@@ -60,12 +61,13 @@
             // 
             // cargoIdComboBox
             // 
+            this.cargoIdComboBox.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.cargoIdComboBox.DataSource = this.listaCargosBindingSource;
             this.cargoIdComboBox.DisplayMember = "Descripcion";
             this.cargoIdComboBox.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDownList;
             this.cargoIdComboBox.FormattingEnabled = true;
             this.cargoIdComboBox.Location = new System.Drawing.Point(753, 60);
-            this.cargoIdComboBox.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.cargoIdComboBox.Margin = new System.Windows.Forms.Padding(2);
             this.cargoIdComboBox.Name = "cargoIdComboBox";
             this.cargoIdComboBox.Size = new System.Drawing.Size(130, 21);
             this.cargoIdComboBox.TabIndex = 48;
@@ -83,8 +85,10 @@
             // 
             // textBox4
             // 
+            this.textBox4.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
             this.textBox4.Location = new System.Drawing.Point(224, 59);
-            this.textBox4.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.textBox4.Margin = new System.Windows.Forms.Padding(2);
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(453, 20);
             this.textBox4.TabIndex = 46;
@@ -121,9 +125,12 @@
             // 
             // dataGridView1
             // 
+            this.dataGridView1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
+            | System.Windows.Forms.AnchorStyles.Right)));
+            this.dataGridView1.BackgroundColor = System.Drawing.Color.White;
             this.dataGridView1.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dataGridView1.Location = new System.Drawing.Point(42, 96);
-            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.dataGridView1.Margin = new System.Windows.Forms.Padding(2);
             this.dataGridView1.Name = "dataGridView1";
             this.dataGridView1.RowTemplate.Height = 24;
             this.dataGridView1.Size = new System.Drawing.Size(954, 344);
@@ -131,6 +138,7 @@
             // 
             // button1
             // 
+            this.button1.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Right)));
             this.button1.Location = new System.Drawing.Point(902, 48);
             this.button1.Name = "button1";
             this.button1.Size = new System.Drawing.Size(97, 41);
@@ -155,7 +163,7 @@
             this.Controls.Add(this.textBox4);
             this.Controls.Add(this.label4);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Margin = new System.Windows.Forms.Padding(2, 2, 2, 2);
+            this.Margin = new System.Windows.Forms.Padding(2);
             this.Name = "Busquedas";
             this.Text = "Busqueda";
             this.Load += new System.EventHandler(this.Busquedas_Load);
